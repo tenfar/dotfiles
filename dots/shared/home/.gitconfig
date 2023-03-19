@@ -109,3 +109,7 @@
 ### Random dad joke if typo on git add
 	dad = !curl https://icanhazdadjoke.com/ && echo
 
+[user]
+	name = Tenfar Lin
+[userr]
+	email = tenfar@gmail.com
