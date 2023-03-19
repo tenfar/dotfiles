@@ -201,9 +201,7 @@ cask "electron"
 cask "firefox"
 cask "grammarly"
 cask "hammerspoon"
-cask "inkscape"
 cask "kitty"
-cask "libreoffice"
 cask "lulu"
 cask "meetingbar"
 cask "monitorcontrol"
@@ -214,36 +212,11 @@ cask "skim"
 cask "sloth"
 cask "spotify"
 cask "stats"
-cask "thunderbird"
 cask "visual-studio-code"
 cask "xquartz"
-mas "1Password for Safari", id: 1569813296
-mas "AdGuard for Safari", id: 1440147259
-mas "AmorphousMemoryMark", id: 1495719766
 mas "Amphetamine", id: 937984704
-mas "AutoMounter", id: 1160435653
-mas "Brother iPrint&Scan", id: 1193539993
-mas "Cascadea", id: 1432182561
-mas "Dark Reader for Safari", id: 1438243180
-mas "Disk Speed Test", id: 425264550
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
-mas "Infuse", id: 1136220934
+mas "Disk Speed Test", id: 4252645
 mas "Keynote", id: 409183694
-mas "Malwarebytes Browser Guard", id: 1577761052
-mas "MediaInfo", id: 510620098
-mas "Messenger", id: 1480068668
-mas "Microsoft OneNote", id: 784801555
-mas "Microsoft Remote Desktop", id: 1295203466
-mas "Notability", id: 360593530
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Patterns", id: 429449079
-mas "Pixelmator", id: 407963104
-mas "PopClip", id: 445189367
-mas "Prime Video", id: 545519333
-mas "Slack", id: 803453959
-mas "Telegram", id: 747648890
-mas "TestFlight", id: 899247664
-mas "WiFi Explorer", id: 494803304
 mas "Xcode", id: 497799835
