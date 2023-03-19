@@ -7,7 +7,7 @@ render_bar_item() {
 	if [ "$SSID" = "" ]; then
 		args+=(--set "$NAME" label="N/A")
 	else
-		args+=(--set "$NAME" label="$SSID (${CURR_TX}Mbps)"
+		args+=(--set "$NAME" label="WIFI6 (${CURR_TX}Mbps)"
 			label.drawing=off) # remove if you want more detailed info available without hovering
 	fi
 }

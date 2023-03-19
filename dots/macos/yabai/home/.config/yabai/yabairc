@@ -135,6 +135,7 @@ UNMANAGED=(
 	Vimac
 	iStat Menus
 	zoom.us
+	IINA
 )
 
 for ((i = 1; i <= "${#UNMANAGED[@]}"; i++)); do
@@ -159,6 +160,7 @@ COMMS=(
 	Messenger
 	Slack
 	Telegram
+	WeChat
 )
 
 for ((i = 1; i <= "${#COMMS[@]}"; i++)); do
@@ -182,6 +184,7 @@ MEDIA=(
 	Plex
 	Spotify
 	VLC
+	IINA
 )
 
 for ((i = 1; i <= "${#MEDIA[@]}"; i++)); do
@@ -234,6 +237,7 @@ done
 VM=(
 	UTM
 	Parallels
+	Docker Desktop
 )
 
 for ((i = 1; i <= "${#VM[@]}"; i++)); do

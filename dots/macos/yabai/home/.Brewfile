@@ -189,34 +189,17 @@ brew "felixkratz/formulae/sketchybar"
 brew "khanhas/tap/spicetify-cli"
 brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai", args: ["HEAD"]
-cask "1password-cli"
 cask "alacritty"
-cask "alfred"
 cask "authy"
 cask "betterdiscord-installer"
-cask "caprine"
 cask "cutter"
 cask "discord"
-cask "electron"
-cask "firefox"
-cask "grammarly"
 cask "hammerspoon"
 cask "kitty"
 cask "lulu"
-cask "meetingbar"
 cask "monitorcontrol"
-cask "moonlight"
-cask "powershell"
 cask "sf-symbols"
 cask "skim"
 cask "sloth"
-cask "spotify"
-cask "stats"
-cask "visual-studio-code"
 cask "xquartz"
-mas "Amphetamine", id: 937984704
-mas "Disk Speed Test", id: 4252645
-mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "Xcode", id: 497799835
