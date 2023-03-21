@@ -14,7 +14,7 @@ render_bar_item() {
 
 add_paired_header() {
 	bluetooth_details=(
-		label="$(echo -e 'Paired Devices')"
+		label="$(echo -e '已配对')"
 		label.font="$FONT:Bold:14.0"
 		label.align=left
 		icon.drawing=off
