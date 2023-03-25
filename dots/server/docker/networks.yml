@@ -2,6 +2,6 @@ networks:
   br0:
     external: true
     name: "br0"
-  khaneproxy:
+  alphaproxy:
     external: true
-    name: "khaneproxy"
+    name: "alphaproxy"

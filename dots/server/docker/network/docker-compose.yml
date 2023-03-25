@@ -26,7 +26,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     restart: "unless-stopped"
     user: "nonroot"
     volumes:
@@ -97,7 +97,7 @@ services:
         max-file: "1"
         max-size: "100m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "2375:2375/tcp"
     restart: "unless-stopped"
@@ -146,7 +146,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "18443:4443/tcp"
       - "1880:8080/tcp"
@@ -329,7 +329,7 @@ services:
   #   volumes:
   #     - /mnt/cache/appdata/rustdesk-hbbs/:/root
   #   networks:
-  #     - "khaneproxy"
+  #     - "alphaproxy"
   #   depends_on:
   #     - hbbr
   #   restart: unless-stopped
@@ -344,5 +344,5 @@ services:
   #   volumes:
   #     - /mnt/cache/appdata/rustdesk-hbbr:/root
   #   networks:
-  #     - "khaneproxy"
+  #     - "alphaproxy"
   #   restart: unless-stopped

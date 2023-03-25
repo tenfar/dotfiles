@@ -32,7 +32,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8185:80/tcp"
     volumes:

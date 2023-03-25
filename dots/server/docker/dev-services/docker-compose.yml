@@ -31,7 +31,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8585:8080/tcp"
     user: "adminer"
@@ -61,7 +61,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "5000:5000/tcp"
     volumes:
@@ -90,7 +90,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8978:8978/tcp"
     volumes:
@@ -110,7 +110,7 @@ services:
       - "PGID=100"
       - "HOST_CONTAINERNAME=binhex-jenkins"
       - "JAVA_ARGS=-Xmx512m"
-      - "JAVA_OPTS=-Dhudson.footerURL=https://khaneliman.com"
+      - "JAVA_OPTS=-Dhudson.footerURL=https://tenfar.me"
       - "UMASK=000"
       - "DOCKER_HOST=tcp://dockersocket:2375"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
@@ -131,7 +131,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "4243:4243/tcp"
       - "8090:8090/tcp"

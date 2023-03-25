@@ -2,7 +2,7 @@ return {
 	widget = {
 		email  = {
 			-- Email address
-			address = 'khaneliman12@gmail.com',
+			address = 'tenfar12@gmail.com',
 			-- App password
 			app_password = '',
 			-- Imap server

@@ -1,7 +1,7 @@
 # Komorebi
 
-[![windows](https://img.shields.io/badge/windows-cad3f5?style=for-the-badge&logo=Windows&logoColor=0079D5)](https://github.com/khaneliman/dotfiles/blob/main/dots/windows/)
-[![Komorebi](https://img.shields.io/badge/Komorebi-24273a?logo=windows&logoColor=fff&style=for-the-badge)](https://github.com/khaneliman/dotfiles/blob/main/dots/windows/komorebi/README.md)
+[![windows](https://img.shields.io/badge/windows-cad3f5?style=for-the-badge&logo=Windows&logoColor=0079D5)](https://github.com/tenfar/dotfiles/blob/main/dots/windows/)
+[![Komorebi](https://img.shields.io/badge/Komorebi-24273a?logo=windows&logoColor=fff&style=for-the-badge)](https://github.com/tenfar/dotfiles/blob/main/dots/windows/komorebi/README.md)
 
 [Catppuccin](https://github.com/catppuccin/catppuccin)-themed [Komorebi](https://github.com/LGUG2Z/komorebi) configuration.
 There's the configuration of Windows Explorer, theme, cursors, fonts, a tiling window manager, and hotkey daemon with application theming and configuration that's cross-platform coming from the shared folder.

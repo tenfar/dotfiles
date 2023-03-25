@@ -86,7 +86,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8888:8080/tcp"
     volumes:
@@ -157,7 +157,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8083:8080/tcp"
     privileged: true
@@ -206,7 +206,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8181:8181/tcp"
     volumes:

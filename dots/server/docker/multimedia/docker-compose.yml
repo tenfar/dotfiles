@@ -43,7 +43,7 @@ services:
         max-file: "1"
         max-size: "100m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "5001:80/tcp"
     volumes:
@@ -77,7 +77,7 @@ services:
         max-file: "1"
         max-size: "100m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "1787:1787/tcp"
     volumes:

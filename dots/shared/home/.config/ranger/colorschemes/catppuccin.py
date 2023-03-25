@@ -1,4 +1,4 @@
-# Austin Horstman <khaneliman12@gmail.com>, 2023
+# Austin Horstman <tenfar12@gmail.com>, 2023
 # Catppuccin like colorscheme for https://github.com/hut/ranger .
 # This software is distributed under the terms of the GNU GPL version 3.
 

@@ -44,7 +44,7 @@ services:
     networks:
       - "br0"
     volumes:
-      - "/mnt/user/timemachine:/opt/khaneliman"
+      - "/mnt/user/timemachine:/opt/tenfar"
     working_dir: "/"
 
   nextcloud:
@@ -97,7 +97,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "444:443/tcp"
     volumes:
@@ -142,7 +142,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8080:8080/tcp"
     restart: "unless-stopped"
@@ -196,7 +196,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "7821:5800/tcp"
       - "7921:5900/tcp"

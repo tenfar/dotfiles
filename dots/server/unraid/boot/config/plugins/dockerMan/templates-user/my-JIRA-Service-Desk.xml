@@ -44,7 +44,7 @@
   </Data>
   <Environment>
     <Variable>
-      <Value>jira.khaneliman.com</Value>
+      <Value>jira.tenfar.me</Value>
       <Name>ATL_PROXY_NAME</Name>
       <Mode/>
     </Variable>
@@ -60,7 +60,7 @@
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="ATL_PROXY_NAME" Target="ATL_PROXY_NAME" Default="" Mode="" Description="If behind a reverse proxy, what's the root address. i.e. jira.example.com" Type="Variable" Display="always" Required="false" Mask="false">jira.khaneliman.com</Config>
+  <Config Name="ATL_PROXY_NAME" Target="ATL_PROXY_NAME" Default="" Mode="" Description="If behind a reverse proxy, what's the root address. i.e. jira.example.com" Type="Variable" Display="always" Required="false" Mask="false">jira.tenfar.me</Config>
   <Config Name="ATL_PROXY_PORT" Target="ATL_PROXY_PORT" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">443</Config>
   <Config Name="ATL_TOMCAT_SCHEME" Target="ATL_TOMCAT_SCHEME" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">https</Config>
   <Config Name="Host Port 1" Target="8080" Default="8080" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8089</Config>

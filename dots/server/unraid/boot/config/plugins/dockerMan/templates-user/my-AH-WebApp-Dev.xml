@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>AH-WebApp-Dev</Name>
-  <Repository>ghcr.io/khaneliman/austin-horstman-webapp:develop</Repository>
+  <Repository>ghcr.io/tenfar/austin-horstman-webapp:develop</Repository>
   <Registry/>
   <Network>alphaproxy</Network>
   <MyIP/>

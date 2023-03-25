@@ -34,7 +34,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     volumes:
       - "/mnt/cache/appdata/Plex-Meta-Manager:/config"
 
@@ -88,7 +88,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "9696:9696/tcp"
     volumes:
@@ -142,7 +142,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8989:8989/tcp"
     volumes:
@@ -194,7 +194,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "7878:7878/tcp"
     volumes:
@@ -249,7 +249,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8686:8686/tcp"
     volumes:
@@ -303,7 +303,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "6767:6767/tcp"
     volumes:
@@ -352,7 +352,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8787:8787/tcp"
     volumes:
@@ -405,7 +405,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8889:8888/tcp"
     volumes:

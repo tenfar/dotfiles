@@ -38,7 +38,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8081:80/tcp"
     working_dir: "/var/www/html"
@@ -86,7 +86,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8084:80/tcp"
     volumes:

@@ -49,12 +49,12 @@
   </Data>
   <Environment>
     <Variable>
-      <Value>mesh.khaneliman.com</Value>
+      <Value>mesh.tenfar.me</Value>
       <Name>HOSTNAME</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>khaneliman.com</Value>
+      <Value>tenfar.me</Value>
       <Name>REVERSE_PROXY</Name>
       <Mode/>
     </Variable>
@@ -81,8 +81,8 @@
   </Environment>
   <Labels/>
   <Config Name="443" Target="443" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8086</Config>
-  <Config Name="HOSTNAME" Target="HOSTNAME" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">mesh.khaneliman.com</Config>
-  <Config Name="REVERSE_PROXY" Target="REVERSE_PROXY" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">khaneliman.com</Config>
+  <Config Name="HOSTNAME" Target="HOSTNAME" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">mesh.tenfar.me</Config>
+  <Config Name="REVERSE_PROXY" Target="REVERSE_PROXY" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">tenfar.me</Config>
   <Config Name="REVERSE_PROXY_TLS_PORT" Target="REVERSE_PROXY_TLS_PORT" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">443</Config>
   <Config Name="IFRAME" Target="IFRAME" Default="" Mode="" Description="Container Path: IFRAME" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="ALLOW_NEW_ACCOUNTS" Target="ALLOW_NEW_ACCOUNTS" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">false</Config>

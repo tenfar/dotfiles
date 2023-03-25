@@ -39,7 +39,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "9091:9091/tcp"
     restart: "unless-stopped"
@@ -95,7 +95,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8282:8080/tcp"
     restart: "unless-stopped"
