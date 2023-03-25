@@ -72,23 +72,6 @@ install_bat_themes() {
 	fi
 }
 
-install_better_discord() {
-	if [[ $(command -v betterdiscordctl) ]]; then
-		message "Better discord detected... installing.."
-		betterdiscordctl install
-	else
-		warning_message "Better Discord not detected... installation instructions: https://docs.betterdiscord.app/users/getting-started/installation"
-
-		message "Building and installing from source..."
-		git clone https://github.com/BetterDiscord/BetterDiscord.git "$HOME"/BetterDiscord
-		cd BetterDiscord || return
-		command -v pnpm || npm install -g pnpm
-		pnpm install
-		pnpm build
-		pnpm inject
-	fi
-}
-
 install_fish_plugins() {
 	if [[ $(command -v fish) ]]; then
 		message "Installing fisher..."
@@ -105,83 +88,6 @@ install_fish_plugins() {
 	fi
 }
 
-install_spicetify() {
-	if [[ $(command -v spicetify) ]]; then
-
-		message "Spicetify detected.. configuring and setting theme"
-
-		if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-
-			message "Linux detected.. checking for spotify installations"
-
-			# Spotify path
-			if [[ -d "/opt/spotify/" ]]; then
-				message "Spotify detected in /opt/spotify.. setting permissions and spotify_path"
-
-				sudo chmod a+wr /opt/spotify
-				sudo chmod a+wr /opt/spotify/Apps -R
-
-				command -v spicetify && spicetify config spotify_path /opt/spotify/
-
-			elif [[ -d "/usr/share/spotify" ]]; then
-				message "Spotify detected in /usr/share/spotify.. settings permissions and spotify_path"
-
-				sudo chmod a+wr /usr/share/spotify
-				sudo chmod a+wr /usr/share/spotify/Apps -R
-
-				command -v spicetify && spicetify config spotify_path /usr/share/spotify
-
-			elif [[ -d "$HOME/.var/app/com.spotify.Client/config/spotify" ]]; then
-				message "Spotify detected in $HOME/.var/app/com.spotify.Client/config/spotify.. settings permissions and spotify_path"
-
-				sudo chmod a+wr "$HOME"/.var/app/com.spotify.Client/config/spotify
-				sudo chmod a+wr "$HOME"/.var/app/com.spotify.Client/config/spotify/Apps -R
-
-				command -v spicetify && spicetify config spotify_path "$HOME"/.var/app/com.spotify.Client/config/spotify
-			fi
-
-			# Preferences path
-			if [[ -f "$HOME/.config.spotify/prefs" ]]; then
-				message "Spotify prefs found at $HOME/.config/spotify/prefs... settings prefs_path"
-
-				command -v spicetify && spicetify config prefs_path "$HOME"/.config/spotify/prefs
-
-			elif [[ -f "$HOME/.var/app/com.spotify.Client/config/spotify/prefs" ]]; then
-				message "Spotify prefs found at $HOME/.var/app/com.spotify.Client/config/spotify/prefs... settings prefs_path"
-
-				command -v spicetify && spicetify config prefs_path "$HOME"/.var/app/com.spotify.Client/config/spotify/prefs
-			fi
-		fi
-
-		if [[ "$OSTYPE" == "darwin"* ]]; then
-
-			message "macOS detected.. checking for spotify installations"
-
-			# Spotify path
-			if [[ -d "/Applications/Spotify.app/" ]]; then
-				message "Spotify detected in /Applications/Spotify.app/.. setting spotify_path"
-
-				command -v spicetify && spicetify config spotify_path /Applications/Spotify.app/Contents/Resources
-			fi
-
-			# Preferences path
-			if [[ -f "$HOME/Library/Application Support/Spotify/prefs" ]]; then
-				message "Spotify prefs found at $HOME/Library/Application Support/Spotify/prefs... settings prefs_path"
-
-				command -v spicetify && spicetify config prefs_path "$HOME/Library/Application Support/Spotify/prefs"
-			fi
-		fi
-
-		spicetify config inject_css 1
-		spicetify config replace_colors 1
-		spicetify config custom_apps marketplace
-
-		spicetify backup apply
-		spicetify apply
-	else
-		warning_message "Spicetify not detected... installation instructions: https://spicetify.app/docs/advanced-usage/installation/"
-	fi
-}
 
 initialize_submodules() {
 	message "Pulling submodules"
@@ -197,7 +103,6 @@ shared_copy_configuration() {
 	# copy_files "$DOTS_DIR"/shared/home/. ~
 
 	# link files that replace contents of location
-	link_locations "$SHARED_HOME"/.config/BetterDiscord "$HOME"/.config/BetterDiscord
 	link_locations "$SHARED_HOME"/.config/alacritty "$HOME"/.config/alacritty
 	link_locations "$SHARED_HOME"/.config/nvim "$HOME"/.config/nvim
 	link_locations "$SHARED_HOME"/.config/astronvim/lua/user "$HOME"/.config/nvim/lua/user
@@ -211,7 +116,6 @@ shared_copy_configuration() {
 	link_locations "$SHARED_HOME"/.config/micro "$HOME"/.config/micro
 	link_locations "$SHARED_HOME"/.config/ohmyposh "$HOME"/.config/ohymyposh
 	link_locations "$SHARED_HOME"/.config/ranger "$HOME"/.config/ranger
-	link_locations "$SHARED_HOME"/.config/spicetify "$HOME"/.config/spicetify
 	link_locations "$SHARED_HOME"/.config/topgrade.toml "$HOME"/.config/topgrade.toml
 	link_locations "$SHARED_HOME"/.config/tmux "$HOME"/.config/tmux
 
