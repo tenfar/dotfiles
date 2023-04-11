@@ -69,7 +69,7 @@
       <Mode/>
     </Variable>
     <Variable>
-      <Value>-Dhudson.footerURL=https://tenfar.me</Value>
+      <Value>-Dhudson.footerURL=https://tenfarr.com</Value>
       <Name>JAVA_OPTS</Name>
       <Mode/>
     </Variable>
@@ -98,7 +98,7 @@
   <Config Name="Host Port 1" Target="8090" Default="8090" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8090</Config>
   <Config Name="Host Port 2" Target="4243" Default="4243" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">4243</Config>
   <Config Name="Key 1" Target="JAVA_ARGS" Default="-Xmx512m" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">-Xmx512m</Config>
-  <Config Name="Key 2" Target="JAVA_OPTS" Default="-Dhudson.footerURL=http://mycompany.com" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">-Dhudson.footerURL=https://tenfar.me</Config>
+  <Config Name="Key 2" Target="JAVA_OPTS" Default="-Dhudson.footerURL=http://mycompany.com" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">-Dhudson.footerURL=https://tenfarr.com</Config>
   <Config Name="Key 3" Target="UMASK" Default="000" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">000</Config>
   <Config Name="Key 4" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="Key 5" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
