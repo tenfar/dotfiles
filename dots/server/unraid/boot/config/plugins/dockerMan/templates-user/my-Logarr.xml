@@ -3,7 +3,7 @@
   <Name>Logarr</Name>
   <Repository>monitorr/logarr-alpha</Repository>
   <Registry>https://hub.docker.com/r/monitorr/logarr-alpha/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -22,7 +22,7 @@
   <DonateLink/>
   <Description>Logarr is a self-hosted, single-page, log consolidation tool written in PHP </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>281</HostPort>

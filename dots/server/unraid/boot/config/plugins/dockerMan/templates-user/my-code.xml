@@ -3,7 +3,7 @@
   <Name>code</Name>
   <Repository>linuxserver/code-server</Repository>
   <Registry>https://hub.docker.com/r/linuxserver/code-server/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
@@ -22,7 +22,7 @@
   <DonateLink/>
   <Description>Code-server is VS Code running on a remote server, accessible through the browser.[ul][li]Code on your Chromebook, tablet, and laptop with a consistent dev environment.[/li][li]If you have a Windows or Mac workstation, more easily develop for Linux.[/li][li]Take advantage of large cloud servers to speed up tests, compilations, downloads, and more.[/li][li]Preserve battery life when you're on the go.[/li][li]All intensive computation runs on your server.[/li][li]You're no longer running excess instances of Chrome.[/li][/ul[br][br][b][a href="https://github.com/linuxserver/docker-code-server#application-setup"]Click here for first time set up details[/a][/b]</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8443</HostPort>

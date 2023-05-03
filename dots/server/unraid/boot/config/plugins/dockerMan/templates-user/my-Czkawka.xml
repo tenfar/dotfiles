@@ -3,7 +3,7 @@
   <Name>Czkawka</Name>
   <Repository>jlesage/czkawka</Repository>
   <Registry>https://hub.docker.com/r/jlesage/czkawka/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -44,7 +44,7 @@ For a complete documentation of this container, see&#xD;
 https://github.com/jlesage/docker-czkawka/blob/master/README.md&#xD;
   </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>7821</HostPort>

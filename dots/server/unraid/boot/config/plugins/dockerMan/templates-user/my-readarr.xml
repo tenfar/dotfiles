@@ -3,7 +3,7 @@
   <Name>readarr</Name>
   <Repository>hotio/readarr:nightly</Repository>
   <Registry>https://hub.docker.com/r/hotio/readarr</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
@@ -22,7 +22,7 @@
   <DonateLink/>
   <Description>Book, Magazine, Comics Ebook and Audiobook Manager and Automation (Sonarr for Ebooks). WARNING: Updates require a fresh database until further notice</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8787</HostPort>

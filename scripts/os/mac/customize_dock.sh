@@ -21,9 +21,11 @@ create_items() {
 
 	messages=$(dock_item "/System/Applications/Messages.app")
 
-	teams=$(dock_item "/Applications/Microsoft Teams.app")
 
-	safari=$(dock_item "/Applications/Safari.app")
+	safari=$(dock_item "/Applications/Safari.app")	
+	chrome=$(dock_item "/Applications/Google Chrome.app")
+
+	reader=$(dock_item "/Applications/Fluent Reader.app")
 
 	reminders=$(dock_item "/System/Applications/Reminders.app")
 
@@ -32,6 +34,8 @@ create_items() {
 	iina=$(dock_item "/Applications/IINA.app")
 
 	code=$(dock_item "/Applications/Visual Studio Code.app")
+
+	iterm2=$(dock_item "/Applications/iTerm.app")
 
 	# visualstudio=$(dock_item "/Application/Visual Studio (Preview).app")
 
@@ -42,6 +46,7 @@ create_items() {
 	spotify=$(dock_item "/Applications/Spotify.app")
 
 	discord=$(dock_item "/Applications/Discord.app")
+	idea=$(dock_item "/Applications/IntelliJ IDEA.app")
 
 }
 
@@ -59,11 +64,11 @@ customize_dock() {
 
 	sudo su "$USER" -c "defaults write com.apple.dock persistent-apps -array 	\
 '$launchpad' '$settings' '$appstore' '$small_blank' 																		\
-'$messages'  '$discord' '$mail' '$small_blank' 										\
+'$messages'   '$mail' '$small_blank' 										\
 '$safari' '$reminders' '$notes' '$small_blank' 								\
-'$music' '$spotify' '$plex' '$small_blank' 																							\
-'$code' '$small_blank' 													\
-'$alacritty' '$kitty'"
+'$music' '$reader' '$iina' '$small_blank' 																							\
+'$code' '$idea' '$small_blank' 													\
+'$alacritty' '$kitty' '$iterm2' "
 
 	success_message "Dock contents were updated. Restarting dock..."
 

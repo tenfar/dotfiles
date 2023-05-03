@@ -3,7 +3,7 @@
   <Name>overseerr</Name>
   <Repository>cr.hotio.dev/hotio/overseerr</Repository>
   <Registry>https://hub.docker.com/r/hotio/overseerr</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
@@ -22,7 +22,7 @@
   <DonateLink/>
   <Description>Request management and media discovery tool for the Plex ecosystem.</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>5055</HostPort>

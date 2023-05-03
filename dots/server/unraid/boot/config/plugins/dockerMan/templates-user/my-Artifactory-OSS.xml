@@ -3,7 +3,7 @@
   <Name>Artifactory-OSS</Name>
   <Repository>docker.bintray.io/jfrog/artifactory-oss:6.23.7</Repository>
   <Registry>https://registry.hub.docker.com/r/docker.bintray.io/jfrog/artifactory-oss</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>true</Privileged>
@@ -22,7 +22,7 @@
   <DonateLink/>
   <Description>JFrog&#x2019;s Artifactory open source project was created to speed up development cycles using binary repositories. It&#x2019;s the world&#x2019;s most advanced repository manager, creating a single place for teams to manage all their binary artifacts efficiently.</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8182</HostPort>

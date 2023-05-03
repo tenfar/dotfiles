@@ -3,7 +3,7 @@
   <Name>Plex-Meta-Manager</Name>
   <Repository>meisnate12/plex-meta-manager</Repository>
   <Registry>https://hub.docker.com/r/meisnate12/plex-meta-manager/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -30,7 +30,7 @@
     https://github.com/meisnate12/Plex-Meta-Manager/wiki/unRAID-Installation&#xD;
   </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish/>
   </Networking>
   <Data>

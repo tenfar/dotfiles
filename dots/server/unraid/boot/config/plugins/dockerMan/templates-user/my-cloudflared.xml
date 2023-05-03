@@ -3,7 +3,7 @@
   <Name>cloudflared</Name>
   <Repository>cloudflare/cloudflared:2021.8.2</Repository>
   <Registry>https://hub.docker.com/r/cloudflare/cloudflared/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
@@ -26,7 +26,7 @@ Instructions for installation can be found at https://github.com/aeleos/cloudfla
 &#xD;
 Instructions for installation can be found at https://github.com/aeleos/cloudflared</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish/>
   </Networking>
   <Data>

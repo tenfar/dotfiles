@@ -3,7 +3,7 @@
   <Name>binhex-nzbget</Name>
   <Repository>binhex/arch-nzbget</Repository>
   <Registry>https://registry.hub.docker.com/r/binhex/arch-nzbget/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -26,7 +26,7 @@
     NZBGet is a cross-platform binary newsgrabber for nzb files, written in C++. It supports client/server mode, automatic par-check/-repair, web-interface, command-line interface, etc. NZBGet requires low system resources and runs great on routers, NAS-devices and media players.&#xD;
   </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>6789</HostPort>

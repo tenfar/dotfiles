@@ -25,7 +25,7 @@ services:
       - "58083/tcp"
       - "8086/tcp"
       - "9086/tcp"
-    hostname: "AustinServer"
+    hostname: "AlphaServer"
     image: "testdasi/grafana-unraid-stack:latest"
     ipc: "private"
     labels:
@@ -86,7 +86,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8888:8080/tcp"
     volumes:
@@ -157,7 +157,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8083:8080/tcp"
     privileged: true
@@ -206,7 +206,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8181:8181/tcp"
     volumes:
@@ -259,6 +259,6 @@ networks:
   br0:
     external: true
     name: "br0"
-  khaneproxy:
+  alphaproxy:
     external: true
-    name: "khaneproxy"
+    name: "alphaproxy"

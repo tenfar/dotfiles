@@ -26,8 +26,6 @@ mac_backup_existing() {
 	backup_files "$HOME"/.Brewfile "$BACKUP_LOCATION"/
 	backup_files "$HOME"/.hammerspoon "$BACKUP_LOCATION"/
 	backup_files "$HOME"/.gitconfig.local "$BACKUP_LOCATION"/
-	backup_files "$HOME/Application Support/Firefox/Profiles/" "$BACKUP_LOCATION"/Application Support/Firefox/Profiles/
-	backup_files "$HOME/Application Support/BetterDiscord/" "$BACKUP_LOCATION"/Application Support/
 }
 
 #
@@ -94,7 +92,6 @@ mac_copy_configuration() {
 	link_locations "$MAC_HOME"/.config/sketchybar "$HOME"/.config/sketchybar
 	link_locations "$MAC_HOME"/.config/skhd "$HOME"/.config/skhd
 	link_locations "$MAC_HOME"/.config/yabai "$HOME"/.config/yabai
-	link_locations "$HOME"/.config/BetterDiscord "$HOME/Library/Application Support/BetterDiscord"
 
 	link_locations "$MAC_HOME"/.local/bin/helper "$HOME"/.local/bin/helper
 	link_locations "$MAC_HOME"/.local/share/fastfetch/presets/local-overrides "$HOME"/.local/share/fastfetch/presets/local-overrides
@@ -106,8 +103,6 @@ mac_copy_configuration() {
 	# copy files that dont replace location
 	copy_files "$MAC_HOME"/.terminfo "$HOME"/
 	copy_files "$MAC_HOME"/Library "$HOME"/
-	copy_files "$HOME"/.mozilla/firefox/ "$HOME/Application Support/Firefox/Profiles/"
-	copy_files "$HOME"/.config/Caprine/ "$HOME/Application Support/Caprine/"
 }
 
 1password_ssh_link() {

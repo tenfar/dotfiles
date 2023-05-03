@@ -3,7 +3,7 @@
   <Name>pwm</Name>
   <Repository>fjudith/pwm</Repository>
   <Registry>https://hub.docker.com/r/fjudith/pwm</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
@@ -22,7 +22,7 @@
   <DonateLink/>
   <Description>PWM is a free and opensource password self-service application enabling end-users to reset their enterprise password themselves.</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8282</HostPort>

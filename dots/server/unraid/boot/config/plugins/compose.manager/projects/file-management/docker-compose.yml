@@ -100,7 +100,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "444:443/tcp"
     volumes:
@@ -145,7 +145,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8080:8080/tcp"
     restart: "unless-stopped"
@@ -199,7 +199,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "7821:5800/tcp"
       - "7921:5900/tcp"
@@ -213,6 +213,6 @@ networks:
   br0:
     external: true
     name: "br0"
-  khaneproxy:
+  alphaproxy:
     external: true
-    name: "khaneproxy"
+    name: "alphaproxy"

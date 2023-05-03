@@ -3,7 +3,7 @@
   <Name>tautulli</Name>
   <Repository>tautulli/tautulli:latest</Repository>
   <Registry>https://registry.hub.docker.com/r/tautulli/tautulli/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -26,7 +26,7 @@ Tautulli is a 3rd party application that you can run alongside your Plex Media S
 &#xD;
 Tautulli is a 3rd party application that you can run alongside your Plex Media Server to monitor activity and track various statistics.</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8181</HostPort>

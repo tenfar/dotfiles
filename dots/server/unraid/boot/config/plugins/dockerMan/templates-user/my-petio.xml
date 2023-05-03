@@ -3,7 +3,7 @@
   <Name>petio</Name>
   <Repository>hotio/petio</Repository>
   <Registry>https://hub.docker.com/r/hotio/petio</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
@@ -22,7 +22,7 @@
   <DonateLink/>
   <Description>Petio is a third party companion app available to Plex server owners to allow their users to request, review and discover content.</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>7777</HostPort>

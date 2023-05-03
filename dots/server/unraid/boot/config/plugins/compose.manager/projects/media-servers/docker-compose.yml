@@ -39,7 +39,7 @@ services:
       - "32469/tcp"
       - "5353/udp"
       - "8324/tcp"
-    hostname: "AustinServer"
+    hostname: "AlphaServer"
     image: "lscr.io/linuxserver/plex"
     ipc: "private"
     labels:
@@ -104,7 +104,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "6969:9999/tcp"
     volumes:
@@ -137,7 +137,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "5002:5000/tcp"
     volumes:
@@ -236,7 +236,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "2342:2342/tcp"
     restart: "unless-stopped"
@@ -278,7 +278,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8096:8096/tcp"
     volumes:
@@ -289,6 +289,6 @@ networks:
   br0:
     external: true
     name: "br0"
-  khaneproxy:
+  alphaproxy:
     external: true
-    name: "khaneproxy"
+    name: "alphaproxy"

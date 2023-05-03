@@ -3,7 +3,7 @@
   <Name>UptimeKuma</Name>
   <Repository>louislam/uptime-kuma</Repository>
   <Registry>https://hub.docker.com/r/louislam/uptime-kuma/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -32,7 +32,7 @@ Fast 20 second inverval checks.&#xD;
 &#xD;
 </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>3001</HostPort>

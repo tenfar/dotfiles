@@ -3,7 +3,7 @@
   <Name>binhex-jenkins</Name>
   <Repository>binhex/arch-jenkins</Repository>
   <Registry>https://registry.hub.docker.com/r/binhex/arch-jenkins/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>true</Privileged>
@@ -26,7 +26,7 @@
   Jenkins is an open source continuous integration tool written in Java. The project was forked from Hudson after a dispute with Oracle. Jenkins provides continuous integration services for software development. It is a server-based system running in a servlet container such as Apache Tomcat.&#xD;
   </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8090</HostPort>

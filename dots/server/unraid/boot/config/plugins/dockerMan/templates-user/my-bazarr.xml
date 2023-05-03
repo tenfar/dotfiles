@@ -3,7 +3,7 @@
   <Name>bazarr</Name>
   <Repository>linuxserver/bazarr</Repository>
   <Registry>https://hub.docker.com/r/linuxserver/bazarr/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
@@ -34,7 +34,7 @@
  [b]/movies[/b]:  Path to Movies[br]&#xD;
  [b]/tv[/b]:  Path to TV Series[br]</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>6767</HostPort>

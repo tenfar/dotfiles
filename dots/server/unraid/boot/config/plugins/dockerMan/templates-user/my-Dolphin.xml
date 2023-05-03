@@ -3,7 +3,7 @@
   <Name>Dolphin</Name>
   <Repository>aptalca/docker-dolphin</Repository>
   <Registry>https://registry.hub.docker.com/r/aptalca/docker-dolphin/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -26,7 +26,7 @@
   Dolphin is KDE's default file manager. With this docker, you can access the dolphin interface through a web browser.&#xD;
   </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8087</HostPort>

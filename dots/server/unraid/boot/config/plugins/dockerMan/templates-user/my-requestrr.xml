@@ -3,7 +3,7 @@
   <Name>requestrr</Name>
   <Repository>hotio/requestrr</Repository>
   <Registry>https://hub.docker.com/r/hotio/requestrr</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
@@ -22,7 +22,7 @@
   <DonateLink/>
   <Description>Requestrr is a chatbot used to simplify using services like Sonarr/Radarr/Ombi via the use of chat!</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>4545</HostPort>

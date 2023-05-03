@@ -1,16 +1,4 @@
 services:
-  AH-WebApp:
-    labels:
-      net.unraid.docker.managed: 'composeman'
-      net.unraid.docker.icon: 'https://i.imgur.com/nYoosop.jpg'
-      net.unraid.docker.webui: 'http://[IP]:[PORT:8088]/'
-      net.unraid.docker.shell: ''
-  AH-WebApp-Dev:
-    labels:
-      net.unraid.docker.managed: 'composeman'
-      net.unraid.docker.icon: 'https://i.imgur.com/nYoosop.jpg'
-      net.unraid.docker.webui: 'http://[IP]:[PORT:8099]/'
-      net.unraid.docker.shell: ''
   organizr:
     labels:
       net.unraid.docker.managed: 'composeman'

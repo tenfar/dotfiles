@@ -1,88 +1,5 @@
 version: "3.6"
 services:
-  AH-WebApp:
-    container_name: "AH-WebApp"
-    entrypoint:
-      - "dotnet"
-      - "WebApp.dll"
-    environment:
-      - "HOST_CONTAINERNAME=AH-WebApp"
-      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-      - "ASPNETCORE_URLS=http://+:80"
-      - "DOTNET_RUNNING_IN_CONTAINER=true"
-      - "DOTNET_VERSION=6.0.10"
-      - "ASPNET_VERSION=6.0.10"
-    hostname: "9b240a4deb1d"
-    image: "ghcr.io/khaneliman/austin-horstman-webapp:latest"
-    ipc: "private"
-    labels:
-      net.unraid.docker.icon: "https://i.imgur.com/nYoosop.jpg"
-      net.unraid.docker.managed: "dockerman"
-      net.unraid.docker.webui: "http://[IP]:[PORT:8088]/"
-      org.opencontainers.image.created: "2022-10-25T03:50:15.872Z"
-      org.opencontainers.image.description: "Personal website for Austin Horstman."
-      org.opencontainers.image.licenses: ""
-      org.opencontainers.image.revision: "e1151865db136dde4a685295cd79d3c7ee75612c"
-      org.opencontainers.image.source: "https://github.com/khaneliman/Austin-Horstman"
-      org.opencontainers.image.title: "Austin-Horstman"
-      org.opencontainers.image.url: "https://github.com/khaneliman/Austin-Horstman"
-      org.opencontainers.image.version: "v3.0.0"
-    logging:
-      driver: "json-file"
-      options:
-        max-file: "1"
-        max-size: "500m"
-    networks:
-      - "khaneproxy"
-    ports:
-      - "17443:443/tcp"
-      - "8088:80/tcp"
-    volumes:
-      - "/mnt/cache/appdata/AH-WebApp/latest:/root/.aspnet/DataProtection-Keys"
-    working_dir: "/app"
-
-  AH-WebApp-Dev:
-    container_name: "AH-WebApp-Dev"
-    entrypoint:
-      - "dotnet"
-      - "WebApp.dll"
-    environment:
-      - "HOST_CONTAINERNAME=AH-WebApp-Dev"
-      - "ASPNETCORE_ENVIRONMENT=Production"
-      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-      - "ASPNETCORE_URLS=http://+:80"
-      - "DOTNET_RUNNING_IN_CONTAINER=true"
-      - "DOTNET_VERSION=6.0.10"
-      - "ASPNET_VERSION=6.0.10"
-    hostname: "5f32693b656d"
-    image: "ghcr.io/khaneliman/austin-horstman-webapp:develop"
-    ipc: "private"
-    labels:
-      net.unraid.docker.icon: "https://i.imgur.com/nYoosop.jpg"
-      net.unraid.docker.managed: "dockerman"
-      net.unraid.docker.webui: "http://[IP]:[PORT:8099]/"
-      org.opencontainers.image.created: "2022-10-25T03:37:22.434Z"
-      org.opencontainers.image.description: "Personal website for Austin Horstman."
-      org.opencontainers.image.licenses: ""
-      org.opencontainers.image.revision: "d273c4b0a4d1bec9ee658fcb1dc74502f25bbcac"
-      org.opencontainers.image.source: "https://github.com/khaneliman/Austin-Horstman"
-      org.opencontainers.image.title: "Austin-Horstman"
-      org.opencontainers.image.url: "https://github.com/khaneliman/Austin-Horstman"
-      org.opencontainers.image.version: "develop"
-    logging:
-      driver: "json-file"
-      options:
-        max-file: "1"
-        max-size: "500m"
-    networks:
-      - "khaneproxy"
-    ports:
-      - "19443:443/tcp"
-      - "8099:80/tcp"
-    volumes:
-      - "/mnt/cache/appdata/AH-WebApp/dev:/root/.aspnet/DataProtection-Keys"
-    working_dir: "/app"
-
   Authelia:
     command:
       - "--config"
@@ -122,7 +39,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "9091:9091/tcp"
     restart: "unless-stopped"
@@ -140,7 +57,7 @@ services:
       - "LIBRARY_NAMES="
       - "BYPASS_SSL_VERIFY="
       - "HOST_CONTAINERNAME=Cleanarr"
-      - "PLEX_BASE_URL=http://192.168.1.37:32400"
+      - "PLEX_BASE_URL=http://10.0.0.3:32400"
       - "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "GPG_KEY=${CLEANARR_GPG_KEY}"
       - "PYTHON_VERSION=3.7.13"
@@ -173,7 +90,7 @@ services:
         max-file: "1"
         max-size: "100m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "5001:80/tcp"
     volumes:
@@ -202,7 +119,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8978:8978/tcp"
     volumes:
@@ -254,7 +171,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "7821:5800/tcp"
       - "7921:5900/tcp"
@@ -328,7 +245,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "5000:5000/tcp"
     volumes:
@@ -369,7 +286,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8888:8080/tcp"
     volumes:
@@ -413,7 +330,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8081:80/tcp"
     volumes:
@@ -445,7 +362,7 @@ services:
       - "58083/tcp"
       - "8086/tcp"
       - "9086/tcp"
-    hostname: "AustinServer"
+    hostname: "AlphaServer"
     image: "testdasi/grafana-unraid-stack:latest"
     ipc: "private"
     labels:
@@ -494,7 +411,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "5002:5000/tcp"
     volumes:
@@ -538,7 +455,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8080:8080/tcp"
     restart: "unless-stopped"
@@ -575,7 +492,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "27017:27017/tcp"
     restart: "unless-stopped"
@@ -626,7 +543,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "18443:4443/tcp"
       - "1880:8080/tcp"
@@ -728,7 +645,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "2342:2342/tcp"
     restart: "unless-stopped"
@@ -766,7 +683,7 @@ services:
         max-file: "1"
         max-size: "100m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "1787:1787/tcp"
     volumes:
@@ -813,7 +730,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     volumes:
       - "/mnt/cache/appdata/Plex-Meta-Manager:/config"
 
@@ -844,7 +761,7 @@ services:
         max-file: "1"
         max-size: "100m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "5432:5432/tcp"
     volumes:
@@ -945,7 +862,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "6969:9999/tcp"
     volumes:
@@ -1062,7 +979,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8185:80/tcp"
     volumes:
@@ -1103,7 +1020,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8585:8080/tcp"
     user: "adminer"
@@ -1155,7 +1072,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "6767:6767/tcp"
     volumes:
@@ -1196,7 +1113,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8096:8096/tcp"
     volumes:
@@ -1237,7 +1154,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "4243:4243/tcp"
       - "8090:8090/tcp"
@@ -1280,7 +1197,7 @@ services:
         max-file: "1"
         max-size: "100m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "6789:6789/tcp"
     volumes:
@@ -1314,7 +1231,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     restart: "unless-stopped"
     user: "nonroot"
     volumes:
@@ -1385,7 +1302,7 @@ services:
         max-file: "1"
         max-size: "100m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "2375:2375/tcp"
     restart: "unless-stopped"
@@ -1435,7 +1352,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8084:80/tcp"
     volumes:
@@ -1522,7 +1439,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8686:8686/tcp"
     volumes:
@@ -1576,7 +1493,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "3306:3306/tcp"
     restart: "unless-stopped"
@@ -1634,7 +1551,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "444:443/tcp"
     volumes:
@@ -1692,7 +1609,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "3579:3579/tcp"
     volumes:
@@ -1742,7 +1659,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "280:80/tcp"
     volumes:
@@ -1789,7 +1706,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "5055:5055/tcp"
     volumes:
@@ -1833,7 +1750,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "7777:7777/tcp"
     volumes:
@@ -1941,7 +1858,7 @@ services:
       - "32469/tcp"
       - "5353/udp"
       - "8324/tcp"
-    hostname: "AustinServer"
+    hostname: "AlphaServer"
     image: "lscr.io/linuxserver/plex"
     ipc: "private"
     labels:
@@ -2031,7 +1948,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "9696:9696/tcp"
     volumes:
@@ -2085,7 +2002,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8282:8080/tcp"
     restart: "unless-stopped"
@@ -2137,7 +2054,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "6881:6881/tcp"
       - "6881:6881/udp"
@@ -2194,7 +2111,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "7878:7878/tcp"
     volumes:
@@ -2241,7 +2158,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8787:8787/tcp"
     volumes:
@@ -2286,7 +2203,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "6379:6379/tcp"
     restart: "unless-stopped"
@@ -2330,7 +2247,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "4545:4545/tcp"
     volumes:
@@ -2367,7 +2284,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8083:8080/tcp"
     privileged: true
@@ -2427,7 +2344,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8989:8989/tcp"
     volumes:
@@ -2472,7 +2389,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8181:8181/tcp"
     volumes:
@@ -2524,7 +2441,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "8889:8888/tcp"
     volumes:
@@ -2547,7 +2464,7 @@ services:
   #   volumes:
   #     - /mnt/cache/appdata/rustdesk-hbbs/:/root
   #   networks:
-  #     - "khaneproxy"
+  #     - "alphaproxy"
   #   depends_on:
   #     - hbbr
   #   restart: unless-stopped
@@ -2562,16 +2479,16 @@ services:
   #   volumes:
   #     - /mnt/cache/appdata/rustdesk-hbbr:/root
   #   networks:
-  #     - "khaneproxy"
+  #     - "alphaproxy"
   #   restart: unless-stopped
 
 networks:
   br0:
     external: true
     name: "br0"
-  khaneproxy:
+  alphaproxy:
     external: true
-    name: "khaneproxy"
+    name: "alphaproxy"
 
 volumes:
   2f61d5237e670c17a851f4463b70f1d144cc3b5fb0acf2619e6d8decf7f6f265:

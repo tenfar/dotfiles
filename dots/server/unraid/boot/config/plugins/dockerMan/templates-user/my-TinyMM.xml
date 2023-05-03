@@ -3,7 +3,7 @@
   <Name>TinyMM</Name>
   <Repository>coolasice1999/tmm:latest</Repository>
   <Registry>https://registry.hub.docker.com/r/coolasice1999/tmm</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -26,7 +26,7 @@
    Tiny Media Manager. &#xD;
   </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>5800</HostPort>

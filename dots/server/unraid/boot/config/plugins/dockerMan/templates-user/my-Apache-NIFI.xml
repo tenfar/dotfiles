@@ -3,7 +3,7 @@
   <Name>Apache-NIFI</Name>
   <Repository>apache/nifi</Repository>
   <Registry>https://hub.docker.com/r/apache/nifi/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -26,7 +26,7 @@
     Apache NiFi supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic.&#xD;
   </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8081</HostPort>

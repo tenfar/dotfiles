@@ -3,7 +3,7 @@
   <Name>digikam</Name>
   <Repository>linuxserver/digikam</Repository>
   <Registry>https://hub.docker.com/r/linuxserver/digikam/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -22,7 +22,7 @@
   <DonateLink/>
   <Description>digiKam: Professional Photo Management with the Power of Open Source[br]By default the user/pass is abc/abc</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>3000</HostPort>

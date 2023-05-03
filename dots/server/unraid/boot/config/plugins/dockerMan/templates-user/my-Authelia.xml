@@ -3,7 +3,7 @@
   <Name>Authelia</Name>
   <Repository>authelia/authelia</Repository>
   <Registry>https://hub.docker.com/r/authelia/authelia/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -28,7 +28,7 @@
     Our docs can be found at https://docs.ibracorp.io&#xD;
   </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>9091</HostPort>

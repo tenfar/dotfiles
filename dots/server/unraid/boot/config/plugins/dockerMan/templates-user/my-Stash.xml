@@ -3,7 +3,7 @@
   <Name>Stash</Name>
   <Repository>stashapp/stash</Repository>
   <Registry>https://hub.docker.com/r/stashapp/stash/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>

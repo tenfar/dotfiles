@@ -3,7 +3,7 @@
   <Name>organizrv2</Name>
   <Repository>organizr/organizr</Repository>
   <Registry>https://hub.docker.com/r/organizr/organizr/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>

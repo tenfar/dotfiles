@@ -3,7 +3,7 @@
   <Name>CloudBeaver</Name>
   <Repository>dbeaver/cloudbeaver</Repository>
   <Registry>https://hub.docker.com/r/dbeaver/cloudbeaver/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -24,7 +24,7 @@ As an open-source product it already supports the most popular open source datab
   <Description>Cloud Database Manager (Official Docker Image)&#xD;
 As an open-source product it already supports the most popular open source databases, such as PostgreSQL, MySQL, MariaDB, SQLite and Firebird.</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8978</HostPort>

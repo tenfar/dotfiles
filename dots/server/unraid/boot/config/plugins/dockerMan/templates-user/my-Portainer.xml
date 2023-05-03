@@ -3,7 +3,7 @@
   <Name>Portainer</Name>
   <Repository>portainer/portainer</Repository>
   <Registry>https://registry.hub.docker.com/r/portainer/portainer/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -26,7 +26,7 @@
     Portainer is a simple management solution for Docker. It consists of a web UI that allows you to easily manage your Docker containers, images, networks and volumes.&#xD;
   </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>9000</HostPort>

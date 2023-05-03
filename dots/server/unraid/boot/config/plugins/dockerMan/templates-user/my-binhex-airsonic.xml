@@ -3,7 +3,7 @@
   <Name>binhex-airsonic</Name>
   <Repository>binhex/arch-airsonic</Repository>
   <Registry>https://registry.hub.docker.com/r/binhex/arch-airsonic/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -34,7 +34,7 @@
     Based on Java technology, Airsonic runs on most platforms, including Windows, Mac, Linux and Unix variants.[br][br]&#xD;
   </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>4040</HostPort>

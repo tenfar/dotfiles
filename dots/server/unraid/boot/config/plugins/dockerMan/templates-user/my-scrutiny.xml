@@ -3,7 +3,7 @@
   <Name>scrutiny</Name>
   <Repository>hotio/scrutiny</Repository>
   <Registry>https://hub.docker.com/r/hotio/scrutiny</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>true</Privileged>
@@ -22,7 +22,7 @@
   <DonateLink/>
   <Description>Hard Drive S.M.A.R.T Monitoring, Historical Trends and Real World Failure Thresholds</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8083</HostPort>

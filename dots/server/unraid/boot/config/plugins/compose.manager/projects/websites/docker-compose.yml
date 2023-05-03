@@ -33,7 +33,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "17443:443/tcp"
       - "8088:80/tcp"
@@ -62,12 +62,12 @@ services:
       net.unraid.docker.managed: "dockerman"
       net.unraid.docker.webui: "http://[IP]:[PORT:8099]/"
       org.opencontainers.image.created: "2022-10-25T03:37:22.434Z"
-      org.opencontainers.image.description: "Personal website for Austin Horstman."
+      org.opencontainers.image.description: "Personal website for Tenfar Lin."
       org.opencontainers.image.licenses: ""
       org.opencontainers.image.revision: "d273c4b0a4d1bec9ee658fcb1dc74502f25bbcac"
-      org.opencontainers.image.source: "https://github.com/khaneliman/Austin-Horstman"
-      org.opencontainers.image.title: "Austin-Horstman"
-      org.opencontainers.image.url: "https://github.com/khaneliman/Austin-Horstman"
+      org.opencontainers.image.source: "https://github.com/tenfar/website"
+      org.opencontainers.image.title: "Tenfar Website"
+      org.opencontainers.image.url: "https://github.com/tenfar/website"
       org.opencontainers.image.version: "develop"
     logging:
       driver: "json-file"
@@ -75,7 +75,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "19443:443/tcp"
       - "8099:80/tcp"
@@ -126,7 +126,7 @@ services:
         max-file: "1"
         max-size: "500m"
     networks:
-      - "khaneproxy"
+      - "alphaproxy"
     ports:
       - "280:80/tcp"
     volumes:
@@ -136,6 +136,6 @@ networks:
   br0:
     external: true
     name: "br0"
-  khaneproxy:
+  alphaproxy:
     external: true
-    name: "khaneproxy"
+    name: "alphaproxy"

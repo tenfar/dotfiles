@@ -3,7 +3,7 @@
   <Name>tdarr</Name>
   <Repository>haveagitgat/tdarr</Repository>
   <Registry>https://hub.docker.com/r/haveagitgat/tdarr/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -44,7 +44,7 @@ Plugins here: https://github.com/HaveAGitGat/Tdarr_Plugins&#xD;
 &#xD;
   </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8266</HostPort>
@@ -87,7 +87,7 @@ Plugins here: https://github.com/HaveAGitGat/Tdarr_Plugins&#xD;
   </Data>
   <Environment>
     <Variable>
-      <Value>192.168.1.37</Value>
+      <Value>10.0.0.3</Value>
       <Name>serverIP</Name>
       <Mode/>
     </Variable>
@@ -103,7 +103,7 @@ Plugins here: https://github.com/HaveAGitGat/Tdarr_Plugins&#xD;
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Server IP" Target="serverIP" Default="0.0.0.0" Mode="" Description="Server IP. Required if using Tdarr Nodes on your local network" Type="Variable" Display="always" Required="false" Mask="false">192.168.1.37</Config>
+  <Config Name="Server IP" Target="serverIP" Default="0.0.0.0" Mode="" Description="Server IP. Required if using Tdarr Nodes on your local network" Type="Variable" Display="always" Required="false" Mask="false">10.0.0.3</Config>
   <Config Name="Server Port" Target="8266" Default="8266" Mode="tcp" Description="Server Port" Type="Port" Display="always" Required="false" Mask="false">8266</Config>
   <Config Name="WebUI Port" Target="8265" Default="8265" Mode="tcp" Description="WebUI Port" Type="Port" Display="always" Required="false" Mask="false">8265</Config>
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>

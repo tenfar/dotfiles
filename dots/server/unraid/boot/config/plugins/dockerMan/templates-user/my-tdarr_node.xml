@@ -3,7 +3,7 @@
   <Name>tdarr_node</Name>
   <Repository>haveagitgat/tdarr_node</Repository>
   <Registry>https://hub.docker.com/r/haveagitgat/tdarr_node/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -44,7 +44,7 @@ Plugins here: https://github.com/HaveAGitGat/Tdarr_Plugins&#xD;
 &#xD;
   </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8267</HostPort>
@@ -77,7 +77,7 @@ Plugins here: https://github.com/HaveAGitGat/Tdarr_Plugins&#xD;
   </Data>
   <Environment>
     <Variable>
-      <Value>192.168.1.37</Value>
+      <Value>10.0.0.3</Value>
       <Name>serverIP</Name>
       <Mode/>
     </Variable>
@@ -87,12 +87,12 @@ Plugins here: https://github.com/HaveAGitGat/Tdarr_Plugins&#xD;
       <Mode/>
     </Variable>
     <Variable>
-      <Value>192.168.1.37</Value>
+      <Value>10.0.0.3</Value>
       <Name>nodeIP</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>AustinPlexServer</Value>
+      <Value>AlphaPlexServer</Value>
       <Name>nodeID</Name>
       <Mode/>
     </Variable>
@@ -108,10 +108,10 @@ Plugins here: https://github.com/HaveAGitGat/Tdarr_Plugins&#xD;
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Server IP" Target="serverIP" Default="0.0.0.0" Mode="" Description="Server IP. Required if using Tdarr Nodes across your local network" Type="Variable" Display="always" Required="false" Mask="false">192.168.1.37</Config>
+  <Config Name="Server IP" Target="serverIP" Default="0.0.0.0" Mode="" Description="Server IP. Required if using Tdarr Nodes across your local network" Type="Variable" Display="always" Required="false" Mask="false">10.0.0.3</Config>
   <Config Name="Server Port" Target="serverPort" Default="8266" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">8266</Config>
-  <Config Name="Node IP" Target="nodeIP" Default="0.0.0.0" Mode="" Description="Node IP. Required if using Tdarr Nodes across your local network" Type="Variable" Display="always" Required="false" Mask="false">192.168.1.37</Config>
-  <Config Name="Node ID" Target="nodeID" Default="Node Name" Mode="" Description="Node ID Name" Type="Variable" Display="always" Required="false" Mask="false">AustinPlexServer</Config>
+  <Config Name="Node IP" Target="nodeIP" Default="0.0.0.0" Mode="" Description="Node IP. Required if using Tdarr Nodes across your local network" Type="Variable" Display="always" Required="false" Mask="false">10.0.0.3</Config>
+  <Config Name="Node ID" Target="nodeID" Default="Node Name" Mode="" Description="Node ID Name" Type="Variable" Display="always" Required="false" Mask="false">AlphaPlexServer</Config>
   <Config Name="Node Port" Target="8267" Default="8267" Mode="tcp" Description="Node Port" Type="Port" Display="always" Required="false" Mask="false">8267</Config>
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>

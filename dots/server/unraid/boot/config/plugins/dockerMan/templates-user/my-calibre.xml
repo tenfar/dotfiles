@@ -3,7 +3,7 @@
   <Name>calibre</Name>
   <Repository>lscr.io/linuxserver/calibre</Repository>
   <Registry>https://github.com/orgs/linuxserver/packages/container/package/calibre</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
@@ -22,7 +22,7 @@
   <DonateLink/>
   <Description>Calibre(https://calibre-ebook.com/) is a powerful and easy to use e-book manager. Users say it&#x2019;s outstanding and a must-have. It&#x2019;ll allow you to do nearly everything and it takes things a step beyond normal e-book software. It&#x2019;s also completely free and open source and great for both casual users and computer experts.</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8084</HostPort>

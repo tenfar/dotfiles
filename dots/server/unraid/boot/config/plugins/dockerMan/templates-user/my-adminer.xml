@@ -3,7 +3,7 @@
   <Name>adminer</Name>
   <Repository>adminer</Repository>
   <Registry>http://hub.docker.com/_/adminer/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -32,7 +32,7 @@ Plugins: https://github.com/vrana/adminer/tree/master/plugins</Overview>
 [br] [br]&#xD;
 Plugins: https://github.com/vrana/adminer/tree/master/plugins</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8585</HostPort>

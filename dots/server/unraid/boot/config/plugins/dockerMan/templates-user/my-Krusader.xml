@@ -3,7 +3,7 @@
   <Name>Krusader</Name>
   <Repository>ich777/krusader</Repository>
   <Registry>https://hub.docker.com/r/ich777/krusader</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -32,7 +32,7 @@ Language Notice: Enter your prefered locales, you can find a full list of suppor
 ATTENTION: Wronge usage of this tool can lead to data loss, be carefull when using Krusader with Unraid.&#xD;
 You can delete your whole Array with a single button press if you don't be carefull!!!</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8080</HostPort>

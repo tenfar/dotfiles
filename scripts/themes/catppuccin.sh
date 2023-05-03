@@ -70,7 +70,7 @@ cat_theme_qt() {
 
 cat_theme_firefox() {
 	# Install firefox theme
-	"$SCRIPT_DIR"/firefox-themer.sh -p dev -t minimal
+	# "$SCRIPTs_DIR"/firefox-themer.sh -p dev -t minimal
 }
 
 cat_theme_spotify() {

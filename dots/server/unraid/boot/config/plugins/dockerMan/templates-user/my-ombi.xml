@@ -3,7 +3,7 @@
   <Name>ombi</Name>
   <Repository>linuxserver/ombi</Repository>
   <Registry>https://hub.docker.com/r/linuxserver/ombi/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -22,7 +22,7 @@
   <DonateLink/>
   <Description>Ombi allows you to host your own Plex Request and user management system. </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>3579</HostPort>

@@ -3,7 +3,7 @@
   <Name>AH-WebApp-Dev</Name>
   <Repository>ghcr.io/khaneliman/austin-horstman-webapp:develop</Repository>
   <Registry/>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -22,7 +22,7 @@
   <DonateLink/>
   <Description/>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8099</HostPort>

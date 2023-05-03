@@ -3,7 +3,7 @@
   <Name>Kavita</Name>
   <Repository>kizaing/kavita</Repository>
   <Registry>https://hub.docker.com/r/kizaing/kavita</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>

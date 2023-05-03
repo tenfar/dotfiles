@@ -10,7 +10,6 @@ shared_backup_existing() {
 	message "Backing up existing dotfiles to $BACKUP_LOCATION"
 
 	# backup .config
-	backup_files "$HOME"/.config/BetterDiscord "$BACKUP_LOCATION"/.config/
 	backup_files "$HOME"/.config/alacritty "$BACKUP_LOCATION"/.config/
 	backup_files "$HOME"/.config/astronvim "$BACKUP_LOCATION"/.config/
 	backup_files "$HOME"/.config/bat "$BACKUP_LOCATION"/.config/
@@ -32,6 +31,7 @@ shared_backup_existing() {
 
 	backup_files "$HOME"/.mozilla "$BACKUP_LOCATION"/
 	backup_files "$HOME"/.oh-my-bash "$BACKUP_LOCATION"/
+	backup_files "$HOME"/.oh-my-zsh "$BACKUP_LOCATION"/
 
 	backup_files "$HOME"/.bashenv "$BACKUP_LOCATION"/
 	backup_files "$HOME"/.bashrc "$BACKUP_LOCATION"/
@@ -266,8 +266,6 @@ shared_install() {
 
 shared_theme_install() {
 
-	install_spicetify
-	install_better_discord
 	install_bat_themes
 	install_fish_plugins
 }

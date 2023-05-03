@@ -3,7 +3,7 @@
   <Name>dockersocket</Name>
   <Repository>ghcr.io/tecnativa/docker-socket-proxy:latest</Repository>
   <Registry>https://hub.docker.com/r/tecnativa/docker-socket-proxy</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -22,7 +22,7 @@
   <DonateLink/>
   <Description>This is a security-enhanced proxy for the Docker Socket.</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>2375</HostPort>

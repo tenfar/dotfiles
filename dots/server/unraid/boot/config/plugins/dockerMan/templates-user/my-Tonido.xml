@@ -3,7 +3,7 @@
   <Name>Tonido</Name>
   <Repository>captinsano/tonido</Repository>
   <Registry>https://registry.hub.docker.com/r/captinsano/tonido/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -24,7 +24,7 @@
   <Description>Tonido Server allows you to access all your files on your computer from a web browser, smartphone, tablet or even DLNA enabled devices. No setup necessary.&#xD;
   </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>10001</HostPort>

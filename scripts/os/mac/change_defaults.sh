@@ -96,7 +96,7 @@ change_defaults() {
 	# NOTE: (e.g. enable Tab in modal dialogs)
 	defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 	# Set a blazingly fast keyboard repeat rate
-	defaults write NSGlobalDomain KeyRepeat -int 1
+	defaults write NSGlobalDomain KeyRepeat -int 2
 	defaults write NSGlobalDomain InitialKeyRepeat -int 10
 	# Enable subpixel font rendering on non-Apple LCDs
 	# NOTE: Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501

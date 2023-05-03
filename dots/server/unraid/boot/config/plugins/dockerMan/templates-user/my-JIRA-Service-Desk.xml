@@ -3,7 +3,7 @@
   <Name>JIRA-Service-Desk</Name>
   <Repository>atlassian/jira-servicedesk</Repository>
   <Registry>https://hub.docker.com/r/atlassian/jira-servicedesk</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -26,7 +26,7 @@
     Jira Service Desk is a fully featured service desk tool used by modern IT teams.&#xD;
   </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8089</HostPort>

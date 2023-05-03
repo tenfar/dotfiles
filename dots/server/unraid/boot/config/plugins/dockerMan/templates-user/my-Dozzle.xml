@@ -3,7 +3,7 @@
   <Name>Dozzle</Name>
   <Repository>amir20/dozzle</Repository>
   <Registry>https://hub.docker.com/r/amir20/dozzle/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -22,7 +22,7 @@
   <DonateLink/>
   <Description>Dozzle is a real-time log viewer for docker containers. </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8888</HostPort>

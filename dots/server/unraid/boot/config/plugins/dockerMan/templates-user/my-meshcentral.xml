@@ -3,7 +3,7 @@
   <Name>meshcentral</Name>
   <Repository>typhonragewind/meshcentral</Repository>
   <Registry>https://hub.docker.com/r/typhonragewind/meshcentral</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -26,7 +26,7 @@
       The open source, multi-platform, self-hosted, feature packed web site for remote device management.&#xD;
 </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8086</HostPort>

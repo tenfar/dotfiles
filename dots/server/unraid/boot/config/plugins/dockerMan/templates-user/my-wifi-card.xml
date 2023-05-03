@@ -3,7 +3,7 @@
   <Name>wifi-card</Name>
   <Repository>bndw/wifi-card:latest</Repository>
   <Registry>https://hub.docker.com/r/bndw/wifi-card/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -22,7 +22,7 @@
   <DonateLink/>
   <Description>Print a neat little card with your WiFi info and stick it on the fridge.</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>8000</HostPort>

@@ -3,7 +3,7 @@
   <Name>radarr</Name>
   <Repository>linuxserver/radarr</Repository>
   <Registry>https://hub.docker.com/r/linuxserver/radarr/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -22,7 +22,7 @@
   <DonateLink/>
   <Description>Radarr - A fork of Sonarr to work with movies &#xE0; la Couchpotato.</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>7878</HostPort>

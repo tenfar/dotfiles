@@ -3,7 +3,7 @@
   <Name>NginxProxyManager</Name>
   <Repository>jlesage/nginx-proxy-manager</Repository>
   <Registry>https://hub.docker.com/r/jlesage/nginx-proxy-manager/</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -56,7 +56,7 @@ management interface are:&#xD;
 &amp;gt; admin@example.com/changeme.&#xD;
   </Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish>
       <Port>
         <HostPort>7818</HostPort>

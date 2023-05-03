@@ -3,7 +3,7 @@
   <Name>Dropbox</Name>
   <Repository>otherguy/dropbox</Repository>
   <Registry>https://hub.docker.com/r/otherguy/dropbox</Registry>
-  <Network>khaneproxy</Network>
+  <Network>alphaproxy</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -60,7 +60,7 @@ If your "Dropbox" share has the cache setting "Only":&#xD;
 &#xD;
 You could even use "/mnt/disk1/Dropbox" with the cache Option "Yes", but if you add new files to this share, they won't be uploaded to Dropbox as long the Mover did not move them to the array.</Description>
   <Networking>
-    <Mode>khaneproxy</Mode>
+    <Mode>alphaproxy</Mode>
     <Publish/>
   </Networking>
   <Data>

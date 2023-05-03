@@ -337,8 +337,6 @@
             "children": [
                 "organizrv2",
                 "JIRA-Service-Desk",
-                "AH-WebApp",
-                "AH-WebApp-Dev",
                 "freshrss",
                 "Full-Text-RSS",
                 "organizr"
