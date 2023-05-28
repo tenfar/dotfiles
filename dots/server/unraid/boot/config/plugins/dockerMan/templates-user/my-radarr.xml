@@ -33,12 +33,12 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/data/</HostDir>
+      <HostDir>/DATA/</HostDir>
       <ContainerDir>/data</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/radarr</HostDir>
+      <HostDir>/DATA/AppData/radarr</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -59,6 +59,6 @@
   <Config Name="Host Port 1" Target="7878" Default="7878" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">7878</Config>
   <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="Key 2" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
-  <Config Name="data" Target="/data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/data/</Config>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/radarr" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/radarr</Config>
+  <Config Name="data" Target="/data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/DATA/AppData/radarr" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/DATA/AppData/radarr</Config>
 </Container>

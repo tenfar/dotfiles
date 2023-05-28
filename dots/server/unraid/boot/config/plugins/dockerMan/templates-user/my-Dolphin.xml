@@ -42,7 +42,7 @@
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/Dolphin</HostDir>
+      <HostDir>/DATA/AppData/Dolphin</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -76,5 +76,5 @@
   <Config Name="Key 2" Target="GROUP_ID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
   <Config Name="Key 3" Target="WIDTH" Default="1280" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">1280</Config>
   <Config Name="Key 4" Target="HEIGHT" Default="720" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">720</Config>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/Dolphin" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/Dolphin</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/DATA/AppData/Dolphin" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/DATA/AppData/Dolphin</Config>
 </Container>

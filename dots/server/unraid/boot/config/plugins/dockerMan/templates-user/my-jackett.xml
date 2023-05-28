@@ -33,12 +33,12 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/Downloads/</HostDir>
+      <HostDir>/DATA/Downloads/</HostDir>
       <ContainerDir>/downloads</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/jackett</HostDir>
+      <HostDir>/DATA/AppData/jackett</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -57,8 +57,8 @@
   </Environment>
   <Labels/>
   <Config Name="Host Port 1" Target="9117" Default="9117" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">9117</Config>
-  <Config Name="Host Path 2" Target="/downloads" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Downloads/</Config>
+  <Config Name="Host Path 2" Target="/downloads" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/DATA/Downloads/</Config>
   <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="Key 2" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/jackett" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/jackett</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/DATA/AppData/jackett" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/DATA/AppData/jackett</Config>
 </Container>

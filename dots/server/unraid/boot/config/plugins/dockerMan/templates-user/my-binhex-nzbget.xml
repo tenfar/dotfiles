@@ -37,12 +37,12 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/data/usenet/</HostDir>
+      <HostDir>/DATA/usenet/</HostDir>
       <ContainerDir>/data</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/binhex-nzbget</HostDir>
+      <HostDir>/DATA/AppData/binhex-nzbget</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -66,9 +66,9 @@
   </Environment>
   <Labels/>
   <Config Name="Host Port 1" Target="6789" Default="6789" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">6789</Config>
-  <Config Name="Host Path 2" Target="/data" Default="/mnt/user/appdata/data" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/data/usenet/</Config>
+  <Config Name="Host Path 2" Target="/data" Default="/DATA/AppData/data" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/DATA/usenet/</Config>
   <Config Name="Key 1" Target="UMASK" Default="000" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">000</Config>
   <Config Name="Key 2" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="Key 3" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/binhex-nzbget" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/binhex-nzbget</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/DATA/AppData/binhex-nzbget" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/DATA/AppData/binhex-nzbget</Config>
 </Container>

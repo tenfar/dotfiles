@@ -38,12 +38,12 @@
       <Mode>ro</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/</HostDir>
+      <HostDir>/DATA/AppData/</HostDir>
       <ContainerDir>/userappdata</ContainerDir>
       <Mode>ro</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/Logarr</HostDir>
+      <HostDir>/DATA/AppData/Logarr</HostDir>
       <ContainerDir>/app</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -63,8 +63,8 @@
   <Labels/>
   <Config Name="WebUI" Target="80" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">281</Config>
   <Config Name="Var Logs" Target="/varlog" Default="" Mode="ro" Description="" Type="Path" Display="always" Required="false" Mask="false">/var/log/</Config>
-  <Config Name="AppData" Target="/userappdata" Default="" Mode="ro" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/</Config>
-  <Config Name="Config" Target="/app" Default="/mnt/user/appdata/Logarr" Mode="rw" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/Logarr</Config>
+  <Config Name="AppData" Target="/userappdata" Default="" Mode="ro" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/AppData/</Config>
+  <Config Name="Config" Target="/app" Default="/DATA/AppData/Logarr" Mode="rw" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/DATA/AppData/Logarr</Config>
   <Config Name="PUID" Target="PUID" Default="99" Mode="{3}" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="{3}" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
 </Container>

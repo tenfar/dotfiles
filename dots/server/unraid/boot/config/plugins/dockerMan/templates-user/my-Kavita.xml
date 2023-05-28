@@ -22,6 +22,6 @@
   <DonateLink/>
   <Requires/>
   <Config Name="Web App Port" Target="5000" Default="5000" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">5002</Config>
-  <Config Name="Data Directory" Target="/kavita/config" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/kavita</Config>
-  <Config Name="Book Library" Target="/library" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/data/media/books</Config>
+  <Config Name="Data Directory" Target="/kavita/config" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/AppData/kavita</Config>
+  <Config Name="Book Library" Target="/library" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/media/books</Config>
 </Container>

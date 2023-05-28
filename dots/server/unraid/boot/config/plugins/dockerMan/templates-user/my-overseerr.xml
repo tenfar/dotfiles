@@ -33,7 +33,7 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/overseerr</HostDir>
+      <HostDir>/DATA/AppData/overseerr</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -57,7 +57,7 @@
   </Environment>
   <Labels/>
   <Config Name="Host Port for 5055" Target="5055" Default="5055" Mode="tcp" Description="" Type="Port" Display="always-hide" Required="true" Mask="false">5055</Config>
-  <Config Name="Host Path for /config" Target="/config" Default="/mnt/user/appdata/overseerr" Mode="rw" Description="" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/overseerr</Config>
+  <Config Name="Host Path for /config" Target="/config" Default="/DATA/AppData/overseerr" Mode="rw" Description="" Type="Path" Display="always-hide" Required="true" Mask="false">/DATA/AppData/overseerr</Config>
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">100</Config>
   <Config Name="UMASK" Target="UMASK" Default="002" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">002</Config>

@@ -38,7 +38,7 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/AH-WebApp/dev</HostDir>
+      <HostDir>/DATA/AppData/AH-WebApp/dev</HostDir>
       <ContainerDir>/root/.aspnet/DataProtection-Keys</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -52,7 +52,7 @@
   </Environment>
   <Labels/>
   <Config Name="Web UI Port" Target="80" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8099</Config>
-  <Config Name="Data Protection Keys" Target="/root/.aspnet/DataProtection-Keys" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/AH-WebApp/dev</Config>
+  <Config Name="Data Protection Keys" Target="/root/.aspnet/DataProtection-Keys" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/AppData/AH-WebApp/dev</Config>
   <Config Name="ASPNETCORE_ENVIRONMENT" Target="ASPNETCORE_ENVIRONMENT" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">Production</Config>
   <Config Name="Host Port 2" Target="443" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">19443</Config>
 </Container>

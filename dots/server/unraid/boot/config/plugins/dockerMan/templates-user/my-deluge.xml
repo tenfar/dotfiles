@@ -27,12 +27,12 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/Downloads/</HostDir>
+      <HostDir>/DATA/Downloads/</HostDir>
       <ContainerDir>/downloads</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/deluge</HostDir>
+      <HostDir>/DATA/AppData/deluge</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -55,9 +55,9 @@
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Host Path 2" Target="/downloads" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Downloads/</Config>
+  <Config Name="Host Path 2" Target="/downloads" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/DATA/Downloads/</Config>
   <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="Key 2" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
   <Config Name="Key 3" Target="UMASK_SET" Default="000" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">000</Config>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/deluge" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/deluge</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/DATA/AppData/deluge" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/DATA/AppData/deluge</Config>
 </Container>

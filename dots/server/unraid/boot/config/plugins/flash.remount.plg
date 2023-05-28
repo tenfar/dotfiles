@@ -26,7 +26,7 @@ A plugin to automatically remount your flash drive if it happens to drop offline
 <FILE Name="/usr/local/emhttp/plugins/flash.remount/remount.sh">
 <INLINE>
 #!/bin/bash
-if [ -d /mnt/user ]; then
+if [ -d /DATA ]; then
 	logger Remounting flash drive
 	mount /dev/flashmount1 /boot -o noatime,nodiratime,dmask=77,fmask=177,shortname=mixed
 	fsck.fat -w -a -l -v /dev/flashmount1

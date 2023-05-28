@@ -55,22 +55,22 @@ Plugins here: https://github.com/HaveAGitGat/Tdarr_Plugins&#xD;
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/tdarr/configs</HostDir>
+      <HostDir>/DATA/AppData/tdarr/configs</HostDir>
       <ContainerDir>/app/configs</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/tdarr/logs</HostDir>
+      <HostDir>/DATA/AppData/tdarr/logs</HostDir>
       <ContainerDir>/app/logs</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/data/media/</HostDir>
+      <HostDir>/DATA/media/</HostDir>
       <ContainerDir>/mnt/media</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/temp</HostDir>
+      <HostDir>/DATA/temp</HostDir>
       <ContainerDir>/temp</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -115,8 +115,8 @@ Plugins here: https://github.com/HaveAGitGat/Tdarr_Plugins&#xD;
   <Config Name="Node Port" Target="8267" Default="8267" Mode="tcp" Description="Node Port" Type="Port" Display="always" Required="false" Mask="false">8267</Config>
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
-  <Config Name="Configs" Target="/app/configs" Default="/mnt/user/appdata/tdarr/configs" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/tdarr/configs</Config>
-  <Config Name="Logs" Target="/app/logs" Default="/mnt/user/appdata/tdarr/logs" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/tdarr/logs</Config>
-  <Config Name="Media Library" Target="/mnt/media" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/data/media/</Config>
-  <Config Name="Transcode Cache" Target="/temp" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/temp</Config>
+  <Config Name="Configs" Target="/app/configs" Default="/DATA/AppData/tdarr/configs" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/AppData/tdarr/configs</Config>
+  <Config Name="Logs" Target="/app/logs" Default="/DATA/AppData/tdarr/logs" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/AppData/tdarr/logs</Config>
+  <Config Name="Media Library" Target="/mnt/media" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/media/</Config>
+  <Config Name="Transcode Cache" Target="/temp" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/temp</Config>
 </Container>

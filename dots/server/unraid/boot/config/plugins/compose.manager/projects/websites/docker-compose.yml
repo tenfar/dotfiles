@@ -9,8 +9,8 @@ services:
     environment:
       - "HOST_CONTAINERNAME=organizr"
       - "branch=develop"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "S6_REL=2.2.0.3"
       - "S6_ARCH=amd64"
@@ -49,7 +49,7 @@ services:
     ports:
       - "280:80/tcp"
     volumes:
-      - "/mnt/cache/appdata/organizrv2:/config"
+      - "/DATA/AppData/organizrv2:/config"
 
 networks:
   br0:

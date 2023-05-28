@@ -37,12 +37,12 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/data/media/</HostDir>
+      <HostDir>/DATA/media/</HostDir>
       <ContainerDir>/media</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/binhex-jellyfin</HostDir>
+      <HostDir>/DATA/AppData/binhex-jellyfin</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -66,9 +66,9 @@
   </Environment>
   <Labels/>
   <Config Name="Host Port 1" Target="8096" Default="8096" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8096</Config>
-  <Config Name="Host Path 2" Target="/media" Default="/mnt/user" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/data/media/</Config>
+  <Config Name="Host Path 2" Target="/media" Default="/DATA" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/DATA/media/</Config>
   <Config Name="Key 1" Target="UMASK" Default="000" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">000</Config>
   <Config Name="Key 2" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="Key 3" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/binhex-jellyfin" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/binhex-jellyfin</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/DATA/AppData/binhex-jellyfin" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/DATA/AppData/binhex-jellyfin</Config>
 </Container>

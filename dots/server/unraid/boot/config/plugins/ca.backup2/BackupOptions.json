@@ -1,6 +1,6 @@
 {
-    "source": "/mnt/user/appdata/",
-    "destinationShare": "/mnt/user/backup/appdatabackups",
+    "source": "/DATA/AppData/",
+    "destinationShare": "/DATA/backup/appdatabackups",
     "excluded": "",
     "compression": "yes",
     "verify": "no",

@@ -31,12 +31,12 @@ Instructions for installation can be found at https://github.com/aeleos/cloudfla
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/cloudflared</HostDir>
+      <HostDir>/DATA/AppData/cloudflared</HostDir>
       <ContainerDir>/home/nonroot/.cloudflared/</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
   <Environment/>
   <Labels/>
-  <Config Name="data" Target="/home/nonroot/.cloudflared/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/cloudflared</Config>
+  <Config Name="data" Target="/home/nonroot/.cloudflared/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/AppData/cloudflared</Config>
 </Container>

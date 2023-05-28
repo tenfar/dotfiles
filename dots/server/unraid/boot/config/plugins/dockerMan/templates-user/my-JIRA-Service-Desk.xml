@@ -37,7 +37,7 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/JiraServiceDesk</HostDir>
+      <HostDir>/DATA/AppData/JiraServiceDesk</HostDir>
       <ContainerDir>/var/atlassian/application-data/jira</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -64,5 +64,5 @@
   <Config Name="ATL_PROXY_PORT" Target="ATL_PROXY_PORT" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">443</Config>
   <Config Name="ATL_TOMCAT_SCHEME" Target="ATL_TOMCAT_SCHEME" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">https</Config>
   <Config Name="Host Port 1" Target="8080" Default="8080" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8089</Config>
-  <Config Name="Host Path 1" Target="/var/atlassian/application-data/jira" Default="" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/JiraServiceDesk</Config>
+  <Config Name="Host Path 1" Target="/var/atlassian/application-data/jira" Default="" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/DATA/AppData/JiraServiceDesk</Config>
 </Container>

@@ -52,12 +52,12 @@
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/Downloads/</HostDir>
+      <HostDir>/DATA/Downloads/</HostDir>
       <ContainerDir>/mnt/downloads</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/binhex-jenkins</HostDir>
+      <HostDir>/DATA/AppData/binhex-jenkins</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -105,6 +105,6 @@
   <Config Name="Docker Sock" Target="/var/run/docker.sock" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/var/run/docker.sock</Config>
   <Config Name="Docker" Target="/usr/bin/docker" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/usr/bin/docker</Config>
   <Config Name="DOCKER_HOST" Target="DOCKER_HOST" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">tcp://dockersocket:2375</Config>
-  <Config Name="Host Path 3" Target="/mnt/downloads" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Downloads/</Config>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/binhex-jenkins" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/binhex-jenkins</Config>
+  <Config Name="Host Path 3" Target="/mnt/downloads" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/Downloads/</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/DATA/AppData/binhex-jenkins" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/DATA/AppData/binhex-jenkins</Config>
 </Container>

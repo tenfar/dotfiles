@@ -14,7 +14,7 @@
     [br][br]
 
     [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
-    [b]/mnt/user/appdata/registry[/b] This is where Registry will store it's data.[br]
+    [b]/DATA/AppData/registry[/b] This is where Registry will store it's data.[br]
     [b]Port 5000[/b] Default connection port[br]
   </Overview>
   <Category>Cloud: Network:Management Productivity: Tools:</Category>
@@ -42,7 +42,7 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/registry</HostDir>
+      <HostDir>/DATA/AppData/registry</HostDir>
       <ContainerDir>/var/lib/registry</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -50,5 +50,5 @@
   <Environment/>
   <Labels/>
   <Config Name="Web Port" Target="5000" Default="5000" Mode="tcp" Description="This is Docker Registry TCP port." Type="Port" Display="always-hide" Required="true" Mask="{8}">5000</Config>
-  <Config Name="Data Storage Path" Target="/var/lib/registry" Default="/mnt/user/appdata/registry" Mode="rw" Description="This is where Docker Registry will store it's data." Type="Path" Display="advanced-hide" Required="true" Mask="{8}">/mnt/user/appdata/registry</Config>
+  <Config Name="Data Storage Path" Target="/var/lib/registry" Default="/DATA/AppData/registry" Mode="rw" Description="This is where Docker Registry will store it's data." Type="Path" Display="advanced-hide" Required="true" Mask="{8}">/DATA/AppData/registry</Config>
 </Container>

@@ -89,17 +89,17 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/data/media/pictures/</HostDir>
+      <HostDir>/DATA/media/pictures/</HostDir>
       <ContainerDir>/ps/library</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/data/media/familyphotos/</HostDir>
+      <HostDir>/DATA/media/familyphotos/</HostDir>
       <ContainerDir>/familyphotos</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/Backups/Photos/</HostDir>
+      <HostDir>/DATA/Backups/Photos/</HostDir>
       <ContainerDir>/backupphotos</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -109,17 +109,17 @@
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/cache/appdata/photostructure/tmp</HostDir>
+      <HostDir>/DATA/AppData/photostructure/tmp</HostDir>
       <ContainerDir>/ps/tmp</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/photostructure/logs</HostDir>
+      <HostDir>/DATA/AppData/photostructure/logs</HostDir>
       <ContainerDir>/ps/logs</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/photostructure/config</HostDir>
+      <HostDir>/DATA/AppData/photostructure/config</HostDir>
       <ContainerDir>/ps/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -148,15 +148,15 @@
   </Environment>
   <Labels/>
   <Config Name="Web UI" Target="1787" Default="" Mode="tcp" Description="Port to access the HTTP UI. Can be modified by setting the PS_HTTP_PORT environment variable." Type="Port" Display="always" Required="true" Mask="false">1787</Config>
-  <Config Name="Library" Target="/ps/library" Default="/mnt/user/Photos" Mode="rw" Description="This is where your PhotoStructure Library will be stored. It needs to have sufficient free space to hold preview images, and transcoded videos." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/data/media/pictures/</Config>
+  <Config Name="Library" Target="/ps/library" Default="/DATA/Photos" Mode="rw" Description="This is where your PhotoStructure Library will be stored. It needs to have sufficient free space to hold preview images, and transcoded videos." Type="Path" Display="always" Required="true" Mask="false">/DATA/media/pictures/</Config>
   <Config Name="User ID" Target="PUID" Default="" Mode="" Description="This is the userid that PhotoStructure will run under, instead of the default of root (userid 0).&#13;&#10;&#13;&#10;Files copied into your library will be owned by this userid." Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="Group ID" Target="PGID" Default="" Mode="" Description="This is the groupid that PhotoStructure will run under. " Type="Variable" Display="always" Required="false" Mask="false">100</Config>
   <Config Name="TZ" Target="TZ" Default="TZ" Mode="" Description="Setting the default timezone helps PhotoStructure infer captured-at time for assets that are missing timezone metadata.&#13;&#10;&#13;&#10;" Type="Variable" Display="always" Required="false" Mask="false">America/Chicago</Config>
-  <Config Name="Plex Family Photos" Target="/familyphotos" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/data/media/familyphotos/</Config>
-  <Config Name="Backup Photos" Target="/backupphotos" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Backups/Photos/</Config>
+  <Config Name="Plex Family Photos" Target="/familyphotos" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/media/familyphotos/</Config>
+  <Config Name="Backup Photos" Target="/backupphotos" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/Backups/Photos/</Config>
   <Config Name="Dropbox Photos" Target="/dropboxphotos" Default="" Mode="rw,slave" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/disks/dropbox/Pictures/Alphas Photos/</Config>
   <Config Name="Logging level" Target="PS_LOG_LEVEL" Default="error" Mode="" Description="Valid values are debug, info, warn, and error. Default is error, which (should be) quiet." Type="Variable" Display="advanced" Required="false" Mask="false">error</Config>
-  <Config Name="Temp/Scratch disk" Target="/ps/tmp" Default="/mnt/cache/appdata/photostructure/tmp" Mode="rw" Description="This needs to be fast, local disk." Type="Path" Display="advanced" Required="true" Mask="false">/mnt/cache/appdata/photostructure/tmp</Config>
-  <Config Name="Logs" Target="/ps/logs" Default="/mnt/user/appdata/photostructure/logs" Mode="rw" Description="Logfiles will be written into this directory. Set environment variable " Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/photostructure/logs</Config>
-  <Config Name="System config" Target="/ps/config" Default="/mnt/user/appdata/photostructure/config" Mode="rw" Description="System configuration is written into this directory." Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/photostructure/config</Config>
+  <Config Name="Temp/Scratch disk" Target="/ps/tmp" Default="/DATA/AppData/photostructure/tmp" Mode="rw" Description="This needs to be fast, local disk." Type="Path" Display="advanced" Required="true" Mask="false">/DATA/AppData/photostructure/tmp</Config>
+  <Config Name="Logs" Target="/ps/logs" Default="/DATA/AppData/photostructure/logs" Mode="rw" Description="Logfiles will be written into this directory. Set environment variable " Type="Path" Display="advanced" Required="true" Mask="false">/DATA/AppData/photostructure/logs</Config>
+  <Config Name="System config" Target="/ps/config" Default="/DATA/AppData/photostructure/config" Mode="rw" Description="System configuration is written into this directory." Type="Path" Display="advanced" Required="true" Mask="false">/DATA/AppData/photostructure/config</Config>
 </Container>

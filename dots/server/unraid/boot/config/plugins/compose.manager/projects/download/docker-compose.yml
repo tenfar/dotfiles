@@ -12,8 +12,8 @@ services:
     environment:
       - "HOST_CONTAINERNAME=binhex-nzbget"
       - "UMASK=000"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "HOME=/home/nobody"
       - "TERM=xterm"
@@ -35,8 +35,8 @@ services:
       - "6789:6789/tcp"
     volumes:
       - "96e3ee4889f8dfc2ed4474e514b938365558420da2b756a1c085f9d53673a5ba:/media"
-      - "/mnt/user/appdata/binhex-nzbget:/config"
-      - "/mnt/user/data/usenet:/data"
+      - "/DATA/AppData/binhex-nzbget:/config"
+      - "/DATA/usenet:/data"
 
   qbittorrentvpn:
     command:
@@ -55,10 +55,10 @@ services:
       - "STRICT_PORT_FORWARD=yes"
       - "ENABLE_PRIVOXY=no"
       - "UMASK=000"
-      - "PGID=100"
+      - "PGID=1000"
       - "VPN_ENABLED=yes"
       - "VPN_CLIENT=wireguard"
-      - "PUID=99"
+      - "PUID=1000"
       - "VPN_OPTIONS="
       - "NAME_SERVERS=209.222.18.222,84.200.69.80,37.235.1.174,1.1.1.1,209.222.18.218,37.235.1.177,84.200.70.40,1.0.0.1"
       - "DEBUG=false"
@@ -91,9 +91,9 @@ services:
     security_opt:
       - "label=disable"
     volumes:
-      - "/mnt/user/appdata/binhex-qbittorrentvpn:/config"
-      - "/mnt/user/data:/data"
-      - "/mnt/cache/appdata/binhex-qbittorrentvpn/vuetorrent:/vuetorrent"
+      - "/DATA/AppData/binhex-qbittorrentvpn:/config"
+      - "/DATA:/data"
+      - "/DATA/AppData/binhex-qbittorrentvpn/vuetorrent:/vuetorrent"
 
 networks:
   br0:

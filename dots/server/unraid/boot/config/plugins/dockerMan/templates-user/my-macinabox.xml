@@ -20,7 +20,7 @@ Usage&#xD;
 				Big Sur&#xD;
  				Mojave&#xD;
  				High Sierra&#xD;
-VM Images Location:      Location of your vm share ( default /mnt/user/domains/ )&#xD;
+VM Images Location:      Location of your vm share ( default /DATA/domains/ )&#xD;
 Install Type 		&#xD;
                 Auto install &#xD;
  This will download MacOS and install needed files into your VM location.&#xD;
@@ -64,7 +64,7 @@ Usage&#xD;
 				Big Sur&#xD;
  				Mojave&#xD;
  				High Sierra&#xD;
-VM Images Location:      Location of your vm share ( default /mnt/user/domains/ )&#xD;
+VM Images Location:      Location of your vm share ( default /DATA/domains/ )&#xD;
 Install Type 		&#xD;
                 Auto install &#xD;
  This will download MacOS and install needed files into your VM location.&#xD;
@@ -104,32 +104,32 @@ Inject fix xml userscript:    &#xD;
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/domains/</HostDir>
+      <HostDir>/DATA/domains/</HostDir>
       <ContainerDir>/domains</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/isos/</HostDir>
+      <HostDir>/DATA/isos/</HostDir>
       <ContainerDir>/isos</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/system/custom_ovmf/</HostDir>
+      <HostDir>/DATA/system/custom_ovmf/</HostDir>
       <ContainerDir>/customovmf/</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/macinabox</HostDir>
+      <HostDir>/DATA/AppData/macinabox</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/macinabox/macinabox</HostDir>
+      <HostDir>/DATA/AppData/macinabox/macinabox</HostDir>
       <ContainerDir>/config2</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/macinabox/basesystem</HostDir>
+      <HostDir>/DATA/AppData/macinabox/basesystem</HostDir>
       <ContainerDir>/Macinabox/tools/FetchMacOS/BaseSystem</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -161,12 +161,12 @@ Inject fix xml userscript:    &#xD;
       <Mode/>
     </Variable>
     <Variable>
-      <Value>/mnt/user/domains/</Value>
+      <Value>/DATA/domains/</Value>
       <Name>VMIMAGES</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>/mnt/user/isos/</Value>
+      <Value>/DATA/isos/</Value>
       <Name>ISOIMAGES</Name>
       <Mode/>
     </Variable>
@@ -220,16 +220,16 @@ Inject fix xml userscript:    &#xD;
   <Config Name="Operating System Version" Target="flavour" Default="Catalina|Big Sur|Mojave|High Sierra" Mode="" Description="Choose macOS version to install " Type="Variable" Display="always" Required="true" Mask="false">Big Sur</Config>
   <Config Name="Install Type" Target="vminstall" Default="Auto install|Manual install" Mode="" Description="Auto install to install a vm directly into Unraid. Manual for advanced install" Type="Variable" Display="always" Required="true" Mask="false">Auto install</Config>
   <Config Name="Vdisk Size" Target="vdisksize" Default="" Mode="" Description="Enter desired vdisk size (only used by auto install - ignored by manual install)" Type="Variable" Display="always" Required="true" Mask="false">100G</Config>
-  <Config Name="VM Images Location" Target="/domains" Default="/mnt/user/domains/" Mode="rw" Description="VM share. Used only by auto install to create vm xml" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/domains/</Config>
-  <Config Name="VM Images Location again" Target="VMIMAGES" Default="/mnt/user/domains/" Mode="" Description="This must match the above VM Images Location (yes we need it twice!)" Type="Variable" Display="always" Required="true" Mask="false">/mnt/user/domains/</Config>
-  <Config Name="Isos Share Location" Target="/isos" Default="/mnt/user/isos/" Mode="rw" Description="Your isos share path - macOS install and opencore bootloader will be put here. (used by auto and manual install)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/isos/</Config>
-  <Config Name="Isos Share Location again" Target="ISOIMAGES" Default="/mnt/user/isos/" Mode="" Description="This must match the above Isos Share Location (yes we need it twice!)" Type="Variable" Display="always" Required="true" Mask="false">/mnt/user/isos/</Config>
+  <Config Name="VM Images Location" Target="/domains" Default="/DATA/domains/" Mode="rw" Description="VM share. Used only by auto install to create vm xml" Type="Path" Display="always" Required="true" Mask="false">/DATA/domains/</Config>
+  <Config Name="VM Images Location again" Target="VMIMAGES" Default="/DATA/domains/" Mode="" Description="This must match the above VM Images Location (yes we need it twice!)" Type="Variable" Display="always" Required="true" Mask="false">/DATA/domains/</Config>
+  <Config Name="Isos Share Location" Target="/isos" Default="/DATA/isos/" Mode="rw" Description="Your isos share path - macOS install and opencore bootloader will be put here. (used by auto and manual install)" Type="Path" Display="always" Required="true" Mask="false">/DATA/isos/</Config>
+  <Config Name="Isos Share Location again" Target="ISOIMAGES" Default="/DATA/isos/" Mode="" Description="This must match the above Isos Share Location (yes we need it twice!)" Type="Variable" Display="always" Required="true" Mask="false">/DATA/isos/</Config>
   <Config Name="Download Method" Target="method" Default="method 1|method 2" Mode="" Description="2 different ways to get macos. Change to method 2 if method 1 doesnt work for you" Type="Variable" Display="always" Required="true" Mask="false">method 1</Config>
   <Config Name="Run Mode" Target="onlyvirt" Default="macinabox_with_virtmanager|virtmanager_only" Mode="" Description="choose running mode" Type="Variable" Display="always" Required="true" Mask="false">macinabox_with_virtmanager</Config>
-  <Config Name="custom ovmf location" Target="/customovmf/" Default="/mnt/user/system/custom_ovmf/" Mode="rw" Description="dont change" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/system/custom_ovmf/</Config>
-  <Config Name="appdata" Target="/config" Default="/mnt/user/appdata/macinabox" Mode="rw" Description="If you change this location be sure to change Macinabox only data &amp;amp; Baseimage location too." Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/macinabox</Config>
-  <Config Name="Macinabox only data" Target="/config2" Default="/mnt/user/appdata/macinabox/macinabox" Mode="rw" Description="Macinabox data as a subfolder of the main appdata&#13;&#10;" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/macinabox/macinabox</Config>
-  <Config Name="Basesystem " Target="/Macinabox/tools/FetchMacOS/BaseSystem" Default="/mnt/user/appdata/macinabox/basesystem" Mode="rw" Description="Baseimage temporary location as a subfolder of appdata" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/macinabox/basesystem</Config>
+  <Config Name="custom ovmf location" Target="/customovmf/" Default="/DATA/system/custom_ovmf/" Mode="rw" Description="dont change" Type="Path" Display="advanced" Required="true" Mask="false">/DATA/system/custom_ovmf/</Config>
+  <Config Name="appdata" Target="/config" Default="/DATA/AppData/macinabox" Mode="rw" Description="If you change this location be sure to change Macinabox only data &amp;amp; Baseimage location too." Type="Path" Display="advanced" Required="true" Mask="false">/DATA/AppData/macinabox</Config>
+  <Config Name="Macinabox only data" Target="/config2" Default="/DATA/AppData/macinabox/macinabox" Mode="rw" Description="Macinabox data as a subfolder of the main appdata&#13;&#10;" Type="Path" Display="advanced" Required="true" Mask="false">/DATA/AppData/macinabox/macinabox</Config>
+  <Config Name="Basesystem " Target="/Macinabox/tools/FetchMacOS/BaseSystem" Default="/DATA/AppData/macinabox/basesystem" Mode="rw" Description="Baseimage temporary location as a subfolder of appdata" Type="Path" Display="advanced" Required="true" Mask="false">/DATA/AppData/macinabox/basesystem</Config>
   <Config Name="Inject fix xml userscript" Target="injectfixxml" Default="yes|no" Mode="" Description="Injects macinabox helper userscript directly into userscripts plugin " Type="Variable" Display="advanced" Required="true" Mask="false">yes</Config>
   <Config Name="Userscripts Location" Target="/userscripts" Default="/boot/config/plugins/user.scripts/scripts" Mode="rw" Description="dont change this!" Type="Path" Display="advanced" Required="true" Mask="false">/boot/config/plugins/user.scripts/scripts</Config>
   <Config Name="Display Height" Target="DISPLAY_HEIGHT" Default="768" Mode="" Description="Height (in pixels) of the virtmager's window." Type="Variable" Display="advanced" Required="true" Mask="false">768</Config>

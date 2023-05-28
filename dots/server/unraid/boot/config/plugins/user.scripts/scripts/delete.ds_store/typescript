@@ -3,7 +3,7 @@ Script started on Sat 18 Feb 2017 11:51:05 PM EST
 #!/bin/bash
 echo "Searching for (and deleting) .DS_Store Files"
 echo "This may take a awhile"
-find /mnt/user -maxdepth 9999 -noleaf -type f -name ".DS_Store" -exec rm "{}" \;
+find /DATA -maxdepth 9999 -noleaf -type f -name ".DS_Store" -exec rm "{}" \;
 ]0;root@Server_A: /usr/local/emhttp/plugins/user.scripts/scripts/delete.ds_store[01;32mroot@Server_A[00m:[01;34m/usr/local/emhttp/plugins/user.scripts/scripts/delete.ds_store[00m# chmod +x script
 ]0;root@Server_A: /usr/local/emhttp/plugins/user.scripts/scripts/delete.ds_store[01;32mroot@Server_A[00m:[01;34m/usr/local/emhttp/plugins/user.scripts/scripts/delete.ds_store[00m# cd ..
 ]0;root@Server_A: /usr/local/emhttp/plugins/user.scripts/scripts[01;32mroot@Server_A[00m:[01;34m/usr/local/emhttp/plugins/user.scripts/scripts[00m# cd [K[K[Kcd delete_dangling_images/

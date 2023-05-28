@@ -35,22 +35,22 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/cache/appdata/owncloud/apps</HostDir>
+      <HostDir>/DATA/AppData/owncloud/apps</HostDir>
       <ContainerDir>/var/www/html/apps</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/cache/appdata/owncloud/config</HostDir>
+      <HostDir>/DATA/AppData/owncloud/config</HostDir>
       <ContainerDir>/var/www/html/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/cache/appdata/owncloud/data</HostDir>
+      <HostDir>/DATA/AppData/owncloud/data</HostDir>
       <ContainerDir>/var/www/html/data</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/data/</HostDir>
+      <HostDir>/DATA/</HostDir>
       <ContainerDir>/mnt/data</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -58,8 +58,8 @@
   <Environment/>
   <Labels/>
   <Config Name="Host Port 1" Target="80" Default="8000" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8001</Config>
-  <Config Name="Host Path 1" Target="/var/www/html/apps" Default="/mnt/cache/appdata/owncloud/apps" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/owncloud/apps</Config>
-  <Config Name="Host Path 2" Target="/var/www/html/config" Default="/mnt/cache/appdata/owncloud/config" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/owncloud/config</Config>
-  <Config Name="Host Path 3" Target="/var/www/html/data" Default="/mnt/cache/appdata/owncloud/data" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/owncloud/data</Config>
-  <Config Name="Data" Target="/mnt/data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/data/</Config>
+  <Config Name="Host Path 1" Target="/var/www/html/apps" Default="/DATA/AppData/owncloud/apps" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/DATA/AppData/owncloud/apps</Config>
+  <Config Name="Host Path 2" Target="/var/www/html/config" Default="/DATA/AppData/owncloud/config" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/DATA/AppData/owncloud/config</Config>
+  <Config Name="Host Path 3" Target="/var/www/html/data" Default="/DATA/AppData/owncloud/data" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/DATA/AppData/owncloud/data</Config>
+  <Config Name="Data" Target="/mnt/data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/</Config>
 </Container>

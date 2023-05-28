@@ -6,8 +6,8 @@ services:
       - "/init"
     environment:
       - "HOST_CONTAINERNAME=petio"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "UMASK=002"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "APP_DIR=/app"
@@ -42,7 +42,7 @@ services:
     ports:
       - "7777:7777/tcp"
     volumes:
-      - "/mnt/cache/appdata/petio:/config"
+      - "/DATA/AppData/petio:/config"
 
   ombi:
     container_name: "ombi"
@@ -50,8 +50,8 @@ services:
       - "/init"
     environment:
       - "HOST_CONTAINERNAME=ombi"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "HOME=/config"
       - "TERM=xterm"
@@ -98,7 +98,7 @@ services:
     ports:
       - "3579:3579/tcp"
     volumes:
-      - "/mnt/cache/appdata/ombi:/config"
+      - "/DATA/AppData/ombi:/config"
     working_dir: "/"
 
   overseerr:
@@ -107,8 +107,8 @@ services:
       - "/init"
     environment:
       - "HOST_CONTAINERNAME=overseerr"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "UMASK=002"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "APP_DIR=/app"
@@ -144,7 +144,7 @@ services:
     ports:
       - "5055:5055/tcp"
     volumes:
-      - "/mnt/cache/appdata/overseerr:/config"
+      - "/DATA/AppData/overseerr:/config"
 
   requestrr:
     container_name: "requestrr"
@@ -152,8 +152,8 @@ services:
       - "/init"
     environment:
       - "HOST_CONTAINERNAME=requestrr"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "UMASK=002"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "APP_DIR=/app"
@@ -188,7 +188,7 @@ services:
     ports:
       - "4545:4545/tcp"
     volumes:
-      - "/mnt/cache/appdata/requestrr:/config"
+      - "/DATA/AppData/requestrr:/config"
 
 networks:
   br0:

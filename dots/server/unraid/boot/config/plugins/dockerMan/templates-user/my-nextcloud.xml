@@ -33,12 +33,12 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/data/nextcloud/</HostDir>
+      <HostDir>/DATA/nextcloud/</HostDir>
       <ContainerDir>/data</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/nextcloud</HostDir>
+      <HostDir>/DATA/AppData/nextcloud</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -57,8 +57,8 @@
   </Environment>
   <Labels/>
   <Config Name="Host Port 1" Target="443" Default="443" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">444</Config>
-  <Config Name="Host Path 2" Target="/data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/data/nextcloud/</Config>
+  <Config Name="Host Path 2" Target="/data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/DATA/nextcloud/</Config>
   <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="Key 2" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/nextcloud" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/nextcloud</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/DATA/AppData/nextcloud" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/DATA/AppData/nextcloud</Config>
 </Container>

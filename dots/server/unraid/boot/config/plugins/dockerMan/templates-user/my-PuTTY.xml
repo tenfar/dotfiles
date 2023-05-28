@@ -58,7 +58,7 @@ https://github.com/jlesage/docker-putty/blob/master/README.md&#xD;
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/PuTTY</HostDir>
+      <HostDir>/DATA/AppData/PuTTY</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -111,7 +111,7 @@ https://github.com/jlesage/docker-putty/blob/master/README.md&#xD;
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Config Directory" Target="/config" Default="/mnt/user/appdata/PuTTY" Mode="rw" Description="This is where the application stores its configuration, log and any files needing persistency.&amp;lt;br&amp;gt;Container path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/PuTTY</Config>
+  <Config Name="Config Directory" Target="/config" Default="/DATA/AppData/PuTTY" Mode="rw" Description="This is where the application stores its configuration, log and any files needing persistency.&amp;lt;br&amp;gt;Container path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/DATA/AppData/PuTTY</Config>
   <Config Name="User ID" Target="USER_ID" Default="99" Mode="" Description="ID of the user the application runs as." Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
   <Config Name="Group ID" Target="GROUP_ID" Default="100" Mode="" Description="ID of the group the application runs as." Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
   <Config Name="Umask" Target="UMASK" Default="000" Mode="" Description="Mask that controls how file permissions are set for newly created files. The value of the mask is in octal notation." Type="Variable" Display="advanced" Required="false" Mask="false">000</Config>

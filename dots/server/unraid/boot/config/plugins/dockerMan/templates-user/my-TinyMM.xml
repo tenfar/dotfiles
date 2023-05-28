@@ -42,12 +42,12 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/data/media/</HostDir>
+      <HostDir>/DATA/media/</HostDir>
       <ContainerDir>/media</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/TinyMM</HostDir>
+      <HostDir>/DATA/AppData/TinyMM</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -92,7 +92,7 @@
   <Labels/>
   <Config Name="Host Port 1" Target="5800" Default="5800" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">5800</Config>
   <Config Name="Host Port 2" Target="5900" Default="5900" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">5900</Config>
-  <Config Name="Host Path 1" Target="/media" Default="/mnt/user/Media/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/data/media/</Config>
+  <Config Name="Host Path 1" Target="/media" Default="/DATA/Media/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/DATA/media/</Config>
   <Config Name="Key 1" Target="USER_ID" Default="0" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
   <Config Name="Key 2" Target="TZ" Default="America/NewYork" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">America/Chicago</Config>
   <Config Name="Key 3" Target="DISPLAY_HEIGHT" Default="1380" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">1380</Config>
@@ -100,5 +100,5 @@
   <Config Name="Key 5" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="Key 6" Target="GUID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
   <Config Name="Key 7" Target="UMASK" Default="000" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">000</Config>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/TinyMM" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/TinyMM</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/DATA/AppData/TinyMM" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/DATA/AppData/TinyMM</Config>
 </Container>

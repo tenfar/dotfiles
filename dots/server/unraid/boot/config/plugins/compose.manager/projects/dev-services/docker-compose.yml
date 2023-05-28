@@ -65,8 +65,8 @@ services:
     ports:
       - "5000:5000/tcp"
     volumes:
-      - "/mnt/cache/appdata/registry/auth:/auth"
-      - "/mnt/user/appdata/registry:/var/lib/registry"
+      - "/DATA/AppData/registry/auth:/auth"
+      - "/DATA/AppData/registry:/var/lib/registry"
 
   CloudBeaver:
     container_name: "CloudBeaver"
@@ -94,7 +94,7 @@ services:
     ports:
       - "8978:8978/tcp"
     volumes:
-      - "/mnt/user/appdata/cloudbeaver:/opt/cloudbeaver/workspace"
+      - "/DATA/AppData/cloudbeaver:/opt/cloudbeaver/workspace"
     working_dir: "/opt/cloudbeaver"
 
   binhex-jenkins:
@@ -106,8 +106,8 @@ services:
       - "/usr/bin/dumb-init"
       - "--"
     environment:
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "HOST_CONTAINERNAME=binhex-jenkins"
       - "JAVA_ARGS=-Xmx512m"
       - "JAVA_OPTS=-Dhudson.footerURL=https://tenfarr.com"
@@ -141,8 +141,8 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "/usr/bin/docker:/usr/bin/docker"
-      - "/mnt/user/Downloads:/mnt/downloads"
-      - "/mnt/user/appdata/binhex-jenkins:/config"
+      - "/DATA/Downloads:/mnt/downloads"
+      - "/DATA/AppData/binhex-jenkins:/config"
 
 networks:
   br0:

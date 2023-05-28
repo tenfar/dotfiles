@@ -214,7 +214,7 @@
 - Fix: Allow a Root Share if disk sharing is set to auto.
 
 ###2022.03.22c
-- Add: 'User Shares' (/mnt/user0/) and 'User and Pool Shares' (/mnt/user/) can both be root shared.
+- Add: 'User Shares' (/DATA0/) and 'User and Pool Shares' (/DATA/) can both be root shared.
 - Add: Disable Root Share button when disk share is enabled.
 - Fix: Remove 'disks' and 'remotes' root shares.  Protection on UD folders prevents this from working.
 
@@ -463,7 +463,7 @@ Fix: Duplicate UD disk serial number check not working properly.
 
 ###2021.08.27
 - Add: File browse fixes for Unraid 6.10.
-- Add: Limit ISO file browsing to /mnt/user/isos/ folder.
+- Add: Limit ISO file browsing to /DATA/isos/ folder.
 - Fix: Force lazy unmount on NFS mounts.
 - Fix: Remove unnecessary parameters from NFS remote share mount command and use defaults.
 - Fix: Only show log icon on first partition when 'Show Partitions' is on.

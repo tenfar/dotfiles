@@ -38,12 +38,12 @@
       <Mode>ro</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/data/</HostDir>
+      <HostDir>/DATA/</HostDir>
       <ContainerDir>/data</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/sonarr</HostDir>
+      <HostDir>/DATA/AppData/sonarr</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -65,6 +65,6 @@
   <Config Name="Host Path 2" Target="/dev/rtc" Default="/dev/rtc" Mode="ro" Description="" Type="Path" Display="always" Required="true" Mask="false">/dev/rtc</Config>
   <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="Key 2" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
-  <Config Name="data" Target="/data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/data/</Config>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/sonarr" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/sonarr</Config>
+  <Config Name="data" Target="/data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/DATA/AppData/sonarr" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/DATA/AppData/sonarr</Config>
 </Container>

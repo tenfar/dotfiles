@@ -49,7 +49,7 @@ vdisk_extensions_to_skip="iso"
 # default is 0. use snapshots to backup vms.
 # NOTE: vms that are backed up using snapshots will not be shutdown. if a vm is already shutdown the default backup method will be used.
 # NOTE: it is highly recommended that you install the qemu guest agent on your vms before using snapshots to ensure the integrity of your backups.
-# WARNING: this will fail if the config path for the virtual disk is /mnt/user/. you must use /mnt/cache/ or /mnt/diskX/ for snapshots to work.
+# WARNING: this will fail if the config path for the virtual disk is /DATA/. you must use /mnt/cache/ or /mnt/diskX/ for snapshots to work.
 use_snapshots="0"
 
 # default is 0. set this to 1 if you would like to kill a vm if it cant be shutdown cleanly.
@@ -468,7 +468,7 @@ only_send_error_notifications="0"
 
         # check to see if vdisk extension is the same as the snapshot extension. if it is, error and skip the vm.
         if [[ "$disk_extension" == "$snapshot_extension" ]]; then
-          log_message "failure: extension for $disk on $vm is the same as the snapshot extension $snapshot_extension. disk will always be skipped. this usually means that the disk path in the config was not changed from /mnt/user. if disk path is correct, then try changing snapshot_extension or vdisk extension." "cannot backup vdisk on $vm" "alert"
+          log_message "failure: extension for $disk on $vm is the same as the snapshot extension $snapshot_extension. disk will always be skipped. this usually means that the disk path in the config was not changed from /DATA. if disk path is correct, then try changing snapshot_extension or vdisk extension." "cannot backup vdisk on $vm" "alert"
         fi
 
         # check to see if vdisk should be skipped by extension.

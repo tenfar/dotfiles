@@ -35,7 +35,7 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/Plex-Meta-Manager</HostDir>
+      <HostDir>/DATA/AppData/Plex-Meta-Manager</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -61,5 +61,5 @@
   <Config Name="Time to Run" Target="PMM_TIME" Default="6:00" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">6:00</Config>
   <Config Name="Divider Character" Target="PMM_DIVIDER" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">=</Config>
   <Config Name="Screen Width" Target="PMM_WIDTH" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">200</Config>
-  <Config Name="Config" Target="/config" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/Plex-Meta-Manager</Config>
+  <Config Name="Config" Target="/config" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/AppData/Plex-Meta-Manager</Config>
 </Container>

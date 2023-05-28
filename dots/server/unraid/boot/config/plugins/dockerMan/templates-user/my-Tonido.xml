@@ -35,12 +35,12 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user</HostDir>
+      <HostDir>/DATA</HostDir>
       <ContainerDir>/unRAID</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/Tonido</HostDir>
+      <HostDir>/DATA/AppData/Tonido</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -48,6 +48,6 @@
   <Environment/>
   <Labels/>
   <Config Name="Host Port 1" Target="10001" Default="10001" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">10001</Config>
-  <Config Name="Host Path 2" Target="/unRAID" Default="/mnt/user" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user</Config>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/Tonido" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/Tonido</Config>
+  <Config Name="Host Path 2" Target="/unRAID" Default="/DATA" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/DATA</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/DATA/AppData/Tonido" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/DATA/AppData/Tonido</Config>
 </Container>

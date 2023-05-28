@@ -35,7 +35,7 @@ As an open-source product it already supports the most popular open source datab
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/cloudbeaver</HostDir>
+      <HostDir>/DATA/AppData/cloudbeaver</HostDir>
       <ContainerDir>/opt/cloudbeaver/workspace</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -43,5 +43,5 @@ As an open-source product it already supports the most popular open source datab
   <Environment/>
   <Labels/>
   <Config Name="Web Interface Port" Target="8978" Default="8978" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8978</Config>
-  <Config Name="AppData" Target="/opt/cloudbeaver/workspace" Default="/mnt/user/appdata/cloudbeaver" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/cloudbeaver</Config>
+  <Config Name="AppData" Target="/opt/cloudbeaver/workspace" Default="/DATA/AppData/cloudbeaver" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/DATA/AppData/cloudbeaver</Config>
 </Container>

@@ -37,7 +37,7 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/nifi</HostDir>
+      <HostDir>/DATA/AppData/nifi</HostDir>
       <ContainerDir>/nifi</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -45,5 +45,5 @@
   <Environment/>
   <Labels/>
   <Config Name="Web Interface Port" Target="8080" Default="8080" Mode="tcp" Description="This is NIFIs Web UI port you can access via a web browser." Type="Port" Display="always-visible" Required="true" Mask="{8}">8081</Config>
-  <Config Name="Config Storage Path" Target="/nifi" Default="/mnt/user/appdata/nifi" Mode="rw" Description="This is where NIFI will store its databases and configuration." Type="Path" Display="always-visible" Required="true" Mask="{8}">/mnt/user/appdata/nifi</Config>
+  <Config Name="Config Storage Path" Target="/nifi" Default="/DATA/AppData/nifi" Mode="rw" Description="This is where NIFI will store its databases and configuration." Type="Path" Display="always-visible" Required="true" Mask="{8}">/DATA/AppData/nifi</Config>
 </Container>

@@ -37,12 +37,12 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/meshcentral/meshcentral-data</HostDir>
+      <HostDir>/DATA/AppData/meshcentral/meshcentral-data</HostDir>
       <ContainerDir>/opt/meshcentral/meshcentral-data</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/meshcentral/meshcentral-files </HostDir>
+      <HostDir>/DATA/AppData/meshcentral/meshcentral-files </HostDir>
       <ContainerDir>/opt/meshcentral/meshcentral-files </ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -87,6 +87,6 @@
   <Config Name="IFRAME" Target="IFRAME" Default="" Mode="" Description="Container Path: IFRAME" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="ALLOW_NEW_ACCOUNTS" Target="ALLOW_NEW_ACCOUNTS" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="WEBRTC" Target="WEBRTC" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
-  <Config Name="/opt/meshcentral/meshcentral-data" Target="/opt/meshcentral/meshcentral-data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/meshcentral/meshcentral-data</Config>
-  <Config Name="/opt/meshcentral/meshcentral-files" Target="/opt/meshcentral/meshcentral-files " Default="" Mode="rw" Description="Container Variable: /opt/meshcentral/meshcentral-files " Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/meshcentral/meshcentral-files </Config>
+  <Config Name="/opt/meshcentral/meshcentral-data" Target="/opt/meshcentral/meshcentral-data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/AppData/meshcentral/meshcentral-data</Config>
+  <Config Name="/opt/meshcentral/meshcentral-files" Target="/opt/meshcentral/meshcentral-files " Default="" Mode="rw" Description="Container Variable: /opt/meshcentral/meshcentral-files " Type="Path" Display="always" Required="false" Mask="false">/DATA/AppData/meshcentral/meshcentral-files </Config>
 </Container>

@@ -9,8 +9,8 @@ services:
       - "/app/entrypoint.sh"
     environment:
       - "HOST_CONTAINERNAME=Authelia"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "PATH=/app:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
     hostname: "6b9591f43425"
     image: "authelia/authelia"
@@ -44,7 +44,7 @@ services:
       - "9091:9091/tcp"
     restart: "unless-stopped"
     volumes:
-      - "/mnt/cache/appdata/Authelia:/config"
+      - "/DATA/AppData/Authelia:/config"
     working_dir: "/app"
 
   Cleanarr:
@@ -57,7 +57,7 @@ services:
       - "LIBRARY_NAMES="
       - "BYPASS_SSL_VERIFY="
       - "HOST_CONTAINERNAME=Cleanarr"
-      - "PLEX_BASE_URL=http://192.168.1.37:32400"
+      - "PLEX_BASE_URL=http://10.0.0.6:32400"
       - "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "GPG_KEY=${CLEANARR_GPG_KEY}"
       - "PYTHON_VERSION=3.7.13"
@@ -94,7 +94,7 @@ services:
     ports:
       - "5001:80/tcp"
     volumes:
-      - "/mnt/user/appdata/plex-library-cleaner:/config"
+      - "/DATA/AppData/plex-library-cleaner:/config"
     working_dir: "/app"
 
   CloudBeaver:
@@ -123,7 +123,7 @@ services:
     ports:
       - "8978:8978/tcp"
     volumes:
-      - "/mnt/user/appdata/cloudbeaver:/opt/cloudbeaver/workspace"
+      - "/DATA/AppData/cloudbeaver:/opt/cloudbeaver/workspace"
     working_dir: "/opt/cloudbeaver"
 
   Czkawka:
@@ -132,10 +132,10 @@ services:
     container_name: "Czkawka"
     environment:
       - "HOST_CONTAINERNAME=Czkawka"
-      - "USER_ID=99"
+      - "USER_ID=1000"
       - "DISPLAY_WIDTH=1280"
       - "SECURE_CONNECTION=0"
-      - "GROUP_ID=100"
+      - "GROUP_ID=1000"
       - "UMASK=000"
       - "APP_NICENESS="
       - "DISPLAY_HEIGHT=768"
@@ -176,9 +176,9 @@ services:
       - "7821:5800/tcp"
       - "7921:5900/tcp"
     volumes:
-      - "/mnt/cache/appdata/Czkawka:/config"
-      - "/mnt/user:/storage"
-      - "/mnt/user/temp:/trash"
+      - "/DATA/AppData/Czkawka:/config"
+      - "/DATA:/storage"
+      - "/DATA/temp:/trash"
     working_dir: "/tmp"
 
   DiskSpeed:
@@ -218,7 +218,7 @@ services:
       - "label=disable"
     volumes:
       - "/var/local/emhttp:/var/local/emhttp:ro"
-      - "/mnt/cache/appdata/DiskSpeed:/tmp/DiskSpeed"
+      - "/DATA/AppData/DiskSpeed:/tmp/DiskSpeed"
     working_dir: "/usr/local/tomcat"
 
   DockerRegistry:
@@ -249,8 +249,8 @@ services:
     ports:
       - "5000:5000/tcp"
     volumes:
-      - "/mnt/cache/appdata/registry/auth:/auth"
-      - "/mnt/user/appdata/registry:/var/lib/registry"
+      - "/DATA/AppData/registry/auth:/auth"
+      - "/DATA/AppData/registry:/var/lib/registry"
 
   Dozzle:
     container_name: "Dozzle"
@@ -381,8 +381,8 @@ services:
       - "/etc:/rootfs/etc:ro"
       - "/var/run/utmp:/var/run/utmp:ro"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "/mnt/cache/appdata/Grafana-Unraid-Stack:/config"
-      - "/mnt/cache/appdata/Grafana-Unraid-Stack/data:/data"
+      - "/DATA/AppData/Grafana-Unraid-Stack:/config"
+      - "/DATA/AppData/Grafana-Unraid-Stack/data:/data"
       - "/proc:/rootfs/proc:ro"
       - "/sys:/rootfs/sys:ro"
       - "/run/udev:/run/udev:ro"
@@ -413,8 +413,8 @@ services:
     ports:
       - "5002:5000/tcp"
     volumes:
-      - "/mnt/cache/appdata/kavita:/kavita/config"
-      - "/mnt/user/data/media/books:/library"
+      - "/DATA/AppData/kavita:/kavita/config"
+      - "/DATA/media/books:/library"
     working_dir: "/kavita"
 
   Krusader:
@@ -434,8 +434,8 @@ services:
       - "RFB_PORT=5900"
       - "TURBOVNC_PARAMS=-securitytypes none"
       - "UMASK=000"
-      - "UID=99"
-      - "GID=100"
+      - "UID=1000"
+      - "UID=1000"
       - "DATA_PERM=770"
       - "USER=krusader"
     hostname: "b54e04622661"
@@ -459,8 +459,8 @@ services:
     restart: "unless-stopped"
     volumes:
       - "/mnt:/UNRAID"
-      - "/mnt/cache/appdata/krusader:/krusader"
-      - "/mnt/user:/mnt/user"
+      - "/DATA/AppData/krusader:/krusader"
+      - "/DATA:/DATA"
 
   MongoDB:
     command:
@@ -495,15 +495,15 @@ services:
       - "27017:27017/tcp"
     restart: "unless-stopped"
     volumes:
-      - "/mnt/cache/appdata/mongodb:/data/db"
+      - "/DATA/AppData/mongodb:/data/db"
 
   NginxProxyManager:
     command:
       - "/init"
     container_name: "NginxProxyManager"
     environment:
-      - "USER_ID=99"
-      - "GROUP_ID=100"
+      - "USER_ID=1000"
+      - "GROUP_ID=1000"
       - "APP_NICENESS="
       - "HOST_CONTAINERNAME=NginxProxyManager"
       - "UMASK=000"
@@ -547,8 +547,8 @@ services:
       - "7818:8181/tcp"
     restart: "unless-stopped"
     volumes:
-      - "/mnt/cache/appdata/NginxProxyManager:/config"
-      - "/mnt/cache/appdata/dmz/goaccess/log:/config/log"
+      - "/DATA/AppData/NginxProxyManager:/config"
+      - "/DATA/AppData/dmz/goaccess/log:/config/log"
     working_dir: "/tmp"
 
   PhotoPrism:
@@ -567,7 +567,7 @@ services:
       - "PHOTOPRISM_SITE_AUTHOR="
       - "PHOTOPRISM_THUMB_FILTER=lanczos"
       - "PHOTOPRISM_EXPERIMENTAL=false"
-      - "PHOTOPRISM_UID=99"
+      - "PHOTOPRISM_UID=1000"
       - "PHOTOPRISM_SITE_CAPTION=Browse Your Life"
       - "PHOTOPRISM_JPEG_SIZE=7680"
       - "PHOTOPRISM_THUMB_UNCACHED=false"
@@ -575,7 +575,7 @@ services:
       - "PHOTOPRISM_THUMB_SIZE_UNCACHED=7680"
       - "PHOTOPRISM_DATABASE_DSN=photoprism:ant*ctv6pkv5GDK-akt@tcp(mariadb:3306)/photoprism?parseTime=true"
       - "PHOTOPRISM_AUTO_INDEX=180"
-      - "PHOTOPRISM_GID=100"
+      - "PHOTOPRISM_GID=1000"
       - "PHOTOPRISM_UPLOAD_NSFW=true"
       - "PHOTOPRISM_DATABASE_DRIVER=mysql"
       - "PHOTOPRISM_DARKTABLE_PRESETS=false"
@@ -647,10 +647,10 @@ services:
       - "2342:2342/tcp"
     restart: "unless-stopped"
     volumes:
-      - "/mnt/user/backup/Photos:/backupphotos"
-      - "/mnt/user/data/media/familyphotos:/photoprism/import"
-      - "/mnt/user/data/media/photoprism:/photoprism/originals"
-      - "/mnt/cache/appdata/photoprism:/photoprism/storage"
+      - "/DATA/backup/Photos:/backupphotos"
+      - "/DATA/media/familyphotos:/photoprism/import"
+      - "/DATA/media/photoprism:/photoprism/originals"
+      - "/DATA/AppData/photoprism:/photoprism/storage"
     working_dir: "/photoprism"
 
   PhotoStructure:
@@ -660,10 +660,10 @@ services:
       - "--"
       - "/ps/app/docker-entrypoint.sh"
     environment:
-      - "PGID=100"
+      - "PGID=1000"
       - "PS_LOG_LEVEL=error"
       - "HOST_CONTAINERNAME=PhotoStructure"
-      - "PUID=99"
+      - "PUID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "NODE_VERSION=16.2.0"
       - "YARN_VERSION=1.22.5"
@@ -684,13 +684,13 @@ services:
     ports:
       - "1787:1787/tcp"
     volumes:
-      - "/mnt/user/appdata/photostructure/config:/ps/config"
-      - "/mnt/user/data/media/pictures:/ps/library"
-      - "/mnt/user/appdata/photostructure/logs:/ps/logs"
-      - "/mnt/cache/appdata/photostructure/tmp:/ps/tmp"
-      - "/mnt/user/backup/Photos:/backupphotos"
+      - "/DATA/AppData/photostructure/config:/ps/config"
+      - "/DATA/media/pictures:/ps/library"
+      - "/DATA/AppData/photostructure/logs:/ps/logs"
+      - "/DATA/AppData/photostructure/tmp:/ps/tmp"
+      - "/DATA/backup/Photos:/backupphotos"
       - "/mnt/disks/dropbox/Pictures/Austins Photos:/dropboxphotos"
-      - "/mnt/user/data/media/familyphotos:/familyphotos"
+      - "/DATA/media/familyphotos:/familyphotos"
     working_dir: "/ps/app"
 
   Plex-Meta-Manager:
@@ -729,7 +729,7 @@ services:
     networks:
       - "alphaproxy"
     volumes:
-      - "/mnt/cache/appdata/Plex-Meta-Manager:/config"
+      - "/DATA/AppData/Plex-Meta-Manager:/config"
 
   Postgres11:
     command:
@@ -762,7 +762,7 @@ services:
     ports:
       - "5432:5432/tcp"
     volumes:
-      - "/mnt/cache/appdata/postgres:/var/lib/postgresql/data"
+      - "/DATA/AppData/postgres:/var/lib/postgresql/data"
 
   RustDeskServer:
     command:
@@ -797,7 +797,7 @@ services:
     networks:
       - "br0"
     volumes:
-      - "/mnt/cache/appdata/rustdesk-hbbs:/root"
+      - "/DATA/AppData/rustdesk-hbbs:/root"
     working_dir: "/root"
 
   RustDeskServer-Relay:
@@ -831,7 +831,7 @@ services:
     networks:
       - "br0"
     volumes:
-      - "/mnt/cache/appdata/rustdesk-hbbr:/root"
+      - "/DATA/AppData/rustdesk-hbbr:/root"
     working_dir: "/root"
 
   Stash:
@@ -863,12 +863,12 @@ services:
     ports:
       - "6969:9999/tcp"
     volumes:
-      - "/mnt/user/data/media/shadowplay/temp/local/AppData/temp2:/data2"
-      - "/mnt/cache/appdata/stash/generated:/generated"
-      - "/mnt/cache/appdata/stash/metadata:/metadata"
-      - "/mnt/cache/appdata/stash/config:/root/.stash"
-      - "/mnt/cache/appdata/stash/cache:/cache"
-      - "/mnt/user/data/media/shadowplay/temp/local/AppData/temp:/data"
+      - "/DATA/media/shadowplay/temp/local/AppData/temp2:/data2"
+      - "/DATA/AppData/stash/generated:/generated"
+      - "/DATA/AppData/stash/metadata:/metadata"
+      - "/DATA/AppData/stash/config:/root/.stash"
+      - "/DATA/AppData/stash/cache:/cache"
+      - "/DATA/media/shadowplay/temp/local/AppData/temp:/data"
 
   Tailscale:
     container_name: "Tailscale"
@@ -894,7 +894,7 @@ services:
     security_opt:
       - "label=disable"
     volumes:
-      - "/mnt/cache/appdata/tailscale:/state"
+      - "/DATA/AppData/tailscale:/state"
     working_dir: "/app"
 
   TimeMachine:
@@ -941,7 +941,7 @@ services:
     networks:
       - "br0"
     volumes:
-      - "/mnt/user/timemachine:/opt/tenfar"
+      - "/DATA/timemachine:/opt/tenfar"
     working_dir: "/"
 
   Virt-Manager:
@@ -950,8 +950,8 @@ services:
     container_name: "Virt-Manager"
     environment:
       - "HOSTS=['qemu:///system']"
-      - "USER_ID=99"
-      - "GROUP_ID=100"
+      - "USER_ID=1000"
+      - "GROUP_ID=1000"
       - "UMASK=000"
       - "HOST_CONTAINERNAME=Virt-Manager"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
@@ -980,10 +980,10 @@ services:
     ports:
       - "8185:80/tcp"
     volumes:
-      - "/mnt/cache/appdata/vman/root:/root"
-      - "/mnt/user/isos:/mnt/isos"
+      - "/DATA/AppData/vman/root:/root"
+      - "/DATA/isos:/mnt/isos"
       - "/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock"
-      - "/mnt/user/domains:/var/lib/libvirt/images"
+      - "/DATA/domains:/var/lib/libvirt/images"
       - "/dev/kvm:/dev/kvm"
 
   adminer:
@@ -1029,8 +1029,8 @@ services:
       - "/init"
     environment:
       - "HOST_CONTAINERNAME=bazarr"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "PS1=$(whoami)@$(hostname):$(pwd)\\$ "
       - "HOME=/root"
@@ -1073,10 +1073,10 @@ services:
     ports:
       - "6767:6767/tcp"
     volumes:
-      - "/mnt/user/data/media/tv:/tv"
-      - "/mnt/user/data/torrents:/data/torrents"
-      - "/mnt/cache/appdata/bazarr:/config"
-      - "/mnt/user/data/media/movies:/movies"
+      - "/DATA/media/tv:/tv"
+      - "/DATA/torrents:/data/torrents"
+      - "/DATA/AppData/bazarr:/config"
+      - "/DATA/media/movies:/movies"
     working_dir: "/"
 
   binhex-jellyfin:
@@ -1090,8 +1090,8 @@ services:
     environment:
       - "HOST_CONTAINERNAME=binhex-jellyfin"
       - "UMASK=000"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "HOME=/home/nobody"
       - "TERM=xterm"
@@ -1114,8 +1114,8 @@ services:
     ports:
       - "8096:8096/tcp"
     volumes:
-      - "/mnt/cache/appdata/binhex-jellyfin:/config"
-      - "/mnt/user/data/media:/media"
+      - "/DATA/AppData/binhex-jellyfin:/config"
+      - "/DATA/media:/media"
 
   binhex-jenkins:
     command:
@@ -1126,8 +1126,8 @@ services:
       - "/usr/bin/dumb-init"
       - "--"
     environment:
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "HOST_CONTAINERNAME=binhex-jenkins"
       - "JAVA_ARGS=-Xmx512m"
       - "JAVA_OPTS=-Dhudson.footerURL=https://tenfarr.com"
@@ -1161,8 +1161,8 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "/usr/bin/docker:/usr/bin/docker"
-      - "/mnt/user/Downloads:/mnt/downloads"
-      - "/mnt/user/appdata/binhex-jenkins:/config"
+      - "/DATA/Downloads:/mnt/downloads"
+      - "/DATA/AppData/binhex-jenkins:/config"
 
   binhex-nzbget:
     command:
@@ -1176,8 +1176,8 @@ services:
     environment:
       - "HOST_CONTAINERNAME=binhex-nzbget"
       - "UMASK=000"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "HOME=/home/nobody"
       - "TERM=xterm"
@@ -1198,8 +1198,8 @@ services:
     ports:
       - "6789:6789/tcp"
     volumes:
-      - "/mnt/user/appdata/binhex-nzbget:/config"
-      - "/mnt/user/data/usenet:/data"
+      - "/DATA/AppData/binhex-nzbget:/config"
+      - "/DATA/usenet:/data"
 
   cloudflared:
     command:
@@ -1231,7 +1231,7 @@ services:
     restart: "unless-stopped"
     user: "nonroot"
     volumes:
-      - "/mnt/cache/appdata/cloudflared:/home/nonroot/.cloudflared"
+      - "/DATA/AppData/cloudflared:/home/nonroot/.cloudflared"
     working_dir: "/home/nonroot"
 
   dockersocket:
@@ -1311,8 +1311,8 @@ services:
       - "/init"
     environment:
       - "HOST_CONTAINERNAME=freshrss"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "UMASK=022"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "PS1=$(whoami)@$(hostname):$(pwd)\\$ "
@@ -1352,7 +1352,7 @@ services:
     ports:
       - "8084:80/tcp"
     volumes:
-      - "/mnt/cache/appdata/freshrss:/config"
+      - "/DATA/AppData/freshrss:/config"
     working_dir: "/"
 
   goaccess:
@@ -1364,8 +1364,8 @@ services:
       - "/usr/local/bin/entrypoint.sh"
     environment:
       - "HOST_CONTAINERNAME=goaccess"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
     hostname: "3f144af284a6"
     image: "gregyankovoy/goaccess"
@@ -1384,8 +1384,8 @@ services:
     ports:
       - "7889:7889/tcp"
     volumes:
-      - "/mnt/user/appdata/goaccess:/config"
-      - "/mnt/cache/appdata/dmz/goaccess/log:/opt/log"
+      - "/DATA/AppData/goaccess:/config"
+      - "/DATA/AppData/dmz/goaccess/log:/opt/log"
     working_dir: "/goaccess"
 
   lidarr:
@@ -1394,8 +1394,8 @@ services:
       - "/init"
     environment:
       - "HOST_CONTAINERNAME=lidarr"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "PS1=$(whoami)@$(hostname):$(pwd)\\$ "
       - "HOME=/root"
@@ -1439,8 +1439,8 @@ services:
     ports:
       - "8686:8686/tcp"
     volumes:
-      - "/mnt/cache/appdata/lidarr:/config"
-      - "/mnt/user/data:/data"
+      - "/DATA/AppData/lidarr:/config"
+      - "/DATA:/data"
     working_dir: "/"
 
   mariadb:
@@ -1449,8 +1449,8 @@ services:
       - "/init"
     environment:
       - "HOST_CONTAINERNAME=mariadb"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "PS1=$(whoami)@$(hostname):$(pwd)\\$ "
       - "HOME=/root"
@@ -1494,7 +1494,7 @@ services:
       - "3306:3306/tcp"
     restart: "unless-stopped"
     volumes:
-      - "/mnt/cache/appdata/mariadb:/config"
+      - "/DATA/AppData/mariadb:/config"
     working_dir: "/"
 
   nextcloud:
@@ -1502,8 +1502,8 @@ services:
     entrypoint:
       - "/init"
     environment:
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "HOST_CONTAINERNAME=nextcloud"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "PS1=$(whoami)@$(hostname):$(pwd)\\$ "
@@ -1551,8 +1551,8 @@ services:
     ports:
       - "444:443/tcp"
     volumes:
-      - "/mnt/cache/appdata/nextcloud:/config"
-      - "/mnt/user/data/nextcloud:/data"
+      - "/DATA/AppData/nextcloud:/config"
+      - "/DATA/nextcloud:/data"
     working_dir: "/"
 
   ombi:
@@ -1561,8 +1561,8 @@ services:
       - "/init"
     environment:
       - "HOST_CONTAINERNAME=ombi"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "HOME=/config"
       - "TERM=xterm"
@@ -1609,7 +1609,7 @@ services:
     ports:
       - "3579:3579/tcp"
     volumes:
-      - "/mnt/cache/appdata/ombi:/config"
+      - "/DATA/AppData/ombi:/config"
     working_dir: "/"
 
   organizr:
@@ -1619,8 +1619,8 @@ services:
     environment:
       - "HOST_CONTAINERNAME=organizr"
       - "branch=develop"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "S6_REL=2.2.0.3"
       - "S6_ARCH=amd64"
@@ -1659,7 +1659,7 @@ services:
     ports:
       - "280:80/tcp"
     volumes:
-      - "/mnt/cache/appdata/organizrv2:/config"
+      - "/DATA/AppData/organizrv2:/config"
 
   overseerr:
     container_name: "overseerr"
@@ -1667,8 +1667,8 @@ services:
       - "/init"
     environment:
       - "HOST_CONTAINERNAME=overseerr"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "UMASK=002"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "APP_DIR=/app"
@@ -1706,7 +1706,7 @@ services:
     ports:
       - "5055:5055/tcp"
     volumes:
-      - "/mnt/cache/appdata/overseerr:/config"
+      - "/DATA/AppData/overseerr:/config"
 
   petio:
     container_name: "petio"
@@ -1714,8 +1714,8 @@ services:
       - "/init"
     environment:
       - "HOST_CONTAINERNAME=petio"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "UMASK=002"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "APP_DIR=/app"
@@ -1750,7 +1750,7 @@ services:
     ports:
       - "7777:7777/tcp"
     volumes:
-      - "/mnt/cache/appdata/petio:/config"
+      - "/DATA/AppData/petio:/config"
 
   pihole-template:
     container_name: "pihole-template"
@@ -1760,7 +1760,7 @@ services:
       - "UDP_PORT_53=53"
       - "TCP_PORT_443=443"
       - "ServerIPv6="
-      - "ServerIP=192.168.1.181"
+      - "ServerIP=10.0.0.6"
       - "WEBUIBOXEDLAYOUT=boxed"
       - "TCP_PORT_53=53"
       - "INTERFACE=br0"
@@ -1812,8 +1812,8 @@ services:
       - "br0"
     restart: "unless-stopped"
     volumes:
-      - "/mnt/cache/appdata/pihole/dnsmasq.d:/etc/dnsmasq.d"
-      - "/mnt/cache/appdata/pihole/pihole:/etc/pihole"
+      - "/DATA/AppData/pihole/dnsmasq.d:/etc/dnsmasq.d"
+      - "/DATA/AppData/pihole/pihole:/etc/pihole"
 
   plex:
     container_name: "plex"
@@ -1825,8 +1825,8 @@ services:
       - "HOST_CONTAINERNAME=plex"
       - "UMASK=022"
       - "VERSION=docker"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "HOME=/root"
       - "TERM=xterm"
@@ -1889,9 +1889,9 @@ services:
         max-size: "500m"
     network_mode: "host"
     volumes:
-      - "/mnt/user/temp/Transcode:/transcode"
-      - "/mnt/cache/appdata/plex:/config"
-      - "/mnt/user/data/media:/data"
+      - "/DATA/temp/Transcode:/transcode"
+      - "/DATA/AppData/plex:/config"
+      - "/DATA/media:/data"
     working_dir: "/"
 
   prowlarr:
@@ -1899,8 +1899,8 @@ services:
     entrypoint:
       - "/init"
     environment:
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "UMASK=022"
       - "HOST_CONTAINERNAME=prowlarr"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
@@ -1948,7 +1948,7 @@ services:
     ports:
       - "9696:9696/tcp"
     volumes:
-      - "/mnt/cache/appdata/prowlarr:/config"
+      - "/DATA/AppData/prowlarr:/config"
     working_dir: "/"
 
   pwm:
@@ -2004,7 +2004,7 @@ services:
     restart: "unless-stopped"
     user: "pwm"
     volumes:
-      - "/mnt/cache/appdata/pwm:/usr/share/pwm"
+      - "/DATA/AppData/pwm:/usr/share/pwm"
     working_dir: "/usr/local/tomcat"
 
   qbittorrentvpn:
@@ -2024,10 +2024,10 @@ services:
       - "STRICT_PORT_FORWARD=yes"
       - "ENABLE_PRIVOXY=no"
       - "UMASK=000"
-      - "PGID=100"
+      - "PGID=1000"
       - "VPN_ENABLED=yes"
       - "VPN_CLIENT=wireguard"
-      - "PUID=99"
+      - "PUID=1000"
       - "VPN_OPTIONS="
       - "NAME_SERVERS=209.222.18.222,84.200.69.80,37.235.1.174,1.1.1.1,209.222.18.218,37.235.1.177,84.200.70.40,1.0.0.1"
       - "DEBUG=false"
@@ -2060,9 +2060,9 @@ services:
     security_opt:
       - "label=disable"
     volumes:
-      - "/mnt/user/appdata/binhex-qbittorrentvpn:/config"
-      - "/mnt/user/data:/data"
-      - "/mnt/cache/appdata/binhex-qbittorrentvpn/vuetorrent:/vuetorrent"
+      - "/DATA/AppData/binhex-qbittorrentvpn:/config"
+      - "/DATA:/data"
+      - "/DATA/AppData/binhex-qbittorrentvpn/vuetorrent:/vuetorrent"
 
   radarr:
     container_name: "radarr"
@@ -2070,8 +2070,8 @@ services:
       - "/init"
     environment:
       - "HOST_CONTAINERNAME=radarr"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "PS1=$(whoami)@$(hostname):$(pwd)\\$ "
       - "HOME=/root"
@@ -2111,8 +2111,8 @@ services:
     ports:
       - "7878:7878/tcp"
     volumes:
-      - "/mnt/cache/appdata/radarr:/config"
-      - "/mnt/user/data:/data"
+      - "/DATA/AppData/radarr:/config"
+      - "/DATA:/data"
     working_dir: "/"
 
   readarr:
@@ -2120,10 +2120,10 @@ services:
     entrypoint:
       - "/init"
     environment:
-      - "PGID=100"
+      - "PGID=1000"
       - "UMASK=002"
       - "HOST_CONTAINERNAME=readarr"
-      - "PUID=99"
+      - "PUID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "APP_DIR=/app"
       - "CONFIG_DIR=/config"
@@ -2158,10 +2158,10 @@ services:
     ports:
       - "8787:8787/tcp"
     volumes:
-      - "/mnt/cache/appdata/readarr:/config"
-      - "/mnt/user/data/media/books:/books"
-      - "/mnt/user/data/media/calibre:/calibre"
-      - "/mnt/user/data/torrents:/data/torrents"
+      - "/DATA/AppData/readarr:/config"
+      - "/DATA/media/books:/books"
+      - "/DATA/media/calibre:/calibre"
+      - "/DATA/torrents:/data/torrents"
 
   redis:
     command:
@@ -2211,8 +2211,8 @@ services:
       - "/init"
     environment:
       - "HOST_CONTAINERNAME=requestrr"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "UMASK=002"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "APP_DIR=/app"
@@ -2247,7 +2247,7 @@ services:
     ports:
       - "4545:4545/tcp"
     volumes:
-      - "/mnt/cache/appdata/requestrr:/config"
+      - "/DATA/AppData/requestrr:/config"
 
   scrutiny:
     command:
@@ -2287,10 +2287,10 @@ services:
     security_opt:
       - "label=disable"
     volumes:
-      - "/mnt/cache/appdata/scrutiny:/opt/scrutiny/influxdb"
+      - "/DATA/AppData/scrutiny:/opt/scrutiny/influxdb"
       - "/run/udev:/run/udev:ro"
       - "/dev/disk:/dev/disk:ro"
-      - "/mnt/cache/appdata/scrutiny:/opt/scrutiny/config"
+      - "/DATA/AppData/scrutiny:/opt/scrutiny/config"
     working_dir: "/opt/scrutiny"
 
   sonarr:
@@ -2299,8 +2299,8 @@ services:
       - "/init"
     environment:
       - "HOST_CONTAINERNAME=sonarr"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "HOME=/root"
       - "TERM=xterm"
@@ -2344,8 +2344,8 @@ services:
     ports:
       - "8989:8989/tcp"
     volumes:
-      - "/mnt/user/data:/data"
-      - "/mnt/cache/appdata/sonarr:/config"
+      - "/DATA:/data"
+      - "/DATA/AppData/sonarr:/config"
       - "/dev/rtc:/dev/rtc:ro"
     working_dir: "/"
 
@@ -2360,8 +2360,8 @@ services:
       - "./start.sh"
     environment:
       - "HOST_CONTAINERNAME=tautulli"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "TZ=UTC"
       - "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "GPG_KEY=${TAUTULLI_GPG_KEY}"
@@ -2389,8 +2389,8 @@ services:
     ports:
       - "8181:8181/tcp"
     volumes:
-      - "/mnt/cache/appdata/plex/Library/Application Support/Plex Media Server/Logs:/plexlogs"
-      - "/mnt/cache/appdata/tautulli:/config"
+      - "/DATA/AppData/plex/Library/Application Support/Plex Media Server/Logs:/plexlogs"
+      - "/DATA/AppData/tautulli:/config"
     working_dir: "/app"
 
   unmanic:
@@ -2402,8 +2402,8 @@ services:
     environment:
       - "NVIDIA_PATCH_VERSION="
       - "HOST_CONTAINERNAME=unmanic"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "NVIDIA_VISIBLE_DEVICES=all"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "HOME=/root"
@@ -2441,12 +2441,12 @@ services:
     ports:
       - "8889:8888/tcp"
     volumes:
-      - "/mnt/user/data/media/pictures:/library/pictures"
-      - "/mnt/user/data/media/tv:/library/tv"
-      - "/mnt/user/temp:/tmp/unmanic"
-      - "/mnt/cache/appdata/unmanic:/config"
-      - "/mnt/user/data/media/movies:/library/movies"
-      - "/mnt/user/data/media/music:/library/music"
+      - "/DATA/media/pictures:/library/pictures"
+      - "/DATA/media/tv:/library/tv"
+      - "/DATA/temp:/tmp/unmanic"
+      - "/DATA/AppData/unmanic:/config"
+      - "/DATA/media/movies:/library/movies"
+      - "/DATA/media/music:/library/music"
 
   # hbbs:
   #   container_name: hbbs
@@ -2458,7 +2458,7 @@ services:
   #   image: rustdesk/rustdesk-server:latest
   #   command: hbbs -r example.com:21117
   #   volumes:
-  #     - /mnt/cache/appdata/rustdesk-hbbs/:/root
+  #     - /DATA/AppData/rustdesk-hbbs/:/root
   #   networks:
   #     - "alphaproxy"
   #   depends_on:
@@ -2473,7 +2473,7 @@ services:
   #   image: rustdesk/rustdesk-server:latest
   #   command: hbbr
   #   volumes:
-  #     - /mnt/cache/appdata/rustdesk-hbbr:/root
+  #     - /DATA/AppData/rustdesk-hbbr:/root
   #   networks:
   #     - "alphaproxy"
   #   restart: unless-stopped

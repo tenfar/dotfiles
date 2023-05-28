@@ -116,7 +116,7 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/Sync</HostDir>
+      <HostDir>/DATA/AppData/Sync</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -135,6 +135,6 @@
   <Config Type="Port" Name="UDP Data Transfer Port" Target="3838" Default="3838" Mode="udp" Display="advanced-hide" Required="true"
        Description="This is Sync's UDP port for data transfers.">3838</Config>
 
-  <Config Type="Path" Name="Config Storage Path" Target="/config" Default="/mnt/user/appdata/Sync" Mode="rw" Display="advanced-hide" Required="true"
-       Description="This is where Sync will store its databases and configuration.">/mnt/user/appdata/Sync</Config>
+  <Config Type="Path" Name="Config Storage Path" Target="/config" Default="/DATA/AppData/Sync" Mode="rw" Display="advanced-hide" Required="true"
+       Description="This is where Sync will store its databases and configuration.">/DATA/AppData/Sync</Config>
 </Container>

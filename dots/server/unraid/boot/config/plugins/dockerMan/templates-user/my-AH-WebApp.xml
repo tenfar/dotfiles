@@ -38,7 +38,7 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/AH-WebApp/latest</HostDir>
+      <HostDir>/DATA/AppData/AH-WebApp/latest</HostDir>
       <ContainerDir>/root/.aspnet/DataProtection-Keys</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -47,5 +47,5 @@
   <Labels/>
   <Config Name="Host Port 1" Target="80" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8088</Config>
   <Config Name="Host Port 2" Target="443" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">17443</Config>
-  <Config Name="Data Protection Keys" Target="/root/.aspnet/DataProtection-Keys" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/AH-WebApp/latest</Config>
+  <Config Name="Data Protection Keys" Target="/root/.aspnet/DataProtection-Keys" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/AppData/AH-WebApp/latest</Config>
 </Container>

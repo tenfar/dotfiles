@@ -37,17 +37,17 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/temp/Transcode/</HostDir>
+      <HostDir>/DATA/temp/Transcode/</HostDir>
       <ContainerDir>/transcode</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/data/media/</HostDir>
+      <HostDir>/DATA/media/</HostDir>
       <ContainerDir>/data</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/Plex-Media-Server</HostDir>
+      <HostDir>/DATA/AppData/Plex-Media-Server</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -75,12 +75,12 @@
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Host Path 2" Target="/transcode" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/temp/Transcode/</Config>
+  <Config Name="Host Path 2" Target="/transcode" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/DATA/temp/Transcode/</Config>
   <Config Name="Key 1" Target="PLEX_CLAIM" Default="Insert Token from https://plex.tv/claim" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">claim-bVRvUtuPLUu9cLwx7xZB</Config>
   <Config Name="Key 2" Target="PLEX_UID" Default="99" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="Key 3" Target="PLEX_GID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
   <Config Name="Key 4" Target="VERSION" Default="latest" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">latest</Config>
-  <Config Name="data" Target="/data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/data/media/</Config>
+  <Config Name="data" Target="/data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/media/</Config>
   <Config Name="/dev/dri/" Target="" Default="" Mode="" Description="Intel Quick Sync" Type="Device" Display="always" Required="false" Mask="false">/dev/dri/</Config>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/Plex-Media-Server" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/Plex-Media-Server</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/DATA/AppData/Plex-Media-Server" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/DATA/AppData/Plex-Media-Server</Config>
 </Container>

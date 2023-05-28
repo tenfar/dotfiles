@@ -47,7 +47,7 @@ services:
       - "8fe2e2394d8c8d2a0dd3afdb7ec33b7092d53010eab53cf3317f57b7feb20a08:/run/samba"
       - "ef9cf24bea51f4fb04afc6cf1ea059e8c926d938d5ffe18acb0d55f180d31258:/var/cache/samba"
       - "697744c7847508a1454454aad57d5870c67d7934fb068642cc4be988c093866d:/var/lib/samba"
-      - "/mnt/user/timemachine:/opt/timemachine"
+      - "/DATA/timemachine:/opt/timemachine"
     working_dir: "/"
 
   nextcloud:
@@ -55,8 +55,8 @@ services:
     entrypoint:
       - "/init"
     environment:
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "HOST_CONTAINERNAME=nextcloud"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "PS1=$(whoami)@$(hostname):$(pwd)\\$ "
@@ -104,8 +104,8 @@ services:
     ports:
       - "444:443/tcp"
     volumes:
-      - "/mnt/cache/appdata/nextcloud:/config"
-      - "/mnt/user/data/nextcloud:/data"
+      - "/DATA/AppData/nextcloud:/config"
+      - "/DATA/nextcloud:/data"
     working_dir: "/"
 
   Krusader:
@@ -126,8 +126,8 @@ services:
       - "RFB_PORT=5900"
       - "TURBOVNC_PARAMS=-securitytypes none"
       - "UMASK=000"
-      - "UID=99"
-      - "GID=100"
+      - "UID=1000"
+      - "UID=1000"
       - "DATA_PERM=770"
       - "USER=krusader"
     hostname: "b54e04622661"
@@ -151,8 +151,8 @@ services:
     restart: "unless-stopped"
     volumes:
       - "/mnt:/UNRAID"
-      - "/mnt/cache/appdata/krusader:/krusader"
-      - "/mnt/user:/mnt/user"
+      - "/DATA/AppData/krusader:/krusader"
+      - "/DATA:/DATA"
 
   Czkawka:
     command:
@@ -160,10 +160,10 @@ services:
     container_name: "Czkawka"
     environment:
       - "HOST_CONTAINERNAME=Czkawka"
-      - "USER_ID=99"
+      - "USER_ID=1000"
       - "DISPLAY_WIDTH=1280"
       - "SECURE_CONNECTION=0"
-      - "GROUP_ID=100"
+      - "GROUP_ID=1000"
       - "UMASK=000"
       - "APP_NICENESS="
       - "DISPLAY_HEIGHT=768"
@@ -204,9 +204,9 @@ services:
       - "7821:5800/tcp"
       - "7921:5900/tcp"
     volumes:
-      - "/mnt/cache/appdata/Czkawka:/config"
-      - "/mnt/user:/storage"
-      - "/mnt/user/temp:/trash"
+      - "/DATA/AppData/Czkawka:/config"
+      - "/DATA:/storage"
+      - "/DATA/temp:/trash"
     working_dir: "/tmp"
 
 networks:

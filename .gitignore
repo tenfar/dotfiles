@@ -87,3 +87,7 @@ dots/linux/hyprland/home/.config/OpenRGB/logs
 # ░█░█░░█░░▄▀▄░█░█░▀▀█
 # ░▀░▀░▀▀▀░▀░▀░▀▀▀░▀▀▀
 dots/nixos/.direnv/*
+
+
+scripts/os/windows/**
+dots/windows/**

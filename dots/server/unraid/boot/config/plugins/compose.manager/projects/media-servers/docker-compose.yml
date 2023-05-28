@@ -10,8 +10,8 @@ services:
       - "HOST_CONTAINERNAME=plex"
       - "UMASK=022"
       - "VERSION=docker"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "HOME=/root"
       - "TERM=xterm"
@@ -74,9 +74,9 @@ services:
         max-size: "500m"
     network_mode: "host"
     volumes:
-      - "/mnt/user/temp/Transcode:/transcode"
-      - "/mnt/cache/appdata/plex:/config"
-      - "/mnt/user/data/media:/data"
+      - "/DATA/temp/Transcode:/transcode"
+      - "/DATA/AppData/plex:/config"
+      - "/DATA/media:/data"
     working_dir: "/"
 
   Stash:
@@ -108,12 +108,12 @@ services:
     ports:
       - "6969:9999/tcp"
     volumes:
-      - "/mnt/user/data/media/shadowplay/temp/local/AppData/temp2:/data2"
-      - "/mnt/cache/appdata/stash/generated:/generated"
-      - "/mnt/cache/appdata/stash/metadata:/metadata"
-      - "/mnt/cache/appdata/stash/config:/root/.stash"
-      - "/mnt/cache/appdata/stash/cache:/cache"
-      - "/mnt/user/data/media/shadowplay/temp/local/AppData/temp:/data"
+      - "/DATA/media/shadowplay/temp/local/AppData/temp2:/data2"
+      - "/DATA/AppData/stash/generated:/generated"
+      - "/DATA/AppData/stash/metadata:/metadata"
+      - "/DATA/AppData/stash/config:/root/.stash"
+      - "/DATA/AppData/stash/cache:/cache"
+      - "/DATA/media/shadowplay/temp/local/AppData/temp:/data"
 
   Kavita:
     command:
@@ -141,8 +141,8 @@ services:
     ports:
       - "5002:5000/tcp"
     volumes:
-      - "/mnt/cache/appdata/kavita:/kavita/config"
-      - "/mnt/user/data/media/books:/library"
+      - "/DATA/AppData/kavita:/kavita/config"
+      - "/DATA/media/books:/library"
     working_dir: "/kavita"
 
   PhotoPrism:
@@ -161,7 +161,7 @@ services:
       - "PHOTOPRISM_SITE_AUTHOR="
       - "PHOTOPRISM_THUMB_FILTER=lanczos"
       - "PHOTOPRISM_EXPERIMENTAL=false"
-      - "PHOTOPRISM_UID=99"
+      - "PHOTOPRISM_UID=1000"
       - "PHOTOPRISM_SITE_CAPTION=Browse Your Life"
       - "PHOTOPRISM_JPEG_SIZE=7680"
       - "PHOTOPRISM_THUMB_UNCACHED=false"
@@ -169,7 +169,7 @@ services:
       - "PHOTOPRISM_THUMB_SIZE_UNCACHED=7680"
       - "PHOTOPRISM_DATABASE_DSN=photoprism:ant*ctv6pkv5GDK-akt@tcp(mariadb:3306)/photoprism?parseTime=true"
       - "PHOTOPRISM_AUTO_INDEX=180"
-      - "PHOTOPRISM_GID=100"
+      - "PHOTOPRISM_UID=1000"
       - "PHOTOPRISM_UPLOAD_NSFW=true"
       - "PHOTOPRISM_DATABASE_DRIVER=mysql"
       - "PHOTOPRISM_DARKTABLE_PRESETS=false"
@@ -241,10 +241,10 @@ services:
       - "2342:2342/tcp"
     restart: "unless-stopped"
     volumes:
-      - "/mnt/user/backup/Photos:/backupphotos"
-      - "/mnt/user/data/media/familyphotos:/photoprism/import"
-      - "/mnt/user/data/media/photoprism:/photoprism/originals"
-      - "/mnt/cache/appdata/photoprism:/photoprism/storage"
+      - "/DATA/backup/Photos:/backupphotos"
+      - "/DATA/media/familyphotos:/photoprism/import"
+      - "/DATA/media/photoprism:/photoprism/originals"
+      - "/DATA/AppData/photoprism:/photoprism/storage"
     working_dir: "/photoprism"
 
   binhex-jellyfin:
@@ -258,8 +258,8 @@ services:
     environment:
       - "HOST_CONTAINERNAME=binhex-jellyfin"
       - "UMASK=000"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "HOME=/home/nobody"
       - "TERM=xterm"
@@ -282,8 +282,8 @@ services:
     ports:
       - "8096:8096/tcp"
     volumes:
-      - "/mnt/cache/appdata/binhex-jellyfin:/config"
-      - "/mnt/user/data/media:/media"
+      - "/DATA/AppData/binhex-jellyfin:/config"
+      - "/DATA/media:/media"
 
 networks:
   br0:

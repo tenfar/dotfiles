@@ -47,7 +47,7 @@ services:
     ports:
       - "5001:80/tcp"
     volumes:
-      - "/mnt/user/appdata/plex-library-cleaner:/config"
+      - "/DATA/AppData/plex-library-cleaner:/config"
     working_dir: "/app"
 
   PhotoStructure:
@@ -57,10 +57,10 @@ services:
       - "--"
       - "/ps/app/docker-entrypoint.sh"
     environment:
-      - "PGID=100"
+      - "PGID=1000"
       - "PS_LOG_LEVEL=error"
       - "HOST_CONTAINERNAME=PhotoStructure"
-      - "PUID=99"
+      - "PUID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "NODE_VERSION=16.2.0"
       - "YARN_VERSION=1.22.5"
@@ -81,13 +81,13 @@ services:
     ports:
       - "1787:1787/tcp"
     volumes:
-      - "/mnt/user/appdata/photostructure/config:/ps/config"
-      - "/mnt/user/data/media/pictures:/ps/library"
-      - "/mnt/user/appdata/photostructure/logs:/ps/logs"
-      - "/mnt/cache/appdata/photostructure/tmp:/ps/tmp"
-      - "/mnt/user/backup/Photos:/backupphotos"
+      - "/DATA/AppData/photostructure/config:/ps/config"
+      - "/DATA/media/pictures:/ps/library"
+      - "/DATA/AppData/photostructure/logs:/ps/logs"
+      - "/DATA/AppData/photostructure/tmp:/ps/tmp"
+      - "/DATA/backup/Photos:/backupphotos"
       - "/mnt/disks/dropbox/Pictures/Austins Photos:/dropboxphotos"
-      - "/mnt/user/data/media/familyphotos:/familyphotos"
+      - "/DATA/media/familyphotos:/familyphotos"
     working_dir: "/ps/app"
 
 networks:

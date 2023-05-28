@@ -27,12 +27,12 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/Home-Assistant-Core</HostDir>
+      <HostDir>/DATA/AppData/Home-Assistant-Core</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
   <Environment/>
   <Labels/>
-  <Config Name="Config Directory" Target="/config" Default="/mnt/cache/app_config/home-assistant" Mode="rw" Description="This path is where Home Assistant will store it's configuration files." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/Home-Assistant-Core</Config>
+  <Config Name="Config Directory" Target="/config" Default="/mnt/cache/app_config/home-assistant" Mode="rw" Description="This path is where Home Assistant will store it's configuration files." Type="Path" Display="always" Required="true" Mask="false">/DATA/AppData/Home-Assistant-Core</Config>
 </Container>

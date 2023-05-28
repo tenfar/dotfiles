@@ -50,7 +50,7 @@ or other application using the libvirt API.
     <emulator>/usr/local/sbin/qemu</emulator>
     <disk type='file' device='disk'>
       <driver name='qemu' type='vmdk' cache='writeback'/>
-      <source file='/mnt/user/domains/Hassio/haos_ova-6.5.vmdk'/>
+      <source file='/DATA/domains/Hassio/haos_ova-6.5.vmdk'/>
       <target dev='hdc' bus='virtio'/>
       <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>

@@ -4,7 +4,7 @@
 
 
 
-while [ ! -d /mnt/user/appdata/macinabox/autoinstall/ ]
+while [ ! -d /DATA/AppData/macinabox/autoinstall/ ]
 do
   sleep 5 #wait 5 seconds before rechecking
 done

@@ -37,12 +37,12 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/PlexMediaServer</HostDir>
+      <HostDir>/DATA/AppData/PlexMediaServer</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
   <Environment/>
   <Labels/>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/PlexMediaServer" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/PlexMediaServer</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/DATA/AppData/PlexMediaServer" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/DATA/AppData/PlexMediaServer</Config>
 </Container>

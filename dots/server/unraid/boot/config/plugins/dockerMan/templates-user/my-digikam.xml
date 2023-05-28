@@ -33,12 +33,12 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/digikam</HostDir>
+      <HostDir>/DATA/AppData/digikam</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/data/media/pictures/</HostDir>
+      <HostDir>/DATA/media/pictures/</HostDir>
       <ContainerDir>/pictures</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -57,8 +57,8 @@
   </Environment>
   <Labels/>
   <Config Name="WebUI" Target="3000" Default="3000" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">3000</Config>
-  <Config Name="Appdata" Target="/config" Default="" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/digikam</Config>
+  <Config Name="Appdata" Target="/config" Default="" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="false" Mask="false">/DATA/AppData/digikam</Config>
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
-  <Config Name="Pictures" Target="/pictures" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/data/media/pictures/</Config>
+  <Config Name="Pictures" Target="/pictures" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/media/pictures/</Config>
 </Container>

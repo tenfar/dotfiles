@@ -49,12 +49,12 @@ For more detailed instructions, refer to the support thread (https://forums.unra
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/Grafana-Unraid-Stack</HostDir>
+      <HostDir>/DATA/AppData/Grafana-Unraid-Stack</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/Grafana-Unraid-Stack/data</HostDir>
+      <HostDir>/DATA/AppData/Grafana-Unraid-Stack/data</HostDir>
       <ContainerDir>/data</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -142,8 +142,8 @@ For more detailed instructions, refer to the support thread (https://forums.unra
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Config" Target="/config" Default="/mnt/user/appdata/Grafana-Unraid-Stack/config" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/Grafana-Unraid-Stack</Config>
-  <Config Name="Data (db)" Target="/data" Default="/mnt/user/appdata/Grafana-Unraid-Stack/data" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/Grafana-Unraid-Stack/data</Config>
+  <Config Name="Config" Target="/config" Default="/DATA/AppData/Grafana-Unraid-Stack/config" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/AppData/Grafana-Unraid-Stack</Config>
+  <Config Name="Data (db)" Target="/data" Default="/DATA/AppData/Grafana-Unraid-Stack/data" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/AppData/Grafana-Unraid-Stack/data</Config>
   <Config Name="USE_HDDTEMP" Target="USE_HDDTEMP" Default="yes|no" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">no</Config>
   <Config Name="INFLUXDB_HTTP_PORT" Target="INFLUXDB_HTTP_PORT" Default="8086" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">8086</Config>
   <Config Name="LOKI_PORT" Target="LOKI_PORT" Default="3100" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">3100</Config>

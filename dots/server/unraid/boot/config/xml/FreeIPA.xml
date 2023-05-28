@@ -50,14 +50,14 @@ or other application using the libvirt API.
     <emulator>/usr/local/sbin/qemu</emulator>
     <disk type='file' device='disk'>
       <driver name='qemu' type='raw' cache='writeback'/>
-      <source file='/mnt/user/domains/FreeIPA/vdisk1.img'/>
+      <source file='/DATA/domains/FreeIPA/vdisk1.img'/>
       <target dev='hdc' bus='virtio'/>
       <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
     </disk>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
-      <source file='/mnt/user/isos/Linux/Red Hat/Fedora/Fedora-Server-dvd-x86_64-35-1.2.iso'/>
+      <source file='/DATA/isos/Linux/Red Hat/Fedora/Fedora-Server-dvd-x86_64-35-1.2.iso'/>
       <target dev='hda' bus='sata'/>
       <readonly/>
       <boot order='2'/>

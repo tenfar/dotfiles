@@ -28,12 +28,12 @@ generated: where the previews, screenshots, transcoded files, and sprites will b
   <DonateLink>http://paypal.me/corneliousjd</DonateLink>
   <Requires/>
   <Config Name="Port" Target="9999" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">6969</Config>
-  <Config Name="Data Path" Target="/data" Default="" Mode="rw" Description="Path to your adult media content." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/data/media/shadowplay/temp/local/AppData/temp</Config>
-  <Config Name="Config Path" Target="/root/.stash" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/stash/config</Config>
-  <Config Name="Metadata Path" Target="/metadata" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/stash/metadata</Config>
-  <Config Name="Cache Path" Target="/cache" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/stash/cache</Config>
-  <Config Name="Generated Path" Target="/generated" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/stash/generated</Config>
-  <Config Name="Data Path 2" Target="/data2" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/data/media/shadowplay/temp/local/AppData/temp2</Config>
+  <Config Name="Data Path" Target="/data" Default="" Mode="rw" Description="Path to your adult media content." Type="Path" Display="always" Required="false" Mask="false">/DATA/media/shadowplay/temp/local/AppData/temp</Config>
+  <Config Name="Config Path" Target="/root/.stash" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/AppData/stash/config</Config>
+  <Config Name="Metadata Path" Target="/metadata" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/AppData/stash/metadata</Config>
+  <Config Name="Cache Path" Target="/cache" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/AppData/stash/cache</Config>
+  <Config Name="Generated Path" Target="/generated" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/AppData/stash/generated</Config>
+  <Config Name="Data Path 2" Target="/data2" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/media/shadowplay/temp/local/AppData/temp2</Config>
   <Config Name="Cache Variable" Target="STASH_CACHE" Default="" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">/cache/</Config>
   <Config Name="Metadata Variable" Target="STASH_METADATA" Default="" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">/metadata/</Config>
   <Config Name="Generated Variable" Target="STASH_GENERATED" Default="" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">/generated/</Config>

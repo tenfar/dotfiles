@@ -38,17 +38,17 @@
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/Backups/</HostDir>
+      <HostDir>/DATA/Backups/</HostDir>
       <ContainerDir>/backups</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/</HostDir>
+      <HostDir>/DATA/</HostDir>
       <ContainerDir>/source</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/duplicati</HostDir>
+      <HostDir>/DATA/AppData/duplicati</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -68,9 +68,9 @@
   <Labels/>
   <Config Name="Host Port 1" Target="8200" Default="8200" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8200</Config>
   <Config Name="Host Path 2" Target="/tmp" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/tmp/</Config>
-  <Config Name="Host Path 3" Target="/backups" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Backups/</Config>
-  <Config Name="Host Path 4" Target="/source" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/</Config>
+  <Config Name="Host Path 3" Target="/backups" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/DATA/Backups/</Config>
+  <Config Name="Host Path 4" Target="/source" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/DATA/</Config>
   <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="Key 2" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/duplicati" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/duplicati</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/DATA/AppData/duplicati" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/DATA/AppData/duplicati</Config>
 </Container>

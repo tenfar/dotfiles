@@ -60,17 +60,17 @@ https://github.com/jlesage/docker-czkawka/blob/master/README.md&#xD;
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user</HostDir>
+      <HostDir>/DATA</HostDir>
       <ContainerDir>/storage</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/temp/</HostDir>
+      <HostDir>/DATA/temp/</HostDir>
       <ContainerDir>/trash</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/Czkawka</HostDir>
+      <HostDir>/DATA/AppData/Czkawka</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -118,9 +118,9 @@ https://github.com/jlesage/docker-czkawka/blob/master/README.md&#xD;
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Storage" Target="/storage" Default="/mnt/user" Mode="rw" Description="This location contains files from your host that need to be accessible by the application.&amp;lt;br&amp;gt;Container path: /storage" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user</Config>
-  <Config Name="Trash" Target="/trash" Default="" Mode="rw" Description="This is where duplicated files are moved files when they are sent to trash.  Usage of the trash is optional.&amp;lt;br&amp;gt;Container path: /trash" Type="Path" Display="always-hide" Required="false" Mask="false">/mnt/user/temp/</Config>
-  <Config Name="Config Directory" Target="/config" Default="/mnt/user/appdata/czkawka" Mode="rw" Description="This is where the application stores its configuration, log and any files needing persistency.&amp;lt;br&amp;gt;Container path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/Czkawka</Config>
+  <Config Name="Storage" Target="/storage" Default="/DATA" Mode="rw" Description="This location contains files from your host that need to be accessible by the application.&amp;lt;br&amp;gt;Container path: /storage" Type="Path" Display="always-hide" Required="true" Mask="false">/DATA</Config>
+  <Config Name="Trash" Target="/trash" Default="" Mode="rw" Description="This is where duplicated files are moved files when they are sent to trash.  Usage of the trash is optional.&amp;lt;br&amp;gt;Container path: /trash" Type="Path" Display="always-hide" Required="false" Mask="false">/DATA/temp/</Config>
+  <Config Name="Config Directory" Target="/config" Default="/DATA/AppData/czkawka" Mode="rw" Description="This is where the application stores its configuration, log and any files needing persistency.&amp;lt;br&amp;gt;Container path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/DATA/AppData/Czkawka</Config>
   <Config Name="User ID" Target="USER_ID" Default="99" Mode="" Description="ID of the user the application runs as." Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
   <Config Name="Group ID" Target="GROUP_ID" Default="100" Mode="" Description="ID of the group the application runs as." Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
   <Config Name="Umask" Target="UMASK" Default="000" Mode="" Description="Mask that controls how file permissions are set for newly created files. The value of the mask is in octal notation." Type="Variable" Display="advanced" Required="false" Mask="false">000</Config>

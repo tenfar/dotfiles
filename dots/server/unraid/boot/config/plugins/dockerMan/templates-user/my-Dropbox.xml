@@ -20,7 +20,7 @@ After installing the Dropbox container&#xD;
 - the container automatically starts syncing&#xD;
 &#xD;
 IMPORTANT:&#xD;
-The official Dropbox client (which is used in this container) does not support FUSE filesystems. Because of that its NOT possible to use the path "/mnt/user" as your user file path. You MUST use one of these direct disk paths:&#xD;
+The official Dropbox client (which is used in this container) does not support FUSE filesystems. Because of that its NOT possible to use the path "/DATA" as your user file path. You MUST use one of these direct disk paths:&#xD;
 &#xD;
 If your Dropbox share has the cache setting "No":&#xD;
 /mnt/disk1/Dropbox&#xD;
@@ -50,7 +50,7 @@ After installing the Dropbox container&#xD;
 - the container automatically starts syncing&#xD;
 &#xD;
 IMPORTANT:&#xD;
-The official Dropbox client (which is used in this container) does not support FUSE filesystems. Because of that its NOT possible to use the path "/mnt/user" as your user file path. You MUST use one of these direct disk paths:&#xD;
+The official Dropbox client (which is used in this container) does not support FUSE filesystems. Because of that its NOT possible to use the path "/DATA" as your user file path. You MUST use one of these direct disk paths:&#xD;
 &#xD;
 If your Dropbox share has the cache setting "No":&#xD;
 /mnt/disk1/Dropbox&#xD;
@@ -70,7 +70,7 @@ You could even use "/mnt/disk1/Dropbox" with the cache Option "Yes", but if you 
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/Dropbox</HostDir>
+      <HostDir>/DATA/AppData/Dropbox</HostDir>
       <ContainerDir>/opt/dropbox/.dropbox</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -88,8 +88,8 @@ You could even use "/mnt/disk1/Dropbox" with the cache Option "Yes", but if you 
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Dropbox user files" Target="/opt/dropbox/Dropbox" Default="" Mode="rw" Description="Read the description! Do not set this path to /mnt/user..." Type="Path" Display="always" Required="false" Mask="false">/mnt/disk1/Dropbox</Config>
-  <Config Name="Dropbox settings" Target="/opt/dropbox/.dropbox" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/Dropbox</Config>
+  <Config Name="Dropbox user files" Target="/opt/dropbox/Dropbox" Default="" Mode="rw" Description="Read the description! Do not set this path to /DATA..." Type="Path" Display="always" Required="false" Mask="false">/mnt/disk1/Dropbox</Config>
+  <Config Name="Dropbox settings" Target="/opt/dropbox/.dropbox" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/DATA/AppData/Dropbox</Config>
   <Config Name="Host Key 1" Target="DROPBOX_UID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="Host Key 2" Target="DROPBOX_GID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
 </Container>

@@ -6,8 +6,8 @@ services:
     container_name: "Virt-Manager"
     environment:
       - "HOSTS=['qemu:///system']"
-      - "USER_ID=99"
-      - "GROUP_ID=100"
+      - "USER_ID=1000"
+      - "GROUP_ID=1000"
       - "UMASK=000"
       - "HOST_CONTAINERNAME=Virt-Manager"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
@@ -36,10 +36,10 @@ services:
     ports:
       - "8185:80/tcp"
     volumes:
-      - "/mnt/cache/appdata/vman/root:/root"
-      - "/mnt/user/isos:/mnt/isos"
+      - "/DATA/AppData/vman/root:/root"
+      - "/DATA/isos:/mnt/isos"
       - "/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock"
-      - "/mnt/user/domains:/var/lib/libvirt/images"
+      - "/DATA/domains:/var/lib/libvirt/images"
       - "/dev/kvm:/dev/kvm"
 
 networks:

@@ -74,7 +74,7 @@ Other options dont change&#xD;
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/vm_custom_icons</HostDir>
+      <HostDir>/DATA/AppData/vm_custom_icons</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -137,6 +137,6 @@ Other options dont change&#xD;
   <Config Name="Enable sucess tune on icon load" Target="tune" Default="no|yes" Mode="" Description="Enable tune on sucess. (you must have a beep speaker)" Type="Variable" Display="always" Required="false" Mask="false">no</Config>
   <Config Name="Time to wait before exit" Target="sleeptimehuman" Default="30 seconds|1 minute|2 minutes|5 minutes|10 minutes" Mode="" Description="Time to wait before stopping container after syncing icons " Type="Variable" Display="advanced" Required="false" Mask="false">30 seconds</Config>
   <Config Name="vm manager icon location" Target="/unraid_vm_icons" Default="" Mode="rw" Description="location on server where Unraid stores vm icons (dont change this)" Type="Path" Display="advanced" Required="false" Mask="false">/usr/local/emhttp/plugins/dynamix.vm.manager/templates/images</Config>
-  <Config Name="appdata" Target="/config" Default="" Mode="rw" Description="appdata" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/vm_custom_icons</Config>
+  <Config Name="appdata" Target="/config" Default="" Mode="rw" Description="appdata" Type="Path" Display="advanced" Required="false" Mask="false">/DATA/AppData/vm_custom_icons</Config>
   <Config Name="beep speaker" Target="" Default="" Mode="" Description="" Type="Device" Display="advanced" Required="false" Mask="false">/dev/tty0</Config>
 </Container>

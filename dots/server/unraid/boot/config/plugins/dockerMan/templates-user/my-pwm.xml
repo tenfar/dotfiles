@@ -33,7 +33,7 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/pwm</HostDir>
+      <HostDir>/DATA/AppData/pwm</HostDir>
       <ContainerDir>/usr/share/pwm</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -48,5 +48,5 @@
   <Labels/>
   <Config Name="Host Port 1" Target="8080" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8282</Config>
   <Config Name="File Lock Bypass" Target="PWM_APPLICATIONFLAGS" Default="PWM_APPLICATIONFLAGS" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">NoFileLock</Config>
-  <Config Name="appdata" Target="/usr/share/pwm" Default="" Mode="rw" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/pwm</Config>
+  <Config Name="appdata" Target="/usr/share/pwm" Default="" Mode="rw" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/DATA/AppData/pwm</Config>
 </Container>

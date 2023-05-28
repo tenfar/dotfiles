@@ -221,7 +221,7 @@
   <Environment/>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/PlexMediaServer</HostDir>
+      <HostDir>/DATA/AppData/PlexMediaServer</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>

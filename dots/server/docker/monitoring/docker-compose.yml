@@ -46,8 +46,8 @@ services:
       - "/etc:/rootfs/etc:ro"
       - "/var/run/utmp:/var/run/utmp:ro"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "/mnt/cache/appdata/Grafana-Unraid-Stack:/config"
-      - "/mnt/cache/appdata/Grafana-Unraid-Stack/data:/data"
+      - "/DATA/AppData/Grafana-Unraid-Stack:/config"
+      - "/DATA/AppData/Grafana-Unraid-Stack/data:/data"
       - "/proc:/rootfs/proc:ro"
       - "/sys:/rootfs/sys:ro"
       - "/run/udev:/run/udev:ro"
@@ -102,8 +102,8 @@ services:
       - "/usr/local/bin/entrypoint.sh"
     environment:
       - "HOST_CONTAINERNAME=goaccess"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
     hostname: "3f144af284a6"
     image: "gregyankovoy/goaccess"
@@ -122,8 +122,8 @@ services:
     ports:
       - "7889:7889/tcp"
     volumes:
-      - "/mnt/user/appdata/goaccess:/config"
-      - "/mnt/cache/appdata/dmz/goaccess/log:/opt/log"
+      - "/DATA/AppData/goaccess:/config"
+      - "/DATA/AppData/dmz/goaccess/log:/opt/log"
     working_dir: "/goaccess"
 
   scrutiny:
@@ -164,10 +164,10 @@ services:
     security_opt:
       - "label=disable"
     volumes:
-      - "/mnt/cache/appdata/scrutiny:/opt/scrutiny/influxdb"
+      - "/DATA/AppData/scrutiny:/opt/scrutiny/influxdb"
       - "/run/udev:/run/udev:ro"
       - "/dev/disk:/dev/disk:ro"
-      - "/mnt/cache/appdata/scrutiny:/opt/scrutiny/config"
+      - "/DATA/AppData/scrutiny:/opt/scrutiny/config"
     working_dir: "/opt/scrutiny"
 
   tautulli:
@@ -181,8 +181,8 @@ services:
       - "./start.sh"
     environment:
       - "HOST_CONTAINERNAME=tautulli"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "TZ=UTC"
       - "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "GPG_KEY=${TAUTULLI_GPG_KEY}"
@@ -210,8 +210,8 @@ services:
     ports:
       - "8181:8181/tcp"
     volumes:
-      - "/mnt/cache/appdata/plex/Library/Application Support/Plex Media Server/Logs:/plexlogs"
-      - "/mnt/cache/appdata/tautulli:/config"
+      - "/DATA/AppData/plex/Library/Application Support/Plex Media Server/Logs:/plexlogs"
+      - "/DATA/AppData/tautulli:/config"
     working_dir: "/app"
 
   DiskSpeed:
@@ -252,5 +252,5 @@ services:
       - "label=disable"
     volumes:
       - "/var/local/emhttp:/var/local/emhttp:ro"
-      - "/mnt/cache/appdata/DiskSpeed:/tmp/DiskSpeed"
+      - "/DATA/AppData/DiskSpeed:/tmp/DiskSpeed"
     working_dir: "/usr/local/tomcat"

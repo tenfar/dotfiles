@@ -587,7 +587,7 @@
 - Suppress error messages if unable to download the application feed
 
 ###2016-08-06###
-- Skip appdata tests within /mnt/user on 6.2-rc3+
+- Skip appdata tests within /DATA on 6.2-rc3+
 
 ###2016-07-08###
 - Relegate permission tests to strictly the extended tests

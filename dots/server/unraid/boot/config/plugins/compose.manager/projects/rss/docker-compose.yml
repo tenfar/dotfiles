@@ -51,8 +51,8 @@ services:
       - "/init"
     environment:
       - "HOST_CONTAINERNAME=freshrss"
-      - "PUID=99"
-      - "PGID=100"
+      - "PUID=1000"
+      - "PGID=1000"
       - "UMASK=022"
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "PS1=$(whoami)@$(hostname):$(pwd)\\$ "
@@ -92,7 +92,7 @@ services:
     ports:
       - "8084:80/tcp"
     volumes:
-      - "/mnt/cache/appdata/freshrss:/config"
+      - "/DATA/AppData/freshrss:/config"
     working_dir: "/"
 
 networks:

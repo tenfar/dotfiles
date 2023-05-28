@@ -60,7 +60,7 @@ https://github.com/jlesage/docker-handbrake/blob/master/README.md&#xD;
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user</HostDir>
+      <HostDir>/DATA</HostDir>
       <ContainerDir>/storage</ContainerDir>
       <Mode>ro</Mode>
     </Volume>
@@ -70,12 +70,12 @@ https://github.com/jlesage/docker-handbrake/blob/master/README.md&#xD;
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/data/media/converted</HostDir>
+      <HostDir>/DATA/media/converted</HostDir>
       <ContainerDir>/output</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/HandBrake</HostDir>
+      <HostDir>/DATA/AppData/HandBrake</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -203,16 +203,16 @@ https://github.com/jlesage/docker-handbrake/blob/master/README.md&#xD;
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Storage" Target="/storage" Default="/mnt/user" Mode="ro" Description="This location contains files from your host that need to be accessible by the application.&amp;lt;br&amp;gt;Container path: /storage" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user</Config>
+  <Config Name="Storage" Target="/storage" Default="/DATA" Mode="ro" Description="This location contains files from your host that need to be accessible by the application.&amp;lt;br&amp;gt;Container path: /storage" Type="Path" Display="always-hide" Required="true" Mask="false">/DATA</Config>
   <Config Name="Watch Directory" Target="/watch" Default="" Mode="rw" Description="This is the watch folder of the automatic video converter.  Any video copied into this folder will be automatically converted by HandBrake.&amp;lt;br&amp;gt;Container path: /watch" Type="Path" Display="always" Required="false" Mask="false"/>
-  <Config Name="Output Directory" Target="/output" Default="" Mode="rw" Description="This is the default output folder for converted videos.  Also used by the automatic video converter.&amp;lt;br&amp;gt;Container path: /output" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/data/media/converted</Config>
+  <Config Name="Output Directory" Target="/output" Default="" Mode="rw" Description="This is the default output folder for converted videos.  Also used by the automatic video converter.&amp;lt;br&amp;gt;Container path: /output" Type="Path" Display="always" Required="true" Mask="false">/DATA/media/converted</Config>
   <Config Name="Automatic Video Converter: Preset" Target="AUTOMATED_CONVERSION_PRESET" Default="General/Very Fast 1080p30" Mode="" Description="Preset used by the automatic video converter.  Identification of the preset must follow the format 'CATEGORY/PRESET NAME'.  Name of all available presets can be seen via the HandBrake GUI." Type="Variable" Display="always" Required="false" Mask="false">General/Very Fast 1080p30</Config>
   <Config Name="Automatic Video Converter: Format" Target="AUTOMATED_CONVERSION_FORMAT" Default="mp4" Mode="" Description="Video container format used by the automatic video converter for output files.  This is typically the video filename extension." Type="Variable" Display="always" Required="false" Mask="false">mp4</Config>
   <Config Name="Automatic Video Converter: Keep Source Files" Target="AUTOMATED_CONVERSION_KEEP_SOURCE" Default="1" Mode="" Description="Set to 0 to remove successfully converted videos from the watch folder, 1 to keep them." Type="Variable" Display="always" Required="false" Mask="false">1</Config>
   <Config Name="Automatic Video Converter: Non-Video File Action" Target="AUTOMATED_CONVERSION_NON_VIDEO_FILE_ACTION" Default="ignore" Mode="" Description="Set to &amp;lt;b&amp;gt;&amp;lt;i&amp;gt;ignore&amp;lt;/i&amp;gt;&amp;lt;/b&amp;gt; to ignore non-video files from the watch folder, or set to &amp;lt;b&amp;gt;&amp;lt;i&amp;gt;copy&amp;lt;/i&amp;gt;&amp;lt;/b&amp;gt; to copy them as-is to the output folder." Type="Variable" Display="always" Required="false" Mask="false">ignore</Config>
   <Config Name="Automatic Video Converter: Output directory" Target="AUTOMATED_CONVERSION_OUTPUT_DIR" Default="/output" Mode="" Description="Root directory where converted videos should be written." Type="Variable" Display="always" Required="false" Mask="false">/output</Config>
   <Config Name="Automatic Video Converter: Output Subdirectory" Target="AUTOMATED_CONVERSION_OUTPUT_SUBDIR" Default="" Mode="" Description="Subdirectory of the output folder into which converted videos should be written.&amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;Leave value empty to save converted videos directly into &amp;lt;b&amp;gt;&amp;lt;i&amp;gt;/output/&amp;lt;/i&amp;gt;&amp;lt;/b&amp;gt;.&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;Use the special value &amp;lt;b&amp;gt;&amp;lt;i&amp;gt;SAME_AS_SRC&amp;lt;/i&amp;gt;&amp;lt;/b&amp;gt; to use the same subfolder as the source.  For example, if the video source file is &amp;lt;b&amp;gt;&amp;lt;i&amp;gt;/watch/Movies/mymovie.mkv&amp;lt;/i&amp;gt;&amp;lt;/b&amp;gt;, the converted video will be written to &amp;lt;b&amp;gt;&amp;lt;i&amp;gt;/output/Movies/&amp;lt;/i&amp;gt;&amp;lt;/b&amp;gt;.&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;Use any subfolder name.  For example, setting the value &amp;lt;b&amp;gt;&amp;lt;i&amp;gt;Home/Movies&amp;lt;/i&amp;gt;&amp;lt;/b&amp;gt; will make converted videos written to &amp;lt;b&amp;gt;&amp;lt;i&amp;gt;/output/Home/Movies&amp;lt;/i&amp;gt;&amp;lt;/b&amp;gt;/&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="Config Directory" Target="/config" Default="/mnt/user/appdata/handbrake" Mode="rw" Description="This is where the application stores its configuration, log and any files needing persistency.&amp;lt;br&amp;gt;Container path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/HandBrake</Config>
+  <Config Name="Config Directory" Target="/config" Default="/DATA/AppData/handbrake" Mode="rw" Description="This is where the application stores its configuration, log and any files needing persistency.&amp;lt;br&amp;gt;Container path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/DATA/AppData/HandBrake</Config>
   <Config Name="User ID" Target="USER_ID" Default="99" Mode="" Description="ID of the user the application runs as." Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
   <Config Name="Group ID" Target="GROUP_ID" Default="100" Mode="" Description="ID of the group the application runs as." Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
   <Config Name="Umask" Target="UMASK" Default="000" Mode="" Description="Mask that controls how file permissions are set for newly created files. The value of the mask is in octal notation." Type="Variable" Display="advanced" Required="false" Mask="false">000</Config>

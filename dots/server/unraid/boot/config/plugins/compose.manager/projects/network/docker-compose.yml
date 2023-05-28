@@ -30,7 +30,7 @@ services:
     restart: "unless-stopped"
     user: "nonroot"
     volumes:
-      - "/mnt/cache/appdata/cloudflared:/home/nonroot/.cloudflared"
+      - "/DATA/AppData/cloudflared:/home/nonroot/.cloudflared"
     working_dir: "/home/nonroot"
 
   dockersocket:
@@ -109,8 +109,8 @@ services:
       - "/init"
     container_name: "NginxProxyManager"
     environment:
-      - "USER_ID=99"
-      - "GROUP_ID=100"
+      - "USER_ID=1000"
+      - "GROUP_ID=1000"
       - "APP_NICENESS="
       - "HOST_CONTAINERNAME=NginxProxyManager"
       - "UMASK=000"
@@ -153,8 +153,8 @@ services:
       - "7818:8181/tcp"
     restart: "unless-stopped"
     volumes:
-      - "/mnt/cache/appdata/NginxProxyManager:/config"
-      - "/mnt/cache/appdata/dmz/goaccess/log:/config/log"
+      - "/DATA/AppData/NginxProxyManager:/config"
+      - "/DATA/AppData/dmz/goaccess/log:/config/log"
     working_dir: "/tmp"
 
   pihole-template:
@@ -217,8 +217,8 @@ services:
       - "br0"
     restart: "unless-stopped"
     volumes:
-      - "/mnt/cache/appdata/pihole/dnsmasq.d:/etc/dnsmasq.d"
-      - "/mnt/cache/appdata/pihole/pihole:/etc/pihole"
+      - "/DATA/AppData/pihole/dnsmasq.d:/etc/dnsmasq.d"
+      - "/DATA/AppData/pihole/pihole:/etc/pihole"
 
   Tailscale:
     container_name: "Tailscale"
@@ -244,7 +244,7 @@ services:
     security_opt:
       - "label=disable"
     volumes:
-      - "/mnt/cache/appdata/tailscale:/state"
+      - "/DATA/AppData/tailscale:/state"
     working_dir: "/app"
 
   RustDeskServer:
@@ -280,7 +280,7 @@ services:
     networks:
       - "br0"
     volumes:
-      - "/mnt/cache/appdata/rustdesk-hbbs:/root"
+      - "/DATA/AppData/rustdesk-hbbs:/root"
     working_dir: "/root"
 
   RustDeskServer-Relay:
@@ -314,7 +314,7 @@ services:
     networks:
       - "br0"
     volumes:
-      - "/mnt/cache/appdata/rustdesk-hbbr:/root"
+      - "/DATA/AppData/rustdesk-hbbr:/root"
     working_dir: "/root"
 
   # hbbs:
@@ -327,7 +327,7 @@ services:
   #   image: rustdesk/rustdesk-server:latest
   #   command: hbbs -r example.com:21117
   #   volumes:
-  #     - /mnt/cache/appdata/rustdesk-hbbs/:/root
+  #     - /DATA/AppData/rustdesk-hbbs/:/root
   #   networks:
   #     - "alphaproxy"
   #   depends_on:
@@ -342,7 +342,7 @@ services:
   #   image: rustdesk/rustdesk-server:latest
   #   command: hbbr
   #   volumes:
-  #     - /mnt/cache/appdata/rustdesk-hbbr:/root
+  #     - /DATA/AppData/rustdesk-hbbr:/root
   #   networks:
   #     - "alphaproxy"
   #   restart: unless-stopped
