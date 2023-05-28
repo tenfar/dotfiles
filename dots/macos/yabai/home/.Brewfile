@@ -93,11 +93,8 @@ brew "gnupg"
 brew "graphene"
 brew "grep"
 brew "gsl"
-brew "gtk+3"
 brew "libpsl"
 brew "libsoup"
-brew "gstreamer"
-brew "gtksourceview4"
 brew "ical-buddy"
 brew "ifstat"
 brew "libomp"
@@ -160,8 +157,6 @@ brew "shfmt"
 brew "smartmontools"
 brew "socat"
 brew "speedtest-cli"
-brew "spice-gtk"
-brew "spotify-tui"
 brew "sql-language-server"
 brew "ssh-copy-id"
 brew "starship"
@@ -222,6 +217,7 @@ mas "iShot", id: 1485844094
 mas "Manico", id: 724472954
 mas "MWeb", id: 1183407767
 mas "Numbers 表格", id: 409203825
+mas "OpenCat", id: 6445999201
 mas "OpenCat", id: 6445999201
 mas "Pages 文稿", id: 409201541
 mas "QQ", id: 451108668
