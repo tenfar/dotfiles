@@ -1,0 +1,48 @@
+version: "3.6"
+services:
+  binhex-jenkins:
+    command:
+      - "/bin/bash"
+      - "/usr/local/bin/init.sh"
+    container_name: "binhex-jenkins"
+    entrypoint:
+      - "/usr/bin/dumb-init"
+      - "--"
+    environment:
+      - "PUID=1000"
+      - "PGID=1000"
+      - "HOST_CONTAINERNAME=binhex-jenkins"
+      - "JAVA_ARGS=-Xmx512m"
+      - "JAVA_OPTS=-Dhudson.footerURL=https://tenfarr.com"
+      - "UMASK=000"
+      - "DOCKER_HOST=tcp://dockersocket:2375"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "HOME=/home/nobody"
+      - "TERM=xterm"
+    hostname: "eaba27db50a4"
+    image: "binhex/arch-jenkins"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/jenkins-icon.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:8090]/"
+      org.opencontainers.image.authors: "= binhex"
+      org.opencontainers.image.source: "= https://github.com/binhex/arch-jenkins"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "4243:4243/tcp"
+      - "8090:8090/tcp"
+    privileged: true
+    security_opt:
+      - "label=disable"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/usr/bin/docker:/usr/bin/docker"
+      - "/DATA/Downloads:/mnt/downloads"
+      - "/DATA/AppData/binhex-jenkins:/config"

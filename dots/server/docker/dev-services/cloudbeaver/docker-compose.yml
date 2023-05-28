@@ -1,0 +1,31 @@
+version: "3.6"
+services:
+  CloudBeaver:
+    container_name: "CloudBeaver"
+    entrypoint:
+      - "./run-server.sh"
+    environment:
+      - "HOST_CONTAINERNAME=CloudBeaver"
+      - "PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "JAVA_HOME=/opt/java/openjdk"
+      - "JAVA_VERSION=jdk-17.0.4.1+1"
+    hostname: "d7359979a409"
+    image: "dbeaver/cloudbeaver"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/CorneliousJD/Docker-Templates/master/icons/cloudbeaver.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:8978]/"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "8978:8978/tcp"
+    volumes:
+      - "/DATA/AppData/cloudbeaver:/opt/cloudbeaver/workspace"
+    working_dir: "/opt/cloudbeaver"
+

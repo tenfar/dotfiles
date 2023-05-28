@@ -1,0 +1,46 @@
+version: "3.6"
+services:
+  petio:
+    container_name: "petio"
+    entrypoint:
+      - "/init"
+    environment:
+      - "HOST_CONTAINERNAME=petio"
+      - "PUID=1000"
+      - "PGID=1000"
+      - "UMASK=002"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "APP_DIR=/app"
+      - "CONFIG_DIR=/config"
+      - "ARGS="
+      - "XDG_CONFIG_HOME=/config/.config"
+      - "XDG_CACHE_HOME=/config/.cache"
+      - "XDG_DATA_HOME=/config/.local/share"
+      - "S6_BEHAVIOUR_IF_STAGE2_FAILS=2"
+      - "BUILD_ARCHITECTURE=linux-amd64"
+    hostname: "1e013c4dd287"
+    image: "hotio/petio"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://hotio.dev/webhook-avatars/petio.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:7777]"
+      org.opencontainers.image.created: "2022-04-03T00:13:16Z"
+      org.opencontainers.image.revision: "90ee60ae6f22485140334a7981469193e9d1cb0c"
+      org.opencontainers.image.source: "https://github.com/hotio/petio/tree/release"
+      org.opencontainers.image.title: "hotio/petio:release"
+      org.opencontainers.image.url: "https://github.com/hotio/petio/blob/master/README.md"
+      org.opencontainers.image.vendor: "hotio"
+      org.opencontainers.image.version: "0.5.4"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "7777:7777/tcp"
+    volumes:
+      - "/DATA/AppData/petio:/config"
+

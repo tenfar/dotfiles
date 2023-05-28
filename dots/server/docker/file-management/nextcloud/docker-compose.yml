@@ -1,0 +1,59 @@
+version: "3.6"
+services:
+  nextcloud:
+    container_name: "nextcloud"
+    entrypoint:
+      - "/init"
+    environment:
+      - "PUID=1000"
+      - "PGID=1000"
+      - "HOST_CONTAINERNAME=nextcloud"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "PS1=$(whoami)@$(hostname):$(pwd)\\$ "
+      - "HOME=/root"
+      - "TERM=xterm"
+      - "S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0"
+      - "NEXTCLOUD_PATH=/config/www/nextcloud"
+      - "LD_PRELOAD=/usr/lib/preloadable_libiconv.so"
+    hostname: "bde486b2ee1e"
+    image: "linuxserver/nextcloud"
+    ipc: "private"
+    labels:
+      build_version: "Linuxserver.io version:- 25.0.3-ls217 Build-date:- 2023-01-17T06:26:52-06:00"
+      maintainer: "aptalca"
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nextcloud-icon.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "https://[IP]:[PORT:443]/"
+      org.opencontainers.image.authors: "linuxserver.io"
+      org.opencontainers.image.created: "2023-01-17T06:26:52-06:00"
+      org.opencontainers.image.description:
+        "[Nextcloud](https://nextcloud.com/) gives\
+        \ you access to all your files wherever you are.    Where are your photos\
+        \ and documents? With Nextcloud you pick a server of your choice, at home,\
+        \ in a data center or at a provider. And that is where your files will be.\
+        \ Nextcloud runs on that server, protecting your data and giving you access\
+        \ from your desktop or mobile devices. Through Nextcloud you also access,\
+        \ sync and share your existing data on that FTP drive at the office, a Dropbox\
+        \ or a NAS you have at home.  "
+      org.opencontainers.image.documentation: "https://docs.linuxserver.io/images/docker-nextcloud"
+      org.opencontainers.image.licenses: "GPL-3.0-only"
+      org.opencontainers.image.ref.name: "8c36f67e537a52c14abcb3cb5e1f871053e2968e"
+      org.opencontainers.image.revision: "8c36f67e537a52c14abcb3cb5e1f871053e2968e"
+      org.opencontainers.image.source: "https://github.com/linuxserver/docker-nextcloud"
+      org.opencontainers.image.title: "Nextcloud"
+      org.opencontainers.image.url: "https://github.com/linuxserver/docker-nextcloud/packages"
+      org.opencontainers.image.vendor: "linuxserver.io"
+      org.opencontainers.image.version: "25.0.3-ls217"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "444:443/tcp"
+    volumes:
+      - "/DATA/AppData/nextcloud:/config"
+      - "/DATA/nextcloud:/data"
+    working_dir: "/"

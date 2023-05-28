@@ -1,0 +1,38 @@
+version: "3.6"
+services:
+  Stash:
+    command:
+      - "stash"
+    container_name: "Stash"
+    environment:
+      - "HOST_CONTAINERNAME=Stash"
+      - "STASH_CACHE=/cache/"
+      - "STASH_METADATA=/metadata/"
+      - "STASH_GENERATED=/generated/"
+      - "STASH_STASH=/data/"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "STASH_CONFIG_FILE=/root/.stash/config.yml"
+    hostname: "c6939c7be73d"
+    image: "stashapp/stash"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/CorneliousJD/Docker-Templates/master/icons/stash.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:9999]"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "6969:9999/tcp"
+    volumes:
+      - "/DATA/media/shadowplay/temp/local/AppData/temp2:/data2"
+      - "/DATA/AppData/stash/generated:/generated"
+      - "/DATA/AppData/stash/metadata:/metadata"
+      - "/DATA/AppData/stash/config:/root/.stash"
+      - "/DATA/AppData/stash/cache:/cache"
+      - "/DATA/media/shadowplay/temp/local/AppData/temp:/data"
+

@@ -1,0 +1,57 @@
+version: "3.6"
+services:
+  sonarr:
+    container_name: "sonarr"
+    entrypoint:
+      - "/init"
+    environment:
+      - "HOST_CONTAINERNAME=sonarr"
+      - "PUID=1000"
+      - "PGID=1000"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "HOME=/root"
+      - "TERM=xterm"
+      - "S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0"
+      - "XDG_CONFIG_HOME=/config/xdg"
+      - "SONARR_BRANCH=main"
+    hostname: "9485efda5f60"
+    image: "linuxserver/sonarr"
+    ipc: "private"
+    labels:
+      build_version: "Linuxserver.io version:- 3.0.9.1549-ls173 Build-date:- 2023-01-17T14:41:36+01:00"
+      maintainer: "aptalca"
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/sonarr-icon.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:8989]/"
+      org.opencontainers.image.authors: "linuxserver.io"
+      org.opencontainers.image.created: "2023-01-17T14:41:36+01:00"
+      org.opencontainers.image.description:
+        "[Sonarr](https://sonarr.tv/) (formerly\
+        \ NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple\
+        \ RSS feeds for new episodes of your favorite shows and will grab, sort and\
+        \ rename them. It can also be configured to automatically upgrade the quality\
+        \ of files already downloaded when a better quality format becomes available.\
+        \  "
+      org.opencontainers.image.documentation: "https://docs.linuxserver.io/images/docker-sonarr"
+      org.opencontainers.image.licenses: "GPL-3.0-only"
+      org.opencontainers.image.ref.name: "dc0f2800cdf765afd9bde5a22feeb882da5eec1f"
+      org.opencontainers.image.revision: "dc0f2800cdf765afd9bde5a22feeb882da5eec1f"
+      org.opencontainers.image.source: "https://github.com/linuxserver/docker-sonarr"
+      org.opencontainers.image.title: "Sonarr"
+      org.opencontainers.image.url: "https://github.com/linuxserver/docker-sonarr/packages"
+      org.opencontainers.image.vendor: "linuxserver.io"
+      org.opencontainers.image.version: "3.0.9.1549-ls173"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "8989:8989/tcp"
+    volumes:
+      - "/DATA:/data"
+      - "/DATA/AppData/sonarr:/config"
+      - "/dev/rtc:/dev/rtc:ro"
+    working_dir: "/"

@@ -1,0 +1,38 @@
+version: "3.6"
+services:
+  binhex-nzbget:
+    command:
+      - "/bin/bash"
+      - "/usr/local/bin/init.sh"
+    container_name: "binhex-nzbget"
+    entrypoint:
+      - "/usr/bin/tini"
+      - "-g"
+      - "--"
+    environment:
+      - "HOST_CONTAINERNAME=binhex-nzbget"
+      - "UMASK=000"
+      - "PUID=1000"
+      - "PGID=1000"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "HOME=/home/nobody"
+      - "TERM=xterm"
+    hostname: "c26d97086419"
+    image: "binhex/arch-nzbget"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/nzbget-icon.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:6789]/"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "100m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "6789:6789/tcp"
+    volumes:
+      - "/DATA/AppData/binhex-nzbget:/config"
+      - "/DATA/usenet:/data"

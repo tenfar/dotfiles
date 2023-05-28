@@ -1,0 +1,34 @@
+version: "3.6"
+services:
+  Postgres11:
+    command:
+      - "postgres"
+    container_name: "Postgres11"
+    entrypoint:
+      - "docker-entrypoint.sh"
+    environment:
+      - "HOST_CONTAINERNAME=Postgres11"
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_DB=postgres"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/11/bin"
+      - "GOSU_VERSION=1.14"
+      - "PG_MAJOR=11"
+      - "PG_VERSION=11.16-1.pgdg90+1"
+      - "PGDATA=/var/lib/postgresql/data"
+    hostname: "postgress"
+    image: "postgres:11"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://github.com/juusujanar/unraid-templates/raw/master/img/PostgreSQL-logo.png"
+      net.unraid.docker.managed: "dockerman"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "100m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "5432:5432/tcp"
+    volumes:
+      - "/DATA/AppData/postgres:/var/lib/postgresql/data"

@@ -1,0 +1,35 @@
+version: "3.6"
+services:
+  goaccess:
+    command:
+      - "sh"
+      - "/usr/local/bin/goaccess.sh"
+    container_name: "goaccess"
+    entrypoint:
+      - "/usr/local/bin/entrypoint.sh"
+    environment:
+      - "HOST_CONTAINERNAME=goaccess"
+      - "PUID=1000"
+      - "PGID=1000"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    hostname: "3f144af284a6"
+    image: "gregyankovoy/goaccess"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/gregyankovoy/docker-templates/master/greg/img/goaccess-logo.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:7889]/"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    mac_address: "02:42:ac:11:00:02"
+    network_mode: "bridge"
+    ports:
+      - "7889:7889/tcp"
+    volumes:
+      - "/DATA/AppData/goaccess:/config"
+      - "/DATA/AppData/dmz/goaccess/log:/opt/log"
+    working_dir: "/goaccess"
+

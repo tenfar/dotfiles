@@ -1,0 +1,33 @@
+version: "3.6"
+services:
+  mariadb:
+    container_name: "mariadb"
+    entrypoint:
+      - "/init"
+    environment:
+      - "HOST_CONTAINERNAME=mariadb"
+      - "PUID=1000"
+      - "PGID=1000"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "PS1=$(whoami)@$(hostname):$(pwd)\\$ "
+      - "HOME=/root"
+      - "TERM=xterm"
+      - "S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0"
+      - "S6_VERBOSITY=1"
+      - "S6_STAGE2_HOOK=/docker-mods"
+      - "MYSQL_DIR=/config"
+      - "DATADIR=/config/databases"
+    hostname: "mariadb"
+    image: "linuxserver/mariadb"
+    ipc: "private"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    ports:
+      - "3306:3306/tcp"
+    restart: "unless-stopped"
+    volumes:
+      - "/DATA/AppData/mariadb:/config"
+    working_dir: "/"

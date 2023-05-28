@@ -1,0 +1,44 @@
+version: "3.6"
+services:
+  Full-Text-RSS:
+    command:
+      - "apache2-foreground"
+    container_name: "Full-Text-RSS"
+    entrypoint:
+      - "docker-php-entrypoint"
+    environment:
+      - "HOST_CONTAINERNAME=Full-Text-RSS"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "PHPIZE_DEPS=autoconf \t\tdpkg-dev \t\tfile \t\tg++ \t\tgcc \t\tlibc-dev \t\
+        \tmake \t\tpkg-config \t\tre2c"
+      - "PHP_INI_DIR=/usr/local/etc/php"
+      - "APACHE_CONFDIR=/etc/apache2"
+      - "APACHE_ENVVARS=/etc/apache2/envvars"
+      - "PHP_EXTRA_BUILD_DEPS=apache2-dev"
+      - "PHP_EXTRA_CONFIGURE_ARGS=--with-apxs2 --disable-cgi"
+      - "PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2"
+      - "PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2"
+      - "PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie"
+      - "GPG_KEYS=${FULL_TEXT_RSS_GPG_KEYS}"
+      - "PHP_VERSION=5.6.40"
+      - "PHP_URL=https://secure.php.net/get/php-5.6.40.tar.xz/from/this/mirror"
+      - "PHP_ASC_URL=https://secure.php.net/get/php-5.6.40.tar.xz.asc/from/this/mirror"
+      - "PHP_SHA256=1369a51eee3995d7fbd1c5342e5cc917760e276d561595b6052b21ace2656d1c"
+      - "PHP_MD5="
+    hostname: "8eee2fb2ed43"
+    image: "heussd/fivefilters-full-text-rss:latest"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://github.com/imTHAI/unraid-templates/raw/main/rss.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:8081]"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "8081:80/tcp"
+    working_dir: "/var/www/html"

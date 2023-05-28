@@ -1,0 +1,41 @@
+version: "3.6"
+services:
+  PhotoStructure:
+    container_name: "PhotoStructure"
+    entrypoint:
+      - "/sbin/tini"
+      - "--"
+      - "/ps/app/docker-entrypoint.sh"
+    environment:
+      - "PGID=1000"
+      - "PS_LOG_LEVEL=error"
+      - "HOST_CONTAINERNAME=PhotoStructure"
+      - "PUID=1000"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "NODE_VERSION=16.2.0"
+      - "YARN_VERSION=1.22.5"
+    hostname: "d98e723a9754"
+    image: "photostructure/server:stable"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://photostructure.com/img/logo-circle-gradient-256.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:1787]"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "100m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "1787:1787/tcp"
+    volumes:
+      - "/DATA/AppData/photostructure/config:/ps/config"
+      - "/DATA/media/pictures:/ps/library"
+      - "/DATA/AppData/photostructure/logs:/ps/logs"
+      - "/DATA/AppData/photostructure/tmp:/ps/tmp"
+      - "/DATA/backup/Photos:/backupphotos"
+      - "/mnt/disks/dropbox/Pictures/Austins Photos:/dropboxphotos"
+      - "/DATA/media/familyphotos:/familyphotos"
+    working_dir: "/ps/app"

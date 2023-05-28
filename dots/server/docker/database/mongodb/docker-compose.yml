@@ -1,0 +1,36 @@
+version: "3.6"
+services:
+  MongoDB:
+    command:
+      - "mongod"
+    container_name: "MongoDB"
+    entrypoint:
+      - "docker-entrypoint.sh"
+    environment:
+      - "HOST_CONTAINERNAME=MongoDB"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "GOSU_VERSION=1.12"
+      - "JSYAML_VERSION=3.13.1"
+      - "MONGO_PACKAGE=mongodb-org"
+      - "MONGO_REPO=repo.mongodb.org"
+      - "MONGO_MAJOR=6.0"
+      - "MONGO_VERSION=6.0.3"
+      - "HOME=/data/db"
+    hostname: "fef16130c0ca"
+    image: "mongo"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/jason-bean/docker-templates/master/jasonbean-repo/mongo.sh-600x600.png"
+      net.unraid.docker.managed: "dockerman"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "27017:27017/tcp"
+    restart: "unless-stopped"
+    volumes:
+      - "/DATA/AppData/mongodb:/data/db"

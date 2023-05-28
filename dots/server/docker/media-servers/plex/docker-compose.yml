@@ -1,0 +1,81 @@
+version: "3.6"
+services:
+  plex:
+    container_name: "plex"
+    devices:
+      - "/dev/dri:/dev/dri"
+    entrypoint:
+      - "/init"
+    environment:
+      - "HOST_CONTAINERNAME=plex"
+      - "UMASK=022"
+      - "VERSION=docker"
+      - "PUID=1000"
+      - "PGID=1000"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "HOME=/root"
+      - "TERM=xterm"
+      - "S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0"
+      - "S6_VERBOSITY=1"
+      - "S6_STAGE2_HOOK=/docker-mods"
+      - "NVIDIA_DRIVER_CAPABILITIES=compute,video,utility"
+      - "DEBIAN_FRONTEND=noninteractive"
+      - "PLEX_DOWNLOAD=https://downloads.plex.tv/plex-media-server-new"
+      - "PLEX_ARCH=amd64"
+      - "PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR=/config/Library/Application Support"
+      - "PLEX_MEDIA_SERVER_HOME=/usr/lib/plexmediaserver"
+      - "PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=6"
+      - "PLEX_MEDIA_SERVER_USER=abc"
+      - "PLEX_MEDIA_SERVER_INFO_VENDOR=Docker"
+      - "PLEX_MEDIA_SERVER_INFO_DEVICE=Docker Container (LinuxServer.io)"
+    expose:
+      - "1900/udp"
+      - "3005/tcp"
+      - "32400/tcp"
+      - "32410/udp"
+      - "32412/udp"
+      - "32413/udp"
+      - "32414/udp"
+      - "32469/tcp"
+      - "5353/udp"
+      - "8324/tcp"
+    hostname: "AustinServer"
+    image: "lscr.io/linuxserver/plex"
+    ipc: "private"
+    labels:
+      build_version:
+        "Linuxserver.io version:- 1.30.1.6562-915986d62-ls148 Build-date:-\
+        \ 2023-01-10T21:49:53+01:00"
+      maintainer: "thelamer"
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/plex-logo.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:32400]/web/index.html"
+      org.opencontainers.image.authors: "linuxserver.io"
+      org.opencontainers.image.created: "2023-01-10T21:49:53+01:00"
+      org.opencontainers.image.description:
+        "[Plex](https://plex.tv) organizes video,\
+        \ music and photos from personal media libraries and streams them to smart\
+        \ TVs, streaming boxes and mobile devices. This container is packaged as a\
+        \ standalone Plex Media Server. has always been a top priority. Straightforward\
+        \ design and bulk actions mean getting things done faster."
+      org.opencontainers.image.documentation: "https://docs.linuxserver.io/images/docker-plex"
+      org.opencontainers.image.licenses: "GPL-3.0-only"
+      org.opencontainers.image.ref.name: "8d73aa5c12d2eb00438f9cbf05bae0bbc6463840"
+      org.opencontainers.image.revision: "8d73aa5c12d2eb00438f9cbf05bae0bbc6463840"
+      org.opencontainers.image.source: "https://github.com/linuxserver/docker-plex"
+      org.opencontainers.image.title: "Plex"
+      org.opencontainers.image.url: "https://github.com/linuxserver/docker-plex/packages"
+      org.opencontainers.image.vendor: "linuxserver.io"
+      org.opencontainers.image.version: "1.30.1.6562-915986d62-ls148"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    network_mode: "host"
+    volumes:
+      - "/DATA/temp/Transcode:/transcode"
+      - "/DATA/AppData/plex:/config"
+      - "/DATA/media:/data"
+    working_dir: "/"
+

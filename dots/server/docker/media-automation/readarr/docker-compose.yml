@@ -1,0 +1,49 @@
+version: "3.6"
+services:
+  readarr:
+    container_name: "readarr"
+    entrypoint:
+      - "/init"
+    environment:
+      - "PGID=1000"
+      - "UMASK=002"
+      - "HOST_CONTAINERNAME=readarr"
+      - "PUID=1000"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "APP_DIR=/app"
+      - "CONFIG_DIR=/config"
+      - "ARGS="
+      - "XDG_CONFIG_HOME=/config/.config"
+      - "XDG_CACHE_HOME=/config/.cache"
+      - "XDG_DATA_HOME=/config/.local/share"
+      - "S6_BEHAVIOUR_IF_STAGE2_FAILS=2"
+      - "S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0"
+      - "BUILD_ARCHITECTURE=linux-amd64"
+    hostname: "9b9fc1246c4b"
+    image: "hotio/readarr:nightly"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://hotio.dev/webhook-avatars/readarr.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:8787]"
+      org.opencontainers.image.created: "2023-01-17T14:58:23Z"
+      org.opencontainers.image.revision: "11e33d6d96e045f6b9f547ae12e4e673a7234ce9"
+      org.opencontainers.image.source: "https://github.com/hotio/readarr/tree/nightly"
+      org.opencontainers.image.title: "hotio/readarr:nightly"
+      org.opencontainers.image.url: "https://github.com/hotio/readarr/blob/master/README.md"
+      org.opencontainers.image.vendor: "hotio"
+      org.opencontainers.image.version: "0.1.1.1527"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "8787:8787/tcp"
+    volumes:
+      - "/DATA/AppData/readarr:/config"
+      - "/DATA/media/books:/books"
+      - "/DATA/media/calibre:/calibre"
+      - "/DATA/torrents:/data/torrents"

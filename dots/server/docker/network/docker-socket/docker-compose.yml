@@ -1,0 +1,72 @@
+version: "3.6"
+services:
+  dockersocket:
+    command:
+      - "haproxy"
+      - "-f"
+      - "/usr/local/etc/haproxy/haproxy.cfg"
+    container_name: "dockersocket"
+    entrypoint:
+      - "/docker-entrypoint.sh"
+    environment:
+      - "PUSH=1"
+      - "PULL=1"
+      - "HOST_CONTAINERNAME=dockersocket"
+      - "CONTAINERS=0"
+      - "POST=1"
+      - "BUILD=1"
+      - "DISTRIBUTION=1"
+      - "IMAGES=1"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "HAPROXY_VERSION=1.9.16"
+      - "HAPROXY_URL=https://www.haproxy.org/download/1.9/src/haproxy-1.9.16.tar.gz"
+      - "HAPROXY_SHA256=47174becf7c641c837b7338210f6194f266de45c49a38b68655fcd980f95bdbf"
+      - "ALLOW_RESTARTS=0"
+      - "AUTH=0"
+      - "COMMIT=0"
+      - "CONFIGS=0"
+      - "EVENTS=1"
+      - "EXEC=0"
+      - "INFO=0"
+      - "LOG_LEVEL=info"
+      - "NETWORKS=0"
+      - "NODES=0"
+      - "PING=1"
+      - "PLUGINS=0"
+      - "SECRETS=0"
+      - "SERVICES=0"
+      - "SESSION=0"
+      - "SWARM=0"
+      - "SYSTEM=0"
+      - "TASKS=0"
+      - "VERSION=1"
+      - "VOLUMES=0"
+    hostname: "d6664dc1c712"
+    image: "ghcr.io/tecnativa/docker-socket-proxy:latest"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/ibracorp/app-logos/main/docker/docker-logo.png"
+      net.unraid.docker.managed: "dockerman"
+      org.opencontainers.image.created: "2021-01-26T10:32:59.090Z"
+      org.opencontainers.image.description:
+        "Proxy over your Docker socket to restrict\
+        \ which requests it accepts"
+      org.opencontainers.image.licenses: "Apache-2.0"
+      org.opencontainers.image.revision: "b911e572d0d65c672f4da6d2ef06d7d95c89de6d"
+      org.opencontainers.image.source: "https://github.com/Tecnativa/docker-socket-proxy"
+      org.opencontainers.image.title: "docker-socket-proxy"
+      org.opencontainers.image.url: "https://github.com/Tecnativa/docker-socket-proxy"
+      org.opencontainers.image.vendor: "Tecnativa"
+      org.opencontainers.image.version: "0.1.1"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "100m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "2375:2375/tcp"
+    restart: "unless-stopped"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"

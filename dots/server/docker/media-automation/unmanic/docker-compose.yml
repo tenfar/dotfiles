@@ -1,0 +1,56 @@
+version: "3.6"
+services:
+  unmanic:
+    container_name: "unmanic"
+    devices:
+      - "/dev/dri:/dev/dri"
+    entrypoint:
+      - "/init"
+    environment:
+      - "NVIDIA_PATCH_VERSION="
+      - "HOST_CONTAINERNAME=unmanic"
+      - "PUID=1000"
+      - "PGID=1000"
+      - "NVIDIA_VISIBLE_DEVICES=all"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "HOME=/root"
+      - "TERM=xterm"
+      - "LIBVA_DRIVERS_PATH=/usr/lib/x86_64-linux-gnu/dri"
+      - "NVIDIA_DRIVER_CAPABILITIES=compute,video,utility"
+    hostname: "0710a075ff90"
+    image: "josh5/unmanic:latest"
+    ipc: "private"
+    labels:
+      build_version: "Linuxserver.io version:- bcd93376-ls76 Build-date:- 2022-05-24T07:06:17+02:00"
+      maintainer: "Josh.5 <jsunnex@gmail.com>"
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/Unmanic/unmanic/master/icon.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:8889]/"
+      org.opencontainers.image.authors: "linuxserver.io"
+      org.opencontainers.image.created: "2022-05-24T07:06:17+02:00"
+      org.opencontainers.image.description: "baseimage-ubuntu image by linuxserver.io"
+      org.opencontainers.image.documentation: "https://docs.linuxserver.io/images/docker-baseimage-ubuntu"
+      org.opencontainers.image.licenses: "GPL-3.0-only"
+      org.opencontainers.image.ref.name: "ad251d995a46272992e8f464e234c0f149d60f23"
+      org.opencontainers.image.revision: "ad251d995a46272992e8f464e234c0f149d60f23"
+      org.opencontainers.image.source: "https://github.com/linuxserver/docker-baseimage-ubuntu"
+      org.opencontainers.image.title: "Baseimage-ubuntu"
+      org.opencontainers.image.url: "https://github.com/linuxserver/docker-baseimage-ubuntu/packages"
+      org.opencontainers.image.vendor: "linuxserver.io"
+      org.opencontainers.image.version: "bcd93376-ls76"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "8889:8888/tcp"
+    volumes:
+      - "/DATA/media/pictures:/library/pictures"
+      - "/DATA/media/tv:/library/tv"
+      - "/DATA/temp:/tmp/unmanic"
+      - "/DATA/AppData/unmanic:/config"
+      - "/DATA/media/movies:/library/movies"
+      - "/DATA/media/music:/library/music"

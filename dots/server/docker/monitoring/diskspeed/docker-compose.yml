@@ -1,0 +1,42 @@
+version: "3.6"
+services:
+  DiskSpeed:
+    command:
+      - "catalina.sh"
+      - "run"
+    container_name: "DiskSpeed"
+    environment:
+      - "HOST_CONTAINERNAME=DiskSpeed"
+      - "PATH=/usr/local/tomcat/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "JAVA_HOME=/usr/local/openjdk-11"
+      - "JAVA_VERSION=11.0.16"
+      - "CATALINA_HOME=/usr/local/tomcat"
+      - "TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib"
+      - "LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib"
+      - "GPG_KEYS=${DISK_SPEED_GPG_KEYS}"
+      - "TOMCAT_MAJOR=9"
+      - "TOMCAT_VERSION=9.0.65"
+      - "TOMCAT_SHA512=2ae846848b8436856be11cfa18d9c62caa06ca7d3134012b2e10cbf6078753c4af20cc5d37f7dc75f1779f5c59d7c033850b8626534c3ce7e389641a67963cf6"
+      - "LUCEE_JAVA_OPTS=-Xms64m -Xmx512m"
+    hostname: "DiskSpeed"
+    image: "jbartlett777/diskspeed"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/jbartlett777/DiskSpeed/master/DiskSpeed.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:8888]/"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    network_mode: "bridge"
+    ports:
+      - "18888:8888/tcp"
+    privileged: true
+    security_opt:
+      - "label=disable"
+    volumes:
+      - "/var/local/emhttp:/var/local/emhttp:ro"
+      - "/DATA/AppData/DiskSpeed:/tmp/DiskSpeed"
+    working_dir: "/usr/local/tomcat"

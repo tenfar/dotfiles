@@ -1,0 +1,47 @@
+version: "3.6"
+services:
+  Krusader:
+    container_name: "Krusader"
+    entrypoint:
+      - "/opt/scripts/start.sh"
+    environment:
+      - "USER_LOCALES=en_US.UTF-8 UTF-8"
+      - "RUNASROOT=false"
+      - "NOVNC_RESIZE=remote"
+      - "CUSTOM_RES_W=1280"
+      - "HOST_CONTAINERNAME=Krusader"
+      - "CUSTOM_RES_H=768"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "DATA_DIR=/krusader"
+      - "CUSTOM_DEPTH=16"
+      - "NOVNC_PORT=8080"
+      - "RFB_PORT=5900"
+      - "TURBOVNC_PARAMS=-securitytypes none"
+      - "UMASK=000"
+      - "UID=1000"
+      - "UID=1000"
+      - "DATA_PERM=770"
+      - "USER=krusader"
+    hostname: "b54e04622661"
+    image: "ich777/krusader"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/ich777/docker-templates/master/ich777/images/krusader.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:8080]/vnc.html?autoconnect=true"
+      org.opencontainers.image.authors: "admin@minenet.at"
+      org.opencontainers.image.source: "https://github.com/ich777/docker-krusader"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "8080:8080/tcp"
+    restart: "unless-stopped"
+    volumes:
+      - "/mnt:/UNRAID"
+      - "/DATA/AppData/krusader:/krusader"
+      - "/DATA:/DATA"

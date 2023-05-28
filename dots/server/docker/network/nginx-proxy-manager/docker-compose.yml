@@ -1,0 +1,54 @@
+version: "3.6"
+services:
+  NginxProxyManager:
+    command:
+      - "/init"
+    container_name: "NginxProxyManager"
+    environment:
+      - "USER_ID=1000"
+      - "GROUP_ID=1000"
+      - "APP_NICENESS="
+      - "HOST_CONTAINERNAME=NginxProxyManager"
+      - "UMASK=000"
+      - "DISABLE_IPV6=0"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "S6_BEHAVIOUR_IF_STAGE2_FAILS=3"
+      - "S6_SERVICE_DEPS=1"
+      - "APP_NAME=Nginx Proxy Manager"
+      - "APP_USER=app"
+      - "XDG_DATA_HOME=/config/xdg/data"
+      - "XDG_CONFIG_HOME=/config/xdg/config"
+      - "XDG_CACHE_HOME=/config/xdg/cache"
+      - "XDG_RUNTIME_DIR=/tmp/run/user/app"
+    hostname: "06858a59d51e"
+    image: "jlesage/nginx-proxy-manager"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/jlesage/docker-templates/master/jlesage/images/nginx-proxy-manager-icon.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:8181]"
+      org.label-schema.description: "Docker container for Nginx Proxy Manager"
+      org.label-schema.name: "nginx-proxy-manager"
+      org.label-schema.schema-version: "1.0"
+      org.label-schema.vcs-url: "https://github.com/jlesage/docker-nginx-proxy-manager"
+      org.label-schema.version: "1.26.1"
+      org.opencontainers.image.created: "2022-06-02T16:36:51Z"
+      org.opencontainers.image.revision: "1dba3108f2f6715c762b86308b5256d92b5d1aeb"
+      org.opencontainers.image.source: "https://github.com/jlesage/docker-nginx-proxy-manager.git"
+      org.opencontainers.image.url: "https://github.com/jlesage/docker-nginx-proxy-manager"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "18443:4443/tcp"
+      - "1880:8080/tcp"
+      - "7818:8181/tcp"
+    restart: "unless-stopped"
+    volumes:
+      - "/DATA/AppData/NginxProxyManager:/config"
+      - "/DATA/AppData/dmz/goaccess/log:/config/log"
+    working_dir: "/tmp"

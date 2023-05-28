@@ -1,0 +1,45 @@
+version: "3.6"
+services:
+  tautulli:
+    command:
+      - "python"
+      - "Tautulli.py"
+      - "--datadir"
+      - "/config"
+    container_name: "tautulli"
+    entrypoint:
+      - "./start.sh"
+    environment:
+      - "HOST_CONTAINERNAME=tautulli"
+      - "PUID=1000"
+      - "PGID=1000"
+      - "TZ=UTC"
+      - "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "GPG_KEY=${TAUTULLI_GPG_KEY}"
+      - "PYTHON_VERSION=3.9.16"
+      - "PYTHON_PIP_VERSION=22.0.4"
+      - "PYTHON_SETUPTOOLS_VERSION=58.1.0"
+      - "PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/66030fa03382b4914d4c4d0896961a0bdeeeb274/public/get-pip.py"
+      - "PYTHON_GET_PIP_SHA256=1e501cf004eac1b7eb1f97266d28f995ae835d30250bec7f8850562703067dc6"
+      - "TAUTULLI_DOCKER=True"
+    hostname: "18dfef11326e"
+    image: "tautulli/tautulli:latest"
+    ipc: "private"
+    labels:
+      maintainer: "Tautulli"
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/Tautulli/Tautulli-Unraid-Template/master/img/logo-circle.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:8181]/"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "8181:8181/tcp"
+    volumes:
+      - "/DATA/AppData/plex/Library/Application Support/Plex Media Server/Logs:/plexlogs"
+      - "/DATA/AppData/tautulli:/config"
+    working_dir: "/app"

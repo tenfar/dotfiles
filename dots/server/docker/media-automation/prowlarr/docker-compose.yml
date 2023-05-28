@@ -1,0 +1,58 @@
+version: "3.6"
+services:
+  prowlarr:
+    container_name: "prowlarr"
+    entrypoint:
+      - "/init"
+    environment:
+      - "PUID=1000"
+      - "PGID=1000"
+      - "UMASK=022"
+      - "HOST_CONTAINERNAME=prowlarr"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "PS1=$(whoami)@$(hostname):$(pwd)\\$ "
+      - "HOME=/root"
+      - "TERM=xterm"
+      - "S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0"
+      - "S6_VERBOSITY=1"
+      - "S6_STAGE2_HOOK=/docker-mods"
+      - "XDG_CONFIG_HOME=/config/xdg"
+    hostname: "2890abe72ad6"
+    image: "ghcr.io/linuxserver/prowlarr:develop"
+    ipc: "private"
+    labels:
+      build_version: "Linuxserver.io version:- 1.1.0.2322-ls85 Build-date:- 2023-01-16T20:46:00-06:00"
+      maintainer: "Roxedus,thespad"
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/prowlarr-logo.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:9696]"
+      org.opencontainers.image.authors: "linuxserver.io"
+      org.opencontainers.image.created: "2023-01-16T20:46:00-06:00"
+      org.opencontainers.image.description:
+        "[Prowlarr](https://github.com/Prowlarr/Prowlarr)\
+        \ is a indexer manager/proxy built on the popular arr .net/reactjs base stack\
+        \ to integrate with your various PVR apps. Prowlarr supports both Torrent\
+        \ Trackers and Usenet Indexers. It integrates seamlessly with Sonarr, Radarr,\
+        \ Lidarr, and Readarr offering complete management of your indexers with no\
+        \ per app Indexer setup required (we do it all).  "
+      org.opencontainers.image.documentation: "https://docs.linuxserver.io/images/docker-prowlarr"
+      org.opencontainers.image.licenses: "GPL-3.0-only"
+      org.opencontainers.image.ref.name: "ae5d139546a0445844fee205fd3de89f152f47c4"
+      org.opencontainers.image.revision: "ae5d139546a0445844fee205fd3de89f152f47c4"
+      org.opencontainers.image.source: "https://github.com/linuxserver/docker-prowlarr"
+      org.opencontainers.image.title: "Prowlarr"
+      org.opencontainers.image.url: "https://github.com/linuxserver/docker-prowlarr/packages"
+      org.opencontainers.image.vendor: "linuxserver.io"
+      org.opencontainers.image.version: "1.1.0.2322-ls85"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "9696:9696/tcp"
+    volumes:
+      - "/DATA/AppData/prowlarr:/config"
+    working_dir: "/"

@@ -1,0 +1,48 @@
+version: "3.6"
+services:
+  TimeMachine:
+    command:
+      - "s6-svscan"
+      - "/etc/s6"
+    container_name: "TimeMachine"
+    entrypoint:
+      - "/entrypoint.sh"
+    environment:
+      - "DEBUG_LEVEL=1"
+      - "SET_PERMISSIONS=false"
+      - "SMB_NFS_ACES=yes"
+      - "SMB_VFS_OBJECTS=acl_xattr fruit streams_xattr"
+      - "TM_GID=1000"
+      - "HOST_CONTAINERNAME=TimeMachine"
+      - "VOLUME_SIZE_LIMIT=1 T"
+      - "ADVERTISED_HOSTNAME=timemachine"
+      - "CUSTOM_USER=false"
+      - "TM_GROUPNAME=timemachine"
+      - "TM_UID=1000"
+      - "CUSTOM_SMB_CONF=false"
+      - "EXTERNAL_CONF="
+      - "SMB_PORT=445"
+      - "WORKGROUP=WORKGROUP"
+      - "MIMIC_MODEL=TimeCapsule8,119"
+      - "HIDE_SHARES=no"
+      - "SMB_INHERIT_PERMISSIONS=no"
+      - "SMB_METADATA=stream"
+      - "SHARE_NAME=TimeMachine"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    hostname: "timemachine"
+    image: "mbentley/timemachine"
+    ipc: "private"
+    labels:
+      maintainer: "Matt Bentley <mbentley@mbentley.net>"
+      net.unraid.docker.icon: "https://upload.wikimedia.org/wikipedia/de/f/f4/Time_Machine_%28Apple%29_Logo.png"
+      net.unraid.docker.managed: "dockerman"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "br0"
+    volumes:
+      - "/DATA/timemachine:/opt/tenfar"
+    working_dir: "/"

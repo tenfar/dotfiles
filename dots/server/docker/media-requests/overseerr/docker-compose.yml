@@ -1,0 +1,47 @@
+version: "3.6"
+services:
+  overseerr:
+    container_name: "overseerr"
+    entrypoint:
+      - "/init"
+    environment:
+      - "HOST_CONTAINERNAME=overseerr"
+      - "PUID=1000"
+      - "PGID=1000"
+      - "UMASK=002"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "APP_DIR=/app"
+      - "CONFIG_DIR=/config"
+      - "ARGS="
+      - "XDG_CONFIG_HOME=/config/.config"
+      - "XDG_CACHE_HOME=/config/.cache"
+      - "XDG_DATA_HOME=/config/.local/share"
+      - "S6_BEHAVIOUR_IF_STAGE2_FAILS=2"
+      - "S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0"
+      - "BUILD_ARCHITECTURE=linux-amd64"
+    hostname: "a765fe876133"
+    image: "cr.hotio.dev/hotio/overseerr"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://hotio.dev/webhook-avatars/overseerr.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:5055]"
+      org.opencontainers.image.created: "2022-12-20T10:49:54Z"
+      org.opencontainers.image.revision: "31407c3143b041de8ce514d464fc74d754fd968a"
+      org.opencontainers.image.source: "https://github.com/hotio/overseerr/tree/release"
+      org.opencontainers.image.title: "hotio/overseerr:release"
+      org.opencontainers.image.url: "https://github.com/hotio/overseerr/blob/master/README.md"
+      org.opencontainers.image.vendor: "hotio"
+      org.opencontainers.image.version: "1.31.0"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "5055:5055/tcp"
+    volumes:
+      - "/DATA/AppData/overseerr:/config"
+

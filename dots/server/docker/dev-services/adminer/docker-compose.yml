@@ -1,0 +1,38 @@
+version: "3.6"
+services:
+  adminer:
+    command:
+      - "php"
+      - "-S"
+      - "[::]:8080"
+      - "-t"
+      - "/var/www/html"
+    container_name: "adminer"
+    entrypoint:
+      - "entrypoint.sh"
+    environment:
+      - "HOST_CONTAINERNAME=adminer"
+      - "ADMINER_DESIGN=dracula"
+      - "ADMINER_PLUGINS="
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "ADMINER_VERSION=4.8.1"
+      - "ADMINER_DOWNLOAD_SHA256=2fd7e6d8f987b243ab1839249551f62adce19704c47d3d0c8dd9e57ea5b9c6b3"
+      - "ADMINER_COMMIT=1f173e18bdf0be29182e0d67989df56eadea4754"
+    hostname: "d962fc1ed7f8"
+    image: "adminer"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/img/adminer.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:8080]"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "8585:8080/tcp"
+    user: "adminer"
+    working_dir: "/var/www/html"

@@ -1,0 +1,42 @@
+version: "3.6"
+services:
+  Dozzle:
+    container_name: "Dozzle"
+    entrypoint:
+      - "/dozzle"
+    environment:
+      - "DOZZLE_TAILSIZE=300"
+      - "DOZZLE_USERNAME="
+      - "DOZZLE_NO_ANALYTICS=true"
+      - "HOST_CONTAINERNAME=Dozzle"
+      - "DOZZLE_BASE=/"
+      - "DOZZLE_LEVEL=info"
+      - "DOZZLE_PASSWORD="
+      - "PATH=/bin"
+    hostname: "ec9895144176"
+    image: "amir20/dozzle"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/img/dozzle.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:8080]/"
+      org.opencontainers.image.created: "2023-01-02T18:10:21.262Z"
+      org.opencontainers.image.description: "Realtime log viewer for docker containers."
+      org.opencontainers.image.licenses: "MIT"
+      org.opencontainers.image.revision: "ce39d3837fa57e9c77e374ed839667ba8f85fb85"
+      org.opencontainers.image.source: "https://github.com/amir20/dozzle"
+      org.opencontainers.image.title: "dozzle"
+      org.opencontainers.image.url: "https://github.com/amir20/dozzle"
+      org.opencontainers.image.version: "v4.6.2"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "8888:8080/tcp"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    working_dir: "/"

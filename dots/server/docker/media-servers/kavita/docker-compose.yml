@@ -1,0 +1,32 @@
+version: "3.6"
+services:
+  Kavita:
+    command:
+      - "/entrypoint.sh"
+    container_name: "Kavita"
+    entrypoint:
+      - "/bin/bash"
+    environment:
+      - "HOST_CONTAINERNAME=Kavita"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    hostname: "ad5cde491050"
+    image: "kizaing/kavita"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/Kareadita/Kavita/develop/UI/Web/src/assets/icons/android-chrome-192x192.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:5000]"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "5002:5000/tcp"
+    volumes:
+      - "/DATA/AppData/kavita:/kavita/config"
+      - "/DATA/media/books:/library"
+    working_dir: "/kavita"
+

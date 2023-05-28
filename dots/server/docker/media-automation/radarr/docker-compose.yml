@@ -1,0 +1,52 @@
+version: "3.6"
+services:
+  radarr:
+    container_name: "radarr"
+    entrypoint:
+      - "/init"
+    environment:
+      - "HOST_CONTAINERNAME=radarr"
+      - "PUID=1000"
+      - "PGID=1000"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "PS1=$(whoami)@$(hostname):$(pwd)\\$ "
+      - "HOME=/root"
+      - "TERM=xterm"
+      - "S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0"
+      - "XDG_CONFIG_HOME=/config/xdg"
+    hostname: "0fa819aed414"
+    image: "linuxserver/radarr"
+    ipc: "private"
+    labels:
+      build_version: "Linuxserver.io version:- 4.3.2.6857-ls159 Build-date:- 2023-01-03T18:47:20-06:00"
+      maintainer: "thelamer"
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/radarr.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:7878]"
+      org.opencontainers.image.authors: "linuxserver.io"
+      org.opencontainers.image.created: "2023-01-03T18:47:20-06:00"
+      org.opencontainers.image.description:
+        "[Radarr](https://github.com/Radarr/Radarr)\
+        \ - A fork of Sonarr to work with movies à la Couchpotato.  "
+      org.opencontainers.image.documentation: "https://docs.linuxserver.io/images/docker-radarr"
+      org.opencontainers.image.licenses: "GPL-3.0-only"
+      org.opencontainers.image.ref.name: "ce75c340c7332cbfea6836b8302d1c54d330471f"
+      org.opencontainers.image.revision: "ce75c340c7332cbfea6836b8302d1c54d330471f"
+      org.opencontainers.image.source: "https://github.com/linuxserver/docker-radarr"
+      org.opencontainers.image.title: "Radarr"
+      org.opencontainers.image.url: "https://github.com/linuxserver/docker-radarr/packages"
+      org.opencontainers.image.vendor: "linuxserver.io"
+      org.opencontainers.image.version: "4.3.2.6857-ls159"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "7878:7878/tcp"
+    volumes:
+      - "/DATA/AppData/radarr:/config"
+      - "/DATA:/data"
+    working_dir: "/"

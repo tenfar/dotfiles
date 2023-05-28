@@ -1,0 +1,53 @@
+version: "3.6"
+services:
+  Grafana-Unraid-Stack:
+    container_name: "Grafana-Unraid-Stack"
+    entrypoint:
+      - "tini"
+      - "--"
+      - "/static-ubuntu/grafana-unraid-stack/entrypoint.sh"
+    environment:
+      - "HOST_SYS=/rootfs/sys"
+      - "PROMTAIL_PORT=9086"
+      - "HOST_ETC=/rootfs/etc"
+      - "USE_HDDTEMP=no"
+      - "INFLUXDB_HTTP_PORT=8086"
+      - "LOKI_PORT=3100"
+      - "GRAFANA_PORT=3006"
+      - "HOST_PROC=/rootfs/proc"
+      - "HOST_CONTAINERNAME=Grafana-Unraid-Stack"
+      - "HOST_MOUNT_PREFIX=/rootfs"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "INFLUXDB_RPC_PORT=58083"
+    expose:
+      - "3006/tcp"
+      - "3100/tcp"
+      - "58083/tcp"
+      - "8086/tcp"
+      - "9086/tcp"
+    hostname: "AustinServer"
+    image: "testdasi/grafana-unraid-stack:latest"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/testdasi/grafana-unraid-stack-base/master/grafana-unraid-stack.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:3006]/"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    network_mode: "host"
+    privileged: true
+    security_opt:
+      - "label=disable"
+    volumes:
+      - "/:/rootfs:ro"
+      - "/etc:/rootfs/etc:ro"
+      - "/var/run/utmp:/var/run/utmp:ro"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "/DATA/AppData/Grafana-Unraid-Stack:/config"
+      - "/DATA/AppData/Grafana-Unraid-Stack/data:/data"
+      - "/proc:/rootfs/proc:ro"
+      - "/sys:/rootfs/sys:ro"
+      - "/run/udev:/run/udev:ro"

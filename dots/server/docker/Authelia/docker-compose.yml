@@ -1,0 +1,48 @@
+version: "3.6"
+services:
+  Authelia:
+    command:
+      - "--config"
+      - "/config/configuration.yml"
+    container_name: "Authelia"
+    entrypoint:
+      - "/app/entrypoint.sh"
+    environment:
+      - "HOST_CONTAINERNAME=Authelia"
+      - "PUID=1000"
+      - "PGID=1000"
+      - "PATH=/app:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    hostname: "6b9591f43425"
+    image: "authelia/authelia"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://i.imgur.com/DCn2yiv.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:9091]/"
+      org.opencontainers.image.base.name: "docker.io/library/alpine:3.17.0"
+      org.opencontainers.image.created: "2022-12-21T19:58:21+11:00"
+      org.opencontainers.image.description:
+        "Authelia is an open-source authentication\
+        \ and authorization server providing two-factor authentication and single\
+        \ sign-on (SSO) for your applications via a web portal."
+      org.opencontainers.image.documentation: "https://www.authelia.com"
+      org.opencontainers.image.licenses: "Apache-2.0"
+      org.opencontainers.image.revision: "566a0d7fc71b450123ad33d350cd3890d311da82"
+      org.opencontainers.image.source: "https://github.com/authelia/authelia/tree/566a0d7fc71b450123ad33d350cd3890d311da82"
+      org.opencontainers.image.title: "authelia"
+      org.opencontainers.image.url: "https://github.com/authelia/authelia/pkgs/container/authelia"
+      org.opencontainers.image.vendor: "Authelia"
+      org.opencontainers.image.version: "4.37.5"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "9091:9091/tcp"
+    restart: "unless-stopped"
+    volumes:
+      - "/DATA/AppData/Authelia:/config"
+    working_dir: "/app"

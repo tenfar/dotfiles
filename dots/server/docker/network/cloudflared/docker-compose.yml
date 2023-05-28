@@ -1,0 +1,34 @@
+version: "3.6"
+services:
+  cloudflared:
+    command:
+      - "tunnel"
+      - "run"
+      - "9271e587-a647-4bc5-ac55-b5664d4a90a8"
+    container_name: "cloudflared"
+    entrypoint:
+      - "cloudflared"
+      - "--no-autoupdate"
+    environment:
+      - "HOST_CONTAINERNAME=cloudflared"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt"
+    hostname: "e543e0cc0861"
+    image: "cloudflare/cloudflared:latest"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/aeleos/cloudflared/main/cloudflare-icon.png"
+      net.unraid.docker.managed: "dockerman"
+      org.opencontainers.image.source: "https://github.com/cloudflare/cloudflared"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    restart: "unless-stopped"
+    user: "nonroot"
+    volumes:
+      - "/DATA/AppData/cloudflared:/home/nonroot/.cloudflared"
+    working_dir: "/home/nonroot"

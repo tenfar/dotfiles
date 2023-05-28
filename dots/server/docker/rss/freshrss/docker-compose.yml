@@ -1,0 +1,51 @@
+version: "3.6"
+services:
+  freshrss:
+    container_name: "freshrss"
+    entrypoint:
+      - "/init"
+    environment:
+      - "HOST_CONTAINERNAME=freshrss"
+      - "PUID=1000"
+      - "PGID=1000"
+      - "UMASK=022"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "PS1=$(whoami)@$(hostname):$(pwd)\\$ "
+      - "HOME=/root"
+      - "TERM=xterm"
+      - "S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0"
+    hostname: "963e226685cf"
+    image: "lscr.io/linuxserver/freshrss"
+    ipc: "private"
+    labels:
+      build_version: "Linuxserver.io version:- 1.20.2-ls158 Build-date:- 2022-12-29T06:44:01-06:00"
+      maintainer: "aptalca"
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/freshrss-logo.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:8084]"
+      org.opencontainers.image.authors: "linuxserver.io"
+      org.opencontainers.image.created: "2022-12-29T06:44:01-06:00"
+      org.opencontainers.image.description:
+        "[Freshrss](https://freshrss.org/) is\
+        \ a free, self-hostable aggregator for rss feeds."
+      org.opencontainers.image.documentation: "https://docs.linuxserver.io/images/docker-freshrss"
+      org.opencontainers.image.licenses: "GPL-3.0-only"
+      org.opencontainers.image.ref.name: "72e6e737f805710786fb0d4d08c28565e9425bba"
+      org.opencontainers.image.revision: "72e6e737f805710786fb0d4d08c28565e9425bba"
+      org.opencontainers.image.source: "https://github.com/linuxserver/docker-freshrss"
+      org.opencontainers.image.title: "Freshrss"
+      org.opencontainers.image.url: "https://github.com/linuxserver/docker-freshrss/packages"
+      org.opencontainers.image.vendor: "linuxserver.io"
+      org.opencontainers.image.version: "1.20.2-ls158"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "8084:80/tcp"
+    volumes:
+      - "/DATA/AppData/freshrss:/config"
+    working_dir: "/"

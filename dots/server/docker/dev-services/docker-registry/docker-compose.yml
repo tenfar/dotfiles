@@ -1,0 +1,32 @@
+version: "3.6"
+services:
+  DockerRegistry:
+    command:
+      - "/etc/docker/registry/config.yml"
+    container_name: "DockerRegistry"
+    entrypoint:
+      - "/entrypoint.sh"
+    environment:
+      - "HOST_CONTAINERNAME=DockerRegistry"
+      - "REGISTRY_AUTH=htpasswd"
+      - "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm"
+      - "REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    hostname: "4ada41613234"
+    image: "registry"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://github.com/juusujanar/unraid-templates/raw/master/img/DockerRegistry-logo.png"
+      net.unraid.docker.managed: "dockerman"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "5000:5000/tcp"
+    volumes:
+      - "/DATA/AppData/registry/auth:/auth"
+      - "/DATA/AppData/registry:/var/lib/registry"

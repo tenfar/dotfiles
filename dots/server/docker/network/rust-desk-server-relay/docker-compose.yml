@@ -1,0 +1,35 @@
+version: "3.6"
+services:
+  RustDeskServer-Relay:
+    command:
+      - "/usr/bin/hbbr"
+    container_name: "RustDeskServer-Relay"
+    environment:
+      - "TCP_PORT_21119=21119"
+      - "HOST_CONTAINERNAME=RustDeskServer-Relay"
+      - "TCP_PORT_21117=21117"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    hostname: "efdcfcb6aeee"
+    image: "rustdesk/rustdesk-server"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://github.com/JmzTaylor/unraid_templates/raw/master/rustserver.png"
+      net.unraid.docker.managed: "dockerman"
+      org.opencontainers.image.created: "2023-01-11T03:49:09.196Z"
+      org.opencontainers.image.description: "RustDesk Server Program"
+      org.opencontainers.image.licenses: "AGPL-3.0"
+      org.opencontainers.image.revision: "accd96f1d84b43af5934a859a028fc70640a6317"
+      org.opencontainers.image.source: "https://github.com/rustdesk/rustdesk-server"
+      org.opencontainers.image.title: "rustdesk-server"
+      org.opencontainers.image.url: "https://github.com/rustdesk/rustdesk-server"
+      org.opencontainers.image.version: "1.1.7"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "br0"
+    volumes:
+      - "/DATA/AppData/rustdesk-hbbr:/root"
+    working_dir: "/root"

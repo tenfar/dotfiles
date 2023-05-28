@@ -1,0 +1,40 @@
+version: "3.6"
+services:
+
+  jellyfin:
+    command:
+      - "/bin/bash"
+      - "/usr/local/bin/init.sh"
+    container_name: "jellyfin"
+    entrypoint:
+      - "/usr/bin/dumb-init"
+      - "--"
+    environment:
+      - "HOST_CONTAINERNAME=jellyfin"
+      - "UMASK=000"
+      - "PUID=1000"
+      - "PGID=1000"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "HOME=/home/nobody"
+      - "TERM=xterm"
+    hostname: "8f3bc44f34da"
+    image: "nyanmisaka/jellyfin:latest"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/jellyfin-icon.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:8096]/"
+      org.opencontainers.image.authors: "= binhex"
+      org.opencontainers.image.source: "= https://github.com/binhex/arch-jellyfin"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "8096:8096/tcp"
+    volumes:
+      - "/DATA/AppData/jellyfin:/config"
+      - "/DATA/media:/media"

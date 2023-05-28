@@ -1,0 +1,57 @@
+version: "3.6"
+services:
+  bazarr:
+    container_name: "bazarr"
+    entrypoint:
+      - "/init"
+    environment:
+      - "HOST_CONTAINERNAME=bazarr"
+      - "PUID=1000"
+      - "PGID=1000"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "PS1=$(whoami)@$(hostname):$(pwd)\\$ "
+      - "HOME=/root"
+      - "TERM=xterm"
+      - "S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0"
+      - "S6_VERBOSITY=1"
+      - "S6_STAGE2_HOOK=/docker-mods"
+    hostname: "bd6e158230b4"
+    image: "linuxserver/bazarr"
+    ipc: "private"
+    labels:
+      build_version: "Linuxserver.io version:- v1.1.4-ls177 Build-date:- 2022-12-31T17:57:41+01:00"
+      maintainer: "chbmb"
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/bazarr.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:6767]"
+      org.opencontainers.image.authors: "linuxserver.io"
+      org.opencontainers.image.created: "2022-12-31T17:57:41+01:00"
+      org.opencontainers.image.description:
+        "[Bazarr](https://www.bazarr.media/) is\
+        \ a companion application to Sonarr and Radarr. It can manage and download\
+        \ subtitles based on your requirements. You define your preferences by TV\
+        \ show or movie and Bazarr takes care of everything for you."
+      org.opencontainers.image.documentation: "https://docs.linuxserver.io/images/docker-bazarr"
+      org.opencontainers.image.licenses: "GPL-3.0-only"
+      org.opencontainers.image.ref.name: "9b1384c89d1499f86dfb4219b3c55477d139275f"
+      org.opencontainers.image.revision: "9b1384c89d1499f86dfb4219b3c55477d139275f"
+      org.opencontainers.image.source: "https://github.com/linuxserver/docker-bazarr"
+      org.opencontainers.image.title: "Bazarr"
+      org.opencontainers.image.url: "https://github.com/linuxserver/docker-bazarr/packages"
+      org.opencontainers.image.vendor: "linuxserver.io"
+      org.opencontainers.image.version: "v1.1.4-ls177"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "6767:6767/tcp"
+    volumes:
+      - "/DATA/media/tv:/tv"
+      - "/DATA/torrents:/data/torrents"
+      - "/DATA/AppData/bazarr:/config"
+      - "/DATA/media/movies:/movies"
+    working_dir: "/"

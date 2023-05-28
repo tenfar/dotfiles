@@ -1,0 +1,45 @@
+version: "3.6"
+services:
+  requestrr:
+    container_name: "requestrr"
+    entrypoint:
+      - "/init"
+    environment:
+      - "HOST_CONTAINERNAME=requestrr"
+      - "PUID=1000"
+      - "PGID=1000"
+      - "UMASK=002"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "APP_DIR=/app"
+      - "CONFIG_DIR=/config"
+      - "ARGS="
+      - "XDG_CONFIG_HOME=/config/.config"
+      - "XDG_CACHE_HOME=/config/.cache"
+      - "XDG_DATA_HOME=/config/.local/share"
+      - "S6_BEHAVIOUR_IF_STAGE2_FAILS=2"
+      - "BUILD_ARCHITECTURE=linux-amd64"
+    hostname: "ca5a65c8db35"
+    image: "hotio/requestrr"
+    ipc: "private"
+    labels:
+      net.unraid.docker.icon: "https://hotio.dev/webhook-avatars/requestrr.png"
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:4545]"
+      org.opencontainers.image.created: "2022-09-02T14:09:10Z"
+      org.opencontainers.image.revision: "4d1f0c9e29bb1b97d0d0fc007d306a1fb0c9ceca"
+      org.opencontainers.image.source: "https://github.com/hotio/requestrr/tree/release"
+      org.opencontainers.image.title: "hotio/requestrr:release"
+      org.opencontainers.image.url: "https://github.com/hotio/requestrr/blob/master/README.md"
+      org.opencontainers.image.vendor: "hotio"
+      org.opencontainers.image.version: "2.1.2"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "1"
+        max-size: "500m"
+    networks:
+      - "alphaproxy"
+    ports:
+      - "4545:4545/tcp"
+    volumes:
+      - "/DATA/AppData/requestrr:/config"
