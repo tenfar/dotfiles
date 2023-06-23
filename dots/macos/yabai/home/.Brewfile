@@ -27,7 +27,7 @@ brew "bash-completion@2"
 brew "node"
 brew "bash-language-server"
 brew "bat"
-brew "protobuf"
+brew "protobuf", link: false
 brew "bear"
 brew "bfg"
 brew "binutils"
@@ -185,7 +185,7 @@ brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 brew "bramstein/webfonttools/sfnt2woff"
 brew "bramstein/webfonttools/sfnt2woff-zopfli"
-brew "felixkratz/formulae/fyabai", args: ["HEAD"], link: false
+brew "felixkratz/formulae/fyabai", args: ["HEAD"]
 brew "felixkratz/formulae/sketchybar"
 brew "felixkratz/formulae/svim"
 brew "khanhas/tap/spicetify-cli"
@@ -195,11 +195,11 @@ cask "android-platform-tools"
 cask "authy"
 cask "caprine"
 cask "cutter"
-cask "discord"
-cask "electron"
 cask "font-hack-nerd-font"
 cask "hammerspoon"
 cask "kitty"
+cask "lulu"
+cask "meetingbar"
 cask "monitorcontrol"
 cask "moonlight"
 cask "powershell"
@@ -223,7 +223,6 @@ mas "Pages 文稿", id: 409201541
 mas "QQ", id: 451108668
 mas "ServerCat", id: 1501532023
 mas "TestFlight", id: 899247664
-mas "Xcode", id: 497799835
 mas "微信", id: 836500024
 mas "超级右键", id: 1497428978
 vscode "13xforever.language-x86-64-assembly"
@@ -364,6 +363,7 @@ vscode "kenhowardpdx.vscode-gist"
 vscode "KishoreIthadi.dotnet-core-essentials"
 vscode "kisstkondoros.vscode-gutter-preview"
 vscode "ksmithut.plusplus"
+vscode "kumar-harsh.graphql-for-vscode"
 vscode "Kuresaru.kstm32"
 vscode "lior-chamla.google-fonts"
 vscode "luongnd.edge"
