@@ -20,6 +20,7 @@ mac_backup_existing() {
 	message "Backing up existing dotfiles to $BACKUP_LOCATION"
 
 	backup_files "$HOME"/.config/sketchybar "$BACKUP_LOCATION"/.config/
+	backup_files "$HOME"/.config/dynamic-island-sketchybar "$BACKUP_LOCATION"/.config/
 	backup_files "$HOME"/.config/skhd "$BACKUP_LOCATION"/.config/
 	backup_files "$HOME"/.config/yabai "$BACKUP_LOCATION"/.config/
 
@@ -90,6 +91,7 @@ mac_copy_configuration() {
 	link_locations "$MAC_HOME"/.config/kitty/macos.kitty.conf "$HOME"/.config/kitty/macos.kitty.conf
 	link_locations "$MAC_HOME"/.config/ranger/config/local.conf "$HOME"/.config/ranger/config/local.conf
 	link_locations "$MAC_HOME"/.config/sketchybar "$HOME"/.config/sketchybar
+	link_locations "$MAC_HOME"/.config/dynamic-island-sketchybar "$HOME"/.config/dynamic-island-sketchybar
 	link_locations "$MAC_HOME"/.config/skhd "$HOME"/.config/skhd
 	link_locations "$MAC_HOME"/.config/yabai "$HOME"/.config/yabai
 
@@ -115,12 +117,22 @@ mac_copy_configuration() {
 	fi
 }
 
+dynamic_island_link() {
+	if [[ -d "$HOME"/.config/dynamic-island-sketchybar ]]; then
+		message "Linking dynamic-island-sketchybar to home folder..."
+		ln -s "$(which sketchybar)" "$(dirname "$(which sketchybar)")"/dynamic-island-sketchybar
+		success_message "dynamic-island-sketchybar linked up"
+	else
+		warning_message "dynamic-island-sketchybar not installed. Skipping linking..."
+	fi
+}
+
 enable_brew_servies() {
 	# Start Services
 	if (command -v brew); then
 		message "Starting Services (grant permissions)..."
-		brew services start skhd
-		brew services start yabai
+		skhd --start-service
+		yabai --start-service
 		brew services start sketchybar
 	else
 		warning_message "Brew not installed! Skipping enabling services..."
@@ -169,6 +181,7 @@ mac_install() {
 	customize_dock
 
 	1password_ssh_link
+	dynamic_island_link
 
 	cat_theme_all
 

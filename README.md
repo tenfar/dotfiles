@@ -13,6 +13,8 @@
 
 Personal dotfiles for each of the platforms I own or have customized. Personal information is either redacted or encrypted with [Git-Crypt](https://github.com/AGWA/git-crypt). Recommend pairing my SDDM theme with this setup. It can be found [here](https://github.com/khaneliman/sddm-catppuccin) or directly from the AUR [here](https://aur.archlinux.org/packages/sddm-catppuccin-git).
 
+## I've migrated all my personal machines to use my new Nix based repo config [KhaneliNix](https://github.com/khaneliman/khanelinix) since it can manage the installation location and dependencies easier than custom scripts to manage for everything. This repo is basically frozen in time with the occasional submodule update and might just archive the main branch and replace the nix config in this repo. 
+
 ## Install
 
 ### Clone repo
@@ -38,6 +40,12 @@ Each environment might require further steps that will be detailed in their resp
 ```
 
 The script will detect what OS you are running the script from and perform the installation for that OS. You will need to select what environment you would like to install the dots for if there are multiple for that given OS.
+
+## NixOS
+
+[![NixOS](https://img.shields.io/badge/NixOS-cad3f5?style=for-the-badge&logo=nixos&logoColor=black)](https://github.com/khaneliman/dotfiles/blob/main/dots/nixos/)
+
+NixOS config is managed in a separate repository. Currently linked as a submodule so it's easy to look at or use. I have been transitioning my legacy dotfiles style of management towards a Nix focused approach, since it seems to have more predictable results and can fully manage more parts of the system via configuration.
 
 ## Linux
 
