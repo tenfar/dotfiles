@@ -20,7 +20,6 @@ mac_backup_existing() {
 	message "Backing up existing dotfiles to $BACKUP_LOCATION"
 
 	backup_files "$HOME"/.config/sketchybar "$BACKUP_LOCATION"/.config/
-	backup_files "$HOME"/.config/dynamic-island-sketchybar "$BACKUP_LOCATION"/.config/
 	backup_files "$HOME"/.config/skhd "$BACKUP_LOCATION"/.config/
 	backup_files "$HOME"/.config/yabai "$BACKUP_LOCATION"/.config/
 
@@ -91,7 +90,6 @@ mac_copy_configuration() {
 	link_locations "$MAC_HOME"/.config/kitty/macos.kitty.conf "$HOME"/.config/kitty/macos.kitty.conf
 	link_locations "$MAC_HOME"/.config/ranger/config/local.conf "$HOME"/.config/ranger/config/local.conf
 	link_locations "$MAC_HOME"/.config/sketchybar "$HOME"/.config/sketchybar
-	link_locations "$MAC_HOME"/.config/dynamic-island-sketchybar "$HOME"/.config/dynamic-island-sketchybar
 	link_locations "$MAC_HOME"/.config/skhd "$HOME"/.config/skhd
 	link_locations "$MAC_HOME"/.config/yabai "$HOME"/.config/yabai
 
@@ -105,26 +103,6 @@ mac_copy_configuration() {
 	# copy files that dont replace location
 	copy_files "$MAC_HOME"/.terminfo "$HOME"/
 	copy_files "$MAC_HOME"/Library "$HOME"/
-}
-
-1password_ssh_link() {
-	if [[ -d "$HOME"/Library/Group\ Containers/2BUA8C4S2C.com.1password/ ]]; then
-		message "Linking 1password ssh agent to home folder..."
-		mkdir -p "$HOME"/.1password && link_locations "$HOME"/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock "$HOME"/.1password/agent.sock
-		success_message "1password ssh agent linked up"
-	else
-		warning_message "1password not installed. Skipping linking ssh agent..."
-	fi
-}
-
-dynamic_island_link() {
-	if [[ -d "$HOME"/.config/dynamic-island-sketchybar ]]; then
-		message "Linking dynamic-island-sketchybar to home folder..."
-		ln -s "$(which sketchybar)" "$(dirname "$(which sketchybar)")"/dynamic-island-sketchybar
-		success_message "dynamic-island-sketchybar linked up"
-	else
-		warning_message "dynamic-island-sketchybar not installed. Skipping linking..."
-	fi
 }
 
 enable_brew_servies() {
