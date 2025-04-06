@@ -6,6 +6,12 @@ using module UserPreferencesMask
 # ░░█░░█▀█░█▀▀░█░█░░█░░█░█░█░█
 # ░░▀░░▀░▀░▀▀▀░▀░▀░▀▀▀░▀░▀░▀▀▀
 #
+
+# Get Windows version
+$osInfo = Get-CimInstance Win32_OperatingSystem
+$osBuild = $osInfo.BuildNumber
+$isWindows11 = $osBuild -ge 22000
+
 # Self-elevate the script if required
 if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] 'Administrator'))
 {
@@ -75,5 +81,36 @@ if ($current_cursor -eq "Catppuccin-Mocha-Blue-Cursors")
 
     $RegConnect.Close()
 
+    # Windows 11 specific cursor settings
+    if ($isWindows11) {
+        Write-Message -Message "Configuring Windows 11 specific cursor settings..."
+        
+        # Enable custom cursors in Windows 11
+        $cursorSettingsPath = "HKCU:\Control Panel\Cursors"
+        Set-ItemProperty -Path $cursorSettingsPath -Name "CursorScheme" -Value "Catppuccin-Mocha-Blue-Cursors"
+        
+        # Set cursor size (Windows 11 supports larger cursors)
+        Set-ItemProperty -Path $cursorSettingsPath -Name "CursorBaseSize" -Value 32
+        
+        # Enable cursor shadows (Windows 11 feature)
+        Set-ItemProperty -Path $cursorSettingsPath -Name "CursorShadow" -Value 1
+        
+        # Set cursor animation speed
+        Set-ItemProperty -Path $cursorSettingsPath -Name "CursorAnimationSpeed" -Value 10
+        
+        # Apply cursor settings to all windows
+        $explorerPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects"
+        if (Test-Path -Path $explorerPath) {
+            Set-ItemProperty -Path $explorerPath -Name "CursorShadow" -Value 1
+        }
+        
+        # Restart Explorer to apply changes
+        Write-Message -Message "Restarting Explorer to apply cursor changes..."
+        Stop-Process -Name "explorer" -Force -ErrorAction SilentlyContinue
+        Start-Process "explorer"
+    }
+
     Update-UserPreferencesMask
+    
+    Write-Message -Type SUCCESS -Message "Cursor installation completed"
 }

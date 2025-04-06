@@ -7,10 +7,22 @@ using module ElevateScript
 # ░▀░▀░▀▀▀░▀░▀░▀▀░░▀▀▀░▀░▀░▀▀▀░░░▀░░░▀▀▀░▀░▀░░▀░░▀▀▀░▀░▀░▀▀▀░▀▀▀
 #
 
-if (([Version](Get-CimInstance Win32_OperatingSystem).version).Major -lt 10)
+$osInfo = Get-CimInstance Win32_OperatingSystem
+$osVersion = [Version]$osInfo.Version
+$osBuild = $osInfo.BuildNumber
+
+if ($osVersion.Major -lt 10 -or ($osVersion.Major -eq 10 -and $osVersion.Minor -lt 0))
 {
-    Write-Message -Type ERROR -Message "The DeveloperMode is only supported on Windows 10"
+    Write-Message -Type ERROR -Message "This script requires Windows 10 or Windows 11"
     exit 1
+}
+
+# Check if running on Windows 11 (Build number 22000 or higher)
+$isWindows11 = $osBuild -ge 22000
+if ($isWindows11) {
+    Write-Message -Message "Detected Windows 11 (Build $osBuild)"
+} else {
+    Write-Message -Message "Detected Windows 10 (Build $osBuild)"
 }
 
 Write-Message -Type WARNING -Message "Enabling features requires admin elevated privileges. Requesting elevated privileges..."

@@ -30,6 +30,10 @@ class ConfigMap
 
     ConfigMap()
     {
+        # Get Windows version
+        $osInfo = Get-CimInstance Win32_OperatingSystem
+        $osBuild = $osInfo.BuildNumber
+        $isWindows11 = $osBuild -ge 22000
 
         $Path = 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders'
         $DOCUMENTS_PATH = Get-ItemPropertyValue -Path $Path -Name "Personal" -ErrorAction SilentlyContinue
@@ -48,11 +52,43 @@ class ConfigMap
             $true,
             $true)
 
-        $this.ConfigMap += [ConfigMapEntry]::new(
-            (-join($global:DOTS_DIR,"/windows/komorebi/home/AppData/Local/Packages/MicaForEveryone_pfhyqtmn5ksmy/LocalState/MicaForEveryone.conf").Replace("/","\")),
-            (-join($env:USERPROFILE,"\AppData\Local\Packages\MicaForEveryone_pfhyqtmn5ksmy\LocalState\MicaForEveryone.conf").Replace("/","\")),
-            $false,
-            $true)
+        # Windows 11 specific configs
+        if ($isWindows11) {
+            # MicaForEveryone config
+            $this.ConfigMap += [ConfigMapEntry]::new(
+                (-join($global:DOTS_DIR,"/windows/komorebi/home/AppData/Local/Packages/MicaForEveryone_pfhyqtmn5ksmy/LocalState/MicaForEveryone.conf").Replace("/","\")),
+                (-join($env:USERPROFILE,"\AppData\Local\Packages\MicaForEveryone_pfhyqtmn5ksmy\LocalState\MicaForEveryone.conf").Replace("/","\")),
+                $false,
+                $true)
+            
+            # StartAllBack config
+            $this.ConfigMap += [ConfigMapEntry]::new(
+                (-join($global:DOTS_DIR,"/windows/komorebi/home/AppData/Local/Packages/StartIsBack_8wekyb3d8bbwe/LocalState/settings.json").Replace("/","\")),
+                (-join($env:USERPROFILE,"\AppData\Local\Packages\StartIsBack_8wekyb3d8bbwe\LocalState\settings.json").Replace("/","\")),
+                $false,
+                $true)
+            
+            # Windows 11 Explorer settings
+            $this.ConfigMap += [ConfigMapEntry]::new(
+                (-join($global:DOTS_DIR,"/windows/komorebi/home/AppData/Local/Microsoft/Windows/Explorer/Windows11ExplorerSettings.reg").Replace("/","\")),
+                (-join($env:USERPROFILE,"\AppData\Local\Microsoft\Windows\Explorer\Windows11ExplorerSettings.reg").Replace("/","\")),
+                $false,
+                $true)
+            
+            # Windows 11 Taskbar settings
+            $this.ConfigMap += [ConfigMapEntry]::new(
+                (-join($global:DOTS_DIR,"/windows/komorebi/home/AppData/Local/Microsoft/Windows/Explorer/Windows11TaskbarSettings.reg").Replace("/","\")),
+                (-join($env:USERPROFILE,"\AppData\Local\Microsoft\Windows\Explorer\Windows11TaskbarSettings.reg").Replace("/","\")),
+                $false,
+                $true)
+        } else {
+            # Windows 10 specific configs
+            $this.ConfigMap += [ConfigMapEntry]::new(
+                (-join($global:DOTS_DIR,"/windows/komorebi/home/AppData/Local/Packages/MicaForEveryone_pfhyqtmn5ksmy/LocalState/MicaForEveryone.conf").Replace("/","\")),
+                (-join($env:USERPROFILE,"\AppData\Local\Packages\MicaForEveryone_pfhyqtmn5ksmy\LocalState\MicaForEveryone.conf").Replace("/","\")),
+                $false,
+                $true)
+        }
 
         $this.ConfigMap += [ConfigMapEntry]::new(
             (-join($global:DOTS_DIR,"/windows/komorebi/home/AppData/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json").Replace("/","\")),
